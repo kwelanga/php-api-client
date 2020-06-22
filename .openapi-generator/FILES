@@ -1,9 +1,5 @@
-.gitignore
-.openapi-generator-ignore
 .php_cs
 .travis.yml
-README.md
-composer.json
 docs/Api/DefaultApi.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
@@ -25,10 +21,3 @@ lib/Model/ProductListItemCategories.php
 lib/Model/User.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/DefaultApiTest.php
-test/Model/InlineResponse2001Test.php
-test/Model/InlineResponse2002Test.php
-test/Model/InlineResponse200Test.php
-test/Model/ProductListItemCategoriesTest.php
-test/Model/ProductListItemTest.php
-test/Model/UserTest.php

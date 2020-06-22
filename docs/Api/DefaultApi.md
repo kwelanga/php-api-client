@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**getStores**](DefaultApi.md#getStores) | **GET** /stores | Search/List Stores
 [**getStoresId**](DefaultApi.md#getStoresId) | **GET** /stores/{id} | Fetch Store Item
 [**getSupport**](DefaultApi.md#getSupport) | **GET** /support | Your GET endpoint
+[**getTestmew**](DefaultApi.md#getTestmew) | **GET** /testmew | Test New Endpoint
 [**getTestnew**](DefaultApi.md#getTestnew) | **GET** /testnew | Your GET endpoint
 [**getUser**](DefaultApi.md#getUser) | **GET** /user | Your GET endpoint
 [**getUserSettings**](DefaultApi.md#getUserSettings) | **GET** /user/settings | Fetch User Settings
@@ -853,6 +854,55 @@ void (empty response body)
 ### Authorization
 
 [credentials](../../README.md#credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## getTestmew
+
+> getTestmew()
+
+Test New Endpoint
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $apiInstance->getTestmew();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getTestmew: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

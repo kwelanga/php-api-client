@@ -72,48 +72,7 @@ try {
 
 All URIs are relative to *https://api.kwelangasolutions.co.za/v1*
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*DefaultApi* | [**deleteOrderId**](docs/Api/DefaultApi.md#deleteorderid) | **DELETE** /orders/{id} | Delete Order Item
-*DefaultApi* | [**deletePrincipalsId**](docs/Api/DefaultApi.md#deleteprincipalsid) | **DELETE** /principals/{id} | Delete Principal Item
-*DefaultApi* | [**deleteProductsId**](docs/Api/DefaultApi.md#deleteproductsid) | **DELETE** /products/{id} | Delete Product Item
-*DefaultApi* | [**deleteStoresId**](docs/Api/DefaultApi.md#deletestoresid) | **DELETE** /stores/{id} | Delete Store Item
-*DefaultApi* | [**getCustomerProfile**](docs/Api/DefaultApi.md#getcustomerprofile) | **GET** /customer/profile | Get Customer/Store Profile
-*DefaultApi* | [**getOrder**](docs/Api/DefaultApi.md#getorder) | **GET** /orders | Search/List Orders
-*DefaultApi* | [**getOrderId**](docs/Api/DefaultApi.md#getorderid) | **GET** /orders/{id} | Fetch Order Item
-*DefaultApi* | [**getPing**](docs/Api/DefaultApi.md#getping) | **GET** /ping | Your GET endpoint
-*DefaultApi* | [**getPrincipals**](docs/Api/DefaultApi.md#getprincipals) | **GET** /principals | Search/List Principals
-*DefaultApi* | [**getPrincipalsId**](docs/Api/DefaultApi.md#getprincipalsid) | **GET** /principals/{id} | Fetch Principal Item
-*DefaultApi* | [**getProducts**](docs/Api/DefaultApi.md#getproducts) | **GET** /products | Create New Product
-*DefaultApi* | [**getProductsId**](docs/Api/DefaultApi.md#getproductsid) | **GET** /products/{id} | Fetch Order Item
-*DefaultApi* | [**getStores**](docs/Api/DefaultApi.md#getstores) | **GET** /stores | Search/List Stores
-*DefaultApi* | [**getStoresId**](docs/Api/DefaultApi.md#getstoresid) | **GET** /stores/{id} | Fetch Store Item
-*DefaultApi* | [**getSupport**](docs/Api/DefaultApi.md#getsupport) | **GET** /support | Your GET endpoint
-*DefaultApi* | [**getTestnew**](docs/Api/DefaultApi.md#gettestnew) | **GET** /testnew | Your GET endpoint
-*DefaultApi* | [**getUser**](docs/Api/DefaultApi.md#getuser) | **GET** /user | Your GET endpoint
-*DefaultApi* | [**getUserSettings**](docs/Api/DefaultApi.md#getusersettings) | **GET** /user/settings | Fetch User Settings
-*DefaultApi* | [**postCustomerLogin**](docs/Api/DefaultApi.md#postcustomerlogin) | **POST** /customer/login | 
-*DefaultApi* | [**postCustomerProfile**](docs/Api/DefaultApi.md#postcustomerprofile) | **POST** /customer/profile | Create Customer/Store Profile
-*DefaultApi* | [**postOrder**](docs/Api/DefaultApi.md#postorder) | **POST** /orders | Create New Order
-*DefaultApi* | [**postPrincipals**](docs/Api/DefaultApi.md#postprincipals) | **POST** /principals | Create New Principal
-*DefaultApi* | [**postProducts**](docs/Api/DefaultApi.md#postproducts) | **POST** /products | Create New Product
-*DefaultApi* | [**postStores**](docs/Api/DefaultApi.md#poststores) | **POST** /stores | Create New Store
-*DefaultApi* | [**putCustomerProfile**](docs/Api/DefaultApi.md#putcustomerprofile) | **PUT** /customer/profile | Update Customer/Store Profile
-*DefaultApi* | [**putOrderId**](docs/Api/DefaultApi.md#putorderid) | **PUT** /orders/{id} | Update Order Item
-*DefaultApi* | [**putPrincipalsId**](docs/Api/DefaultApi.md#putprincipalsid) | **PUT** /principals/{id} | Update Principal Item
-*DefaultApi* | [**putProductsId**](docs/Api/DefaultApi.md#putproductsid) | **PUT** /products/{id} | Update Product Item
-*DefaultApi* | [**putStoresId**](docs/Api/DefaultApi.md#putstoresid) | **PUT** /stores/{id} | Update Store Item
-*DefaultApi* | [**putUserSettings**](docs/Api/DefaultApi.md#putusersettings) | **PUT** /user/settings | Update User Settings
-
-
-## Documentation For Models
-
- - [InlineResponse200](docs/Model/InlineResponse200.md)
- - [InlineResponse2001](docs/Model/InlineResponse2001.md)
- - [InlineResponse2002](docs/Model/InlineResponse2002.md)
- - [ProductListItem](docs/Model/ProductListItem.md)
- - [ProductListItemCategories](docs/Model/ProductListItemCategories.md)
- - [User](docs/Model/User.md)
+[**api endpoints**](docs/Api/DefaultApi.md)
 
 
 ## Documentation For Authorization
