@@ -27,7 +27,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
     }
   ],
   "require": {
-    "kwelanga/php-api-client": "*@dev"
+    "kwelanga/php-api-client": "1.0"
   }
 }
 ```

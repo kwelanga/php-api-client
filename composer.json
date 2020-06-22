@@ -1,6 +1,6 @@
 {
-    "name": "GIT_USER_ID/GIT_REPO_ID",
-    "description": "OpenAPI for Kwelanga Online Solutions",
+    "name": "kwelanga/php-api-client",
+    "description": "PHP client library for Kwelanga Online Solutions",
     "keywords": [
         "openapitools",
         "openapi-generator",
