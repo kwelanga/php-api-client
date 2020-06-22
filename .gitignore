@@ -13,6 +13,8 @@ composer.lock
 # PHPUnit cache
 .phpunit.result.cache
 
+
+
 #CI defaults.
 .DS_Store
 

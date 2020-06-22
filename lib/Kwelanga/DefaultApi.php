@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace OpenAPI\Client\Kwelanga;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;

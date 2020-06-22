@@ -223,6 +223,16 @@ class DefaultApiTest extends TestCase
     }
 
     /**
+     * Test case for getTestnew
+     *
+     * Your GET endpoint.
+     *
+     */
+    public function testGetTestnew()
+    {
+    }
+
+    /**
      * Test case for getUser
      *
      * Your GET endpoint.
