@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace KwelangaAPI\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \KwelangaAPI\ObjectSerializer;
 
 /**
  * User Class Doc Comment
  *
  * @category Class
  * @description Tetst
- * @package  OpenAPI\Client
+ * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -60,7 +60,7 @@ class User implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'rewrew' => 'string',
-        'rewrwe' => '\OpenAPI\Client\Model\InlineResponse200'
+        'rewrwe' => '\KwelangaAPI\Model\InlineResponse200'
     ];
 
     /**
@@ -268,7 +268,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets rewrwe
      *
-     * @return \OpenAPI\Client\Model\InlineResponse200|null
+     * @return \KwelangaAPI\Model\InlineResponse200|null
      */
     public function getRewrwe()
     {
@@ -278,7 +278,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets rewrwe
      *
-     * @param \OpenAPI\Client\Model\InlineResponse200|null $rewrwe rewrwe
+     * @param \KwelangaAPI\Model\InlineResponse200|null $rewrwe rewrwe
      *
      * @return $this
      */

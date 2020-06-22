@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace KwelangaAPI\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \KwelangaAPI\ObjectSerializer;
 
 /**
  * ProductListItem Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -63,7 +63,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'title' => 'string',
         'description' => 'string',
         'web_enabled' => 'string',
-        'categories' => '\OpenAPI\Client\Model\ProductListItemCategories[]',
+        'categories' => '\KwelangaAPI\Model\ProductListItemCategories[]',
         'status' => 'string'
     ];
 
@@ -393,7 +393,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
     /**
      * Gets categories
      *
-     * @return \OpenAPI\Client\Model\ProductListItemCategories[]|null
+     * @return \KwelangaAPI\Model\ProductListItemCategories[]|null
      */
     public function getCategories()
     {
@@ -403,7 +403,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
     /**
      * Sets categories
      *
-     * @param \OpenAPI\Client\Model\ProductListItemCategories[]|null $categories categories
+     * @param \KwelangaAPI\Model\ProductListItemCategories[]|null $categories categories
      *
      * @return $this
      */

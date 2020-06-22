@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace KwelangaAPI\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \KwelangaAPI\ObjectSerializer;
 
 /**
  * InlineResponse2001 Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'total' => 'int',
-        'data' => '\OpenAPI\Client\Model\ProductListItem[]'
+        'data' => '\KwelangaAPI\Model\ProductListItem[]'
     ];
 
     /**
@@ -237,7 +237,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \OpenAPI\Client\Model\ProductListItem[]|null
+     * @return \KwelangaAPI\Model\ProductListItem[]|null
      */
     public function getData()
     {
@@ -247,7 +247,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \OpenAPI\Client\Model\ProductListItem[]|null $data data
+     * @param \KwelangaAPI\Model\ProductListItem[]|null $data data
      *
      * @return $this
      */

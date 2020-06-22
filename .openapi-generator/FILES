@@ -8,10 +8,10 @@ docs/Model/ProductListItem.md
 docs/Model/ProductListItemCategories.md
 docs/Model/User.md
 git_push.sh
+lib/Api/DefaultApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
-lib/Kwelanga/DefaultApi.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/InlineResponse2002.php

@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Kwelanga;
+namespace KwelangaAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use KwelangaAPI\ApiException;
+use KwelangaAPI\Configuration;
+use KwelangaAPI\HeaderSelector;
+use KwelangaAPI\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -122,7 +122,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -138,7 +138,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -351,7 +351,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -367,7 +367,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -576,7 +576,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -592,7 +592,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -801,7 +801,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -817,7 +817,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1025,7 +1025,7 @@ class DefaultApi
      * Get Customer/Store Profile
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1040,7 +1040,7 @@ class DefaultApi
      * Get Customer/Store Profile
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1235,9 +1235,9 @@ class DefaultApi
      * @param  string $order order (optional)
      * @param  int $offset limit offset (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse200
+     * @return \KwelangaAPI\Model\InlineResponse200
      */
     public function getOrder($store_id = null, $limit = null, $order = null, $offset = null)
     {
@@ -1255,9 +1255,9 @@ class DefaultApi
      * @param  string $order (optional)
      * @param  int $offset limit offset (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderWithHttpInfo($store_id = null, $limit = null, $order = null, $offset = null)
     {
@@ -1294,20 +1294,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse200' === '\SplFileObject') {
+                    if ('\KwelangaAPI\Model\InlineResponse200' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse200', []),
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse200', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse200';
+            $returnType = '\KwelangaAPI\Model\InlineResponse200';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1326,7 +1326,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse200',
+                        '\KwelangaAPI\Model\InlineResponse200',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1374,7 +1374,7 @@ class DefaultApi
      */
     public function getOrderAsyncWithHttpInfo($store_id = null, $limit = null, $order = null, $offset = null)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse200';
+        $returnType = '\KwelangaAPI\Model\InlineResponse200';
         $request = $this->getOrderRequest($store_id, $limit, $order, $offset);
 
         return $this->client
@@ -1550,7 +1550,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1566,7 +1566,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1778,9 +1778,9 @@ class DefaultApi
      * Your GET endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2002
+     * @return \KwelangaAPI\Model\InlineResponse2002
      */
     public function getPing()
     {
@@ -1794,9 +1794,9 @@ class DefaultApi
      * Your GET endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPingWithHttpInfo()
     {
@@ -1833,20 +1833,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('\KwelangaAPI\Model\InlineResponse2002' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2002', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+            $returnType = '\KwelangaAPI\Model\InlineResponse2002';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1865,7 +1865,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2002',
+                        '\KwelangaAPI\Model\InlineResponse2002',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1905,7 +1905,7 @@ class DefaultApi
      */
     public function getPingAsyncWithHttpInfo()
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2002';
+        $returnType = '\KwelangaAPI\Model\InlineResponse2002';
         $request = $this->getPingRequest();
 
         return $this->client
@@ -2032,7 +2032,7 @@ class DefaultApi
      * Search/List Principals
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2047,7 +2047,7 @@ class DefaultApi
      * Search/List Principals
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2239,7 +2239,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2255,7 +2255,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2466,9 +2466,9 @@ class DefaultApi
      * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
      * @param  string $order order (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\InlineResponse2001
+     * @return \KwelangaAPI\Model\InlineResponse2001
      */
     public function getProducts($web_enabled = null, $status = null, $order = null)
     {
@@ -2485,9 +2485,9 @@ class DefaultApi
      * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
      * @param  string $order (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProductsWithHttpInfo($web_enabled = null, $status = null, $order = null)
     {
@@ -2524,20 +2524,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\InlineResponse2001' === '\SplFileObject') {
+                    if ('\KwelangaAPI\Model\InlineResponse2001' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\InlineResponse2001', []),
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2001', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\InlineResponse2001';
+            $returnType = '\KwelangaAPI\Model\InlineResponse2001';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2556,7 +2556,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\InlineResponse2001',
+                        '\KwelangaAPI\Model\InlineResponse2001',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2602,7 +2602,7 @@ class DefaultApi
      */
     public function getProductsAsyncWithHttpInfo($web_enabled = null, $status = null, $order = null)
     {
-        $returnType = '\OpenAPI\Client\Model\InlineResponse2001';
+        $returnType = '\KwelangaAPI\Model\InlineResponse2001';
         $request = $this->getProductsRequest($web_enabled, $status, $order);
 
         return $this->client
@@ -2770,7 +2770,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2786,7 +2786,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2994,7 +2994,7 @@ class DefaultApi
      * Search/List Stores
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3009,7 +3009,7 @@ class DefaultApi
      * Search/List Stores
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3201,7 +3201,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3217,7 +3217,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3425,7 +3425,7 @@ class DefaultApi
      * Your GET endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3440,7 +3440,7 @@ class DefaultApi
      * Your GET endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3635,7 +3635,7 @@ class DefaultApi
      * Test New Endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -3651,7 +3651,7 @@ class DefaultApi
      * Test New Endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3889,7 +3889,7 @@ class DefaultApi
      * Your GET endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3904,7 +3904,7 @@ class DefaultApi
      * Your GET endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4095,7 +4095,7 @@ class DefaultApi
      * Your GET endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4110,7 +4110,7 @@ class DefaultApi
      * Your GET endpoint
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4305,7 +4305,7 @@ class DefaultApi
      * Fetch User Settings
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4320,7 +4320,7 @@ class DefaultApi
      * Fetch User Settings
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4511,7 +4511,7 @@ class DefaultApi
      * @param  string $username username (optional)
      * @param  string $password password (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4526,7 +4526,7 @@ class DefaultApi
      * @param  string $username (optional)
      * @param  string $password (optional)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4745,7 +4745,7 @@ class DefaultApi
      * Create Customer/Store Profile
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4760,7 +4760,7 @@ class DefaultApi
      * Create Customer/Store Profile
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4951,7 +4951,7 @@ class DefaultApi
      * Create New Order
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4966,7 +4966,7 @@ class DefaultApi
      * Create New Order
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5161,7 +5161,7 @@ class DefaultApi
      * Create New Principal
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5176,7 +5176,7 @@ class DefaultApi
      * Create New Principal
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5367,7 +5367,7 @@ class DefaultApi
      * Create New Product
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5382,7 +5382,7 @@ class DefaultApi
      * Create New Product
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5577,7 +5577,7 @@ class DefaultApi
      * Create New Store
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5592,7 +5592,7 @@ class DefaultApi
      * Create New Store
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5783,7 +5783,7 @@ class DefaultApi
      * Update Customer/Store Profile
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5798,7 +5798,7 @@ class DefaultApi
      * Update Customer/Store Profile
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5990,7 +5990,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6006,7 +6006,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6219,7 +6219,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6235,7 +6235,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6444,7 +6444,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6460,7 +6460,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6669,7 +6669,7 @@ class DefaultApi
      *
      * @param  string $id id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6685,7 +6685,7 @@ class DefaultApi
      *
      * @param  string $id (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6893,7 +6893,7 @@ class DefaultApi
      * Update User Settings
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6908,7 +6908,7 @@ class DefaultApi
      * Update User Settings
      *
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
