@@ -1780,7 +1780,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \KwelangaAPI\Model\InlineResponse2002
+     * @return object
      */
     public function getPing()
     {
@@ -1796,7 +1796,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \KwelangaAPI\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPingWithHttpInfo()
     {
@@ -1833,20 +1833,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\KwelangaAPI\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('object' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, 'object', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+            $returnType = 'object';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1865,7 +1865,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\KwelangaAPI\Model\InlineResponse2002',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1905,7 +1905,7 @@ class DefaultApi
      */
     public function getPingAsyncWithHttpInfo()
     {
-        $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+        $returnType = 'object';
         $request = $this->getPingRequest();
 
         return $this->client

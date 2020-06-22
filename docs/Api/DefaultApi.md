@@ -435,7 +435,7 @@ void (empty response body)
 
 ## getPing
 
-> \KwelangaAPI\Model\InlineResponse2002 getPing()
+> object getPing()
 
 Your GET endpoint
 
@@ -469,7 +469,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+**object**
 
 ### Authorization
 
