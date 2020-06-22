@@ -867,7 +867,7 @@ void (empty response body)
 
 ## getTestmew
 
-> getTestmew()
+> object getTestmew()
 
 Test New Endpoint
 
@@ -885,7 +885,8 @@ $apiInstance = new OpenAPI\Client\Api\DefaultApi(
 );
 
 try {
-    $apiInstance->getTestmew();
+    $result = $apiInstance->getTestmew();
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTestmew: ', $e->getMessage(), PHP_EOL;
 }
@@ -898,7 +899,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -907,7 +908,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
