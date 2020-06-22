@@ -111,10 +111,17 @@ Delete Principal Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -139,7 +146,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -164,10 +171,17 @@ Delete Product Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -192,7 +206,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -217,10 +231,17 @@ Delete Store Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -245,7 +266,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -270,10 +291,17 @@ Get Customer/Store Profile
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -294,7 +322,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -448,10 +476,17 @@ api test ping endpoint, no auth required
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -473,7 +508,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -498,10 +533,17 @@ Search/List Principals
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -522,7 +564,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -547,10 +589,17 @@ Fetch Principal Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -575,7 +624,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -665,10 +714,17 @@ Fetch Order Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -693,7 +749,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -718,10 +774,17 @@ Search/List Stores
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -742,7 +805,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -767,10 +830,17 @@ Fetch Store Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -795,7 +865,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -878,10 +948,22 @@ Test New Endpoint
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+// Configure API key authorization: principal
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -903,7 +985,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials), [principal](../../README.md#principal)
 
 ### HTTP request headers
 
@@ -928,10 +1010,17 @@ Your GET endpoint
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -952,7 +1041,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1035,10 +1124,17 @@ Fetch User Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -1059,7 +1155,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1084,10 +1180,17 @@ No authorization required
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $username = 'username_example'; // string | 
 $password = 'password_example'; // string | 
@@ -1114,7 +1217,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1139,10 +1242,17 @@ Create Customer/Store Profile
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -1163,7 +1273,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1244,10 +1354,17 @@ Create New Principal
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -1268,7 +1385,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1349,10 +1466,17 @@ Create New Store
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -1373,7 +1497,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1398,10 +1522,17 @@ Update Customer/Store Profile
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -1422,7 +1553,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1507,10 +1638,17 @@ Update Principal Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -1535,7 +1673,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1560,10 +1698,17 @@ Update Product Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -1588,7 +1733,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1613,10 +1758,17 @@ Update Store Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | 
 
@@ -1641,7 +1793,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1666,10 +1818,17 @@ Update User Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -1690,7 +1849,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
