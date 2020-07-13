@@ -665,7 +665,7 @@ void (empty response body)
 
 ## getProducts
 
-> \KwelangaAPI\Model\InlineResponse2001 getProducts($web_enabled, $status, $order)
+> \KwelangaAPI\Model\InlineResponse2001 getProducts($web_enabled, $status, $order, $start, $length, $search)
 
 Create New Product
 
@@ -695,10 +695,13 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
 );
 $web_enabled = 'web_enabled_example'; // string | filter response to include/exclude web enabled products - options: Y/N
 $status = 'status_example'; // string | filter response to include/exclude deleted products - options: A/D, default : A
-$order = 'order_example'; // string | 
+$order = new \KwelangaAPI\Model\AnyType(); // AnyType | order[column]=direction eg: order[code]=desc
+$start = 3.4; // float | Paging first record indicator. This is the start point in the current data set, zero based: default 0
+$length = 3.4; // float | -1 = all records, default 50 for mobile first
+$search = new \KwelangaAPI\Model\AnyType(); // AnyType | //  eg:  search[GLOBAL] = '*fadfsad*'   //global regex search     //  eg:  search[GLOBAL] = '136'   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] = 'hello'   //column strict search
 
 try {
-    $result = $apiInstance->getProducts($web_enabled, $status, $order);
+    $result = $apiInstance->getProducts($web_enabled, $status, $order, $start, $length, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getProducts: ', $e->getMessage(), PHP_EOL;
@@ -713,7 +716,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **web_enabled** | **string**| filter response to include/exclude web enabled products - options: Y/N | [optional]
  **status** | **string**| filter response to include/exclude deleted products - options: A/D, default : A | [optional]
- **order** | **string**|  | [optional]
+ **order** | [**AnyType**](../Model/.md)| order[column]&#x3D;direction eg: order[code]&#x3D;desc | [optional]
+ **start** | **float**| Paging first record indicator. This is the start point in the current data set, zero based: default 0 | [optional]
+ **length** | **float**| -1 &#x3D; all records, default 50 for mobile first | [optional]
+ **search** | [**AnyType**](../Model/.md)| //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search | [optional]
 
 ### Return type
 
