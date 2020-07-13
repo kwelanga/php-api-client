@@ -2567,14 +2567,14 @@ class DefaultApi
     /**
      * Operation getProducts
      *
-     * Create New Product
+     * Search/List Products
      *
      * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
      * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
-     * @param  AnyType $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
-     * @param  float $start Paging first record indicator. This is the start point in the current data set, zero based: default 0 (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  AnyType $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2589,14 +2589,14 @@ class DefaultApi
     /**
      * Operation getProductsWithHttpInfo
      *
-     * Create New Product
+     * Search/List Products
      *
      * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
      * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
-     * @param  AnyType $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
-     * @param  float $start Paging first record indicator. This is the start point in the current data set, zero based: default 0 (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  AnyType $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2682,14 +2682,14 @@ class DefaultApi
     /**
      * Operation getProductsAsync
      *
-     * Create New Product
+     * Search/List Products
      *
      * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
      * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
-     * @param  AnyType $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
-     * @param  float $start Paging first record indicator. This is the start point in the current data set, zero based: default 0 (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  AnyType $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2707,14 +2707,14 @@ class DefaultApi
     /**
      * Operation getProductsAsyncWithHttpInfo
      *
-     * Create New Product
+     * Search/List Products
      *
      * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
      * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
-     * @param  AnyType $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
-     * @param  float $start Paging first record indicator. This is the start point in the current data set, zero based: default 0 (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  AnyType $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2763,10 +2763,10 @@ class DefaultApi
      *
      * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
      * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
-     * @param  AnyType $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
-     * @param  float $start Paging first record indicator. This is the start point in the current data set, zero based: default 0 (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  AnyType $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
