@@ -60,11 +60,14 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'id' => 'int',
         'code' => 'string',
         'alt_code' => 'string',
-        'title' => 'string',
+        'ean_code' => 'string',
+        'name' => 'string',
         'description' => 'string',
+        'weight' => 'float',
+        'items_per_case' => 'float',
         'web_enabled' => 'string',
-        'categories' => '\KwelangaAPI\Model\ProductListItemCategories[]',
-        'status' => 'string'
+        'status' => 'string',
+        'pricing' => '\KwelangaAPI\Model\ProductListItemPricing'
     ];
 
     /**
@@ -76,11 +79,14 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'id' => null,
         'code' => null,
         'alt_code' => null,
-        'title' => null,
+        'ean_code' => null,
+        'name' => null,
         'description' => null,
+        'weight' => null,
+        'items_per_case' => null,
         'web_enabled' => null,
-        'categories' => null,
-        'status' => null
+        'status' => null,
+        'pricing' => null
     ];
 
     /**
@@ -112,12 +118,15 @@ class ProductListItem implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'code' => 'code',
-        'alt_code' => 'alt_code',
-        'title' => 'title',
+        'alt_code' => 'altCode',
+        'ean_code' => 'eanCode',
+        'name' => 'name',
         'description' => 'description',
-        'web_enabled' => 'web_enabled',
-        'categories' => 'categories',
-        'status' => 'status'
+        'weight' => 'weight',
+        'items_per_case' => 'itemsPerCase',
+        'web_enabled' => 'webEnabled',
+        'status' => 'status',
+        'pricing' => 'pricing'
     ];
 
     /**
@@ -129,11 +138,14 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'code' => 'setCode',
         'alt_code' => 'setAltCode',
-        'title' => 'setTitle',
+        'ean_code' => 'setEanCode',
+        'name' => 'setName',
         'description' => 'setDescription',
+        'weight' => 'setWeight',
+        'items_per_case' => 'setItemsPerCase',
         'web_enabled' => 'setWebEnabled',
-        'categories' => 'setCategories',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'pricing' => 'setPricing'
     ];
 
     /**
@@ -145,11 +157,14 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'code' => 'getCode',
         'alt_code' => 'getAltCode',
-        'title' => 'getTitle',
+        'ean_code' => 'getEanCode',
+        'name' => 'getName',
         'description' => 'getDescription',
+        'weight' => 'getWeight',
+        'items_per_case' => 'getItemsPerCase',
         'web_enabled' => 'getWebEnabled',
-        'categories' => 'getCategories',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'pricing' => 'getPricing'
     ];
 
     /**
@@ -215,11 +230,14 @@ class ProductListItem implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['alt_code'] = isset($data['alt_code']) ? $data['alt_code'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['ean_code'] = isset($data['ean_code']) ? $data['ean_code'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
+        $this->container['items_per_case'] = isset($data['items_per_case']) ? $data['items_per_case'] : null;
         $this->container['web_enabled'] = isset($data['web_enabled']) ? $data['web_enabled'] : null;
-        $this->container['categories'] = isset($data['categories']) ? $data['categories'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['pricing'] = isset($data['pricing']) ? $data['pricing'] : null;
     }
 
     /**
@@ -319,25 +337,49 @@ class ProductListItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets title
+     * Gets ean_code
      *
      * @return string|null
      */
-    public function getTitle()
+    public function getEanCode()
     {
-        return $this->container['title'];
+        return $this->container['ean_code'];
     }
 
     /**
-     * Sets title
+     * Sets ean_code
      *
-     * @param string|null $title title
+     * @param string|null $ean_code ean_code
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setEanCode($ean_code)
     {
-        $this->container['title'] = $title;
+        $this->container['ean_code'] = $ean_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -367,6 +409,54 @@ class ProductListItem implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets weight
+     *
+     * @return float|null
+     */
+    public function getWeight()
+    {
+        return $this->container['weight'];
+    }
+
+    /**
+     * Sets weight
+     *
+     * @param float|null $weight weight
+     *
+     * @return $this
+     */
+    public function setWeight($weight)
+    {
+        $this->container['weight'] = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Gets items_per_case
+     *
+     * @return float|null
+     */
+    public function getItemsPerCase()
+    {
+        return $this->container['items_per_case'];
+    }
+
+    /**
+     * Sets items_per_case
+     *
+     * @param float|null $items_per_case items_per_case
+     *
+     * @return $this
+     */
+    public function setItemsPerCase($items_per_case)
+    {
+        $this->container['items_per_case'] = $items_per_case;
+
+        return $this;
+    }
+
+    /**
      * Gets web_enabled
      *
      * @return string|null
@@ -391,30 +481,6 @@ class ProductListItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets categories
-     *
-     * @return \KwelangaAPI\Model\ProductListItemCategories[]|null
-     */
-    public function getCategories()
-    {
-        return $this->container['categories'];
-    }
-
-    /**
-     * Sets categories
-     *
-     * @param \KwelangaAPI\Model\ProductListItemCategories[]|null $categories categories
-     *
-     * @return $this
-     */
-    public function setCategories($categories)
-    {
-        $this->container['categories'] = $categories;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      *
      * @return string|null
@@ -434,6 +500,30 @@ class ProductListItem implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets pricing
+     *
+     * @return \KwelangaAPI\Model\ProductListItemPricing|null
+     */
+    public function getPricing()
+    {
+        return $this->container['pricing'];
+    }
+
+    /**
+     * Sets pricing
+     *
+     * @param \KwelangaAPI\Model\ProductListItemPricing|null $pricing pricing
+     *
+     * @return $this
+     */
+    public function setPricing($pricing)
+    {
+        $this->container['pricing'] = $pricing;
 
         return $this;
     }

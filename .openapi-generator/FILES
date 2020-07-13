@@ -4,7 +4,7 @@ docs/Api/DefaultApi.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/ProductListItem.md
-docs/Model/ProductListItemCategories.md
+docs/Model/ProductListItemPricing.md
 docs/Model/User.md
 git_push.sh
 lib/Api/DefaultApi.php
@@ -15,7 +15,8 @@ lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/ModelInterface.php
 lib/Model/ProductListItem.php
-lib/Model/ProductListItemCategories.php
+lib/Model/ProductListItemPricing.php
 lib/Model/User.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/ProductListItemPricingTest.php
