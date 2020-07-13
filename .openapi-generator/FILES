@@ -19,4 +19,3 @@ lib/Model/ProductListItemPricing.php
 lib/Model/User.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/ProductListItemPricingTest.php

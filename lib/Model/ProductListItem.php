@@ -67,6 +67,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'items_per_case' => 'float',
         'web_enabled' => 'string',
         'status' => 'string',
+        'image_uri' => 'string',
         'pricing' => '\KwelangaAPI\Model\ProductListItemPricing'
     ];
 
@@ -86,6 +87,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'items_per_case' => null,
         'web_enabled' => null,
         'status' => null,
+        'image_uri' => null,
         'pricing' => null
     ];
 
@@ -126,6 +128,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'items_per_case' => 'itemsPerCase',
         'web_enabled' => 'webEnabled',
         'status' => 'status',
+        'image_uri' => 'imageUri',
         'pricing' => 'pricing'
     ];
 
@@ -145,6 +148,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'items_per_case' => 'setItemsPerCase',
         'web_enabled' => 'setWebEnabled',
         'status' => 'setStatus',
+        'image_uri' => 'setImageUri',
         'pricing' => 'setPricing'
     ];
 
@@ -164,6 +168,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'items_per_case' => 'getItemsPerCase',
         'web_enabled' => 'getWebEnabled',
         'status' => 'getStatus',
+        'image_uri' => 'getImageUri',
         'pricing' => 'getPricing'
     ];
 
@@ -237,6 +242,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
         $this->container['items_per_case'] = isset($data['items_per_case']) ? $data['items_per_case'] : null;
         $this->container['web_enabled'] = isset($data['web_enabled']) ? $data['web_enabled'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['image_uri'] = isset($data['image_uri']) ? $data['image_uri'] : null;
         $this->container['pricing'] = isset($data['pricing']) ? $data['pricing'] : null;
     }
 
@@ -500,6 +506,30 @@ class ProductListItem implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets image_uri
+     *
+     * @return string|null
+     */
+    public function getImageUri()
+    {
+        return $this->container['image_uri'];
+    }
+
+    /**
+     * Sets image_uri
+     *
+     * @param string|null $image_uri image_uri
+     *
+     * @return $this
+     */
+    public function setImageUri($image_uri)
+    {
+        $this->container['image_uri'] = $image_uri;
 
         return $this;
     }

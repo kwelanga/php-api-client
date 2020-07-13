@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **items_per_case** | **float** |  | [optional] 
 **web_enabled** | **string** |  | [optional] 
 **status** | **string** |  | [optional] 
+**image_uri** | **string** |  | [optional] 
 **pricing** | [**\KwelangaAPI\Model\ProductListItemPricing**](ProductListItemPricing.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
