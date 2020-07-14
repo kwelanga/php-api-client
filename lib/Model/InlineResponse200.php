@@ -57,7 +57,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total' => 'int',
+        'total' => 'float',
+        'total_pages' => 'float',
         'data' => '\KwelangaAPI\Model\ProductListItem[]'
     ];
 
@@ -68,6 +69,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'total' => null,
+        'total_pages' => null,
         'data' => null
     ];
 
@@ -99,6 +101,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'total' => 'total',
+        'total_pages' => 'total_pages',
         'data' => 'data'
     ];
 
@@ -109,6 +112,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'total' => 'setTotal',
+        'total_pages' => 'setTotalPages',
         'data' => 'setData'
     ];
 
@@ -119,6 +123,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'total' => 'getTotal',
+        'total_pages' => 'getTotalPages',
         'data' => 'getData'
     ];
 
@@ -183,6 +188,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
@@ -213,7 +219,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     /**
      * Gets total
      *
-     * @return int|null
+     * @return float|null
      */
     public function getTotal()
     {
@@ -223,13 +229,37 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     /**
      * Sets total
      *
-     * @param int|null $total total
+     * @param float|null $total total
      *
      * @return $this
      */
     public function setTotal($total)
     {
         $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_pages
+     *
+     * @return float|null
+     */
+    public function getTotalPages()
+    {
+        return $this->container['total_pages'];
+    }
+
+    /**
+     * Sets total_pages
+     *
+     * @param float|null $total_pages total_pages
+     *
+     * @return $this
+     */
+    public function setTotalPages($total_pages)
+    {
+        $this->container['total_pages'] = $total_pages;
 
         return $this;
     }
