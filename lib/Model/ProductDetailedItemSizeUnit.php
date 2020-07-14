@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * ProductDetailedItemSizeUnit
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * ProductDetailedItemSizeUnit Class Doc Comment
  *
  * @category Class
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class InlineResponse2001 implements ModelInterface, ArrayAccess
+class ProductDetailedItemSizeUnit implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_1';
+    protected static $openAPIModelName = 'ProductDetailedItem_size_unit';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,9 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\KwelangaAPI\Model\ProductDetailedItem'
+        'id' => 'int',
+        'name' => 'string',
+        'unit' => 'string'
     ];
 
     /**
@@ -66,7 +68,9 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'id' => null,
+        'name' => null,
+        'unit' => null
     ];
 
     /**
@@ -96,7 +100,9 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'id' => 'id',
+        'name' => 'name',
+        'unit' => 'unit'
     ];
 
     /**
@@ -105,7 +111,9 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'id' => 'setId',
+        'name' => 'setName',
+        'unit' => 'setUnit'
     ];
 
     /**
@@ -114,7 +122,9 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'id' => 'getId',
+        'name' => 'getName',
+        'unit' => 'getUnit'
     ];
 
     /**
@@ -177,7 +187,9 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
     }
 
     /**
@@ -205,25 +217,73 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets id
      *
-     * @return \KwelangaAPI\Model\ProductDetailedItem|null
+     * @return int|null
      */
-    public function getData()
+    public function getId()
     {
-        return $this->container['data'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets data
+     * Sets id
      *
-     * @param \KwelangaAPI\Model\ProductDetailedItem|null $data data
+     * @param int|null $id id
      *
      * @return $this
      */
-    public function setData($data)
+    public function setId($id)
     {
-        $this->container['data'] = $data;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit
+     *
+     * @return string|null
+     */
+    public function getUnit()
+    {
+        return $this->container['unit'];
+    }
+
+    /**
+     * Sets unit
+     *
+     * @param string|null $unit unit
+     *
+     * @return $this
+     */
+    public function setUnit($unit)
+    {
+        $this->container['unit'] = $unit;
 
         return $this;
     }

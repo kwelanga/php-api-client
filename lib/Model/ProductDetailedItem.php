@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductListItem
+ * ProductDetailedItem
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * ProductListItem Class Doc Comment
+ * ProductDetailedItem Class Doc Comment
  *
  * @category Class
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ProductListItem implements ModelInterface, ArrayAccess
+class ProductDetailedItem implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ProductListItem implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ProductListItem';
+    protected static $openAPIModelName = 'ProductDetailedItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -63,10 +63,13 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'ean_code' => 'string',
         'name' => 'string',
         'short_desc' => 'string',
+        'long_desc' => 'string',
+        'weight' => 'float',
         'items_per_case' => 'float',
         'web_enabled' => 'string',
         'status' => 'string',
         'image_uri' => 'string',
+        'size' => '\KwelangaAPI\Model\ProductDetailedItemSize',
         'pricing' => '\KwelangaAPI\Model\ProductDetailedItemPricing'
     ];
 
@@ -82,10 +85,13 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'ean_code' => null,
         'name' => null,
         'short_desc' => null,
+        'long_desc' => null,
+        'weight' => null,
         'items_per_case' => null,
         'web_enabled' => null,
         'status' => null,
         'image_uri' => null,
+        'size' => null,
         'pricing' => null
     ];
 
@@ -122,10 +128,13 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'ean_code' => 'eanCode',
         'name' => 'name',
         'short_desc' => 'shortDesc',
+        'long_desc' => 'longDesc',
+        'weight' => 'weight',
         'items_per_case' => 'itemsPerCase',
         'web_enabled' => 'webEnabled',
         'status' => 'status',
         'image_uri' => 'imageUri',
+        'size' => 'size',
         'pricing' => 'pricing'
     ];
 
@@ -141,10 +150,13 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'ean_code' => 'setEanCode',
         'name' => 'setName',
         'short_desc' => 'setShortDesc',
+        'long_desc' => 'setLongDesc',
+        'weight' => 'setWeight',
         'items_per_case' => 'setItemsPerCase',
         'web_enabled' => 'setWebEnabled',
         'status' => 'setStatus',
         'image_uri' => 'setImageUri',
+        'size' => 'setSize',
         'pricing' => 'setPricing'
     ];
 
@@ -160,10 +172,13 @@ class ProductListItem implements ModelInterface, ArrayAccess
         'ean_code' => 'getEanCode',
         'name' => 'getName',
         'short_desc' => 'getShortDesc',
+        'long_desc' => 'getLongDesc',
+        'weight' => 'getWeight',
         'items_per_case' => 'getItemsPerCase',
         'web_enabled' => 'getWebEnabled',
         'status' => 'getStatus',
         'image_uri' => 'getImageUri',
+        'size' => 'getSize',
         'pricing' => 'getPricing'
     ];
 
@@ -233,10 +248,13 @@ class ProductListItem implements ModelInterface, ArrayAccess
         $this->container['ean_code'] = isset($data['ean_code']) ? $data['ean_code'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['short_desc'] = isset($data['short_desc']) ? $data['short_desc'] : null;
+        $this->container['long_desc'] = isset($data['long_desc']) ? $data['long_desc'] : null;
+        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
         $this->container['items_per_case'] = isset($data['items_per_case']) ? $data['items_per_case'] : null;
         $this->container['web_enabled'] = isset($data['web_enabled']) ? $data['web_enabled'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['image_uri'] = isset($data['image_uri']) ? $data['image_uri'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
         $this->container['pricing'] = isset($data['pricing']) ? $data['pricing'] : null;
     }
 
@@ -409,6 +427,54 @@ class ProductListItem implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets long_desc
+     *
+     * @return string|null
+     */
+    public function getLongDesc()
+    {
+        return $this->container['long_desc'];
+    }
+
+    /**
+     * Sets long_desc
+     *
+     * @param string|null $long_desc long_desc
+     *
+     * @return $this
+     */
+    public function setLongDesc($long_desc)
+    {
+        $this->container['long_desc'] = $long_desc;
+
+        return $this;
+    }
+
+    /**
+     * Gets weight
+     *
+     * @return float|null
+     */
+    public function getWeight()
+    {
+        return $this->container['weight'];
+    }
+
+    /**
+     * Sets weight
+     *
+     * @param float|null $weight weight
+     *
+     * @return $this
+     */
+    public function setWeight($weight)
+    {
+        $this->container['weight'] = $weight;
+
+        return $this;
+    }
+
+    /**
      * Gets items_per_case
      *
      * @return float|null
@@ -500,6 +566,30 @@ class ProductListItem implements ModelInterface, ArrayAccess
     public function setImageUri($image_uri)
     {
         $this->container['image_uri'] = $image_uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets size
+     *
+     * @return \KwelangaAPI\Model\ProductDetailedItemSize|null
+     */
+    public function getSize()
+    {
+        return $this->container['size'];
+    }
+
+    /**
+     * Sets size
+     *
+     * @param \KwelangaAPI\Model\ProductDetailedItemSize|null $size size
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->container['size'] = $size;
 
         return $this;
     }

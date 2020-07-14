@@ -1,10 +1,14 @@
-# # InlineResponse2001
+# # ProductDetailedItemPricing
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\KwelangaAPI\Model\ProductDetailedItem**](ProductDetailedItem.md) |  | [optional] 
+**inclusive** | **float** |  | [optional] 
+**vat_rate** | **float** |  | [optional] 
+**start_date** | **string** |  | [optional] 
+**end_date** | **string** |  | [optional] 
+**code** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

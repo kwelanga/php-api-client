@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * ProductDetailedItemSize
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * ProductDetailedItemSize Class Doc Comment
  *
  * @category Class
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class InlineResponse2001 implements ModelInterface, ArrayAccess
+class ProductDetailedItemSize implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_1';
+    protected static $openAPIModelName = 'ProductDetailedItem_size';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\KwelangaAPI\Model\ProductDetailedItem'
+        'unit' => '\KwelangaAPI\Model\ProductDetailedItemSizeUnit',
+        'width' => 'float',
+        'length' => 'float',
+        'height' => 'float'
     ];
 
     /**
@@ -66,7 +69,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'unit' => null,
+        'width' => null,
+        'length' => null,
+        'height' => null
     ];
 
     /**
@@ -96,7 +102,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'unit' => 'unit',
+        'width' => 'width',
+        'length' => 'length',
+        'height' => 'height'
     ];
 
     /**
@@ -105,7 +114,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'unit' => 'setUnit',
+        'width' => 'setWidth',
+        'length' => 'setLength',
+        'height' => 'setHeight'
     ];
 
     /**
@@ -114,7 +126,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'unit' => 'getUnit',
+        'width' => 'getWidth',
+        'length' => 'getLength',
+        'height' => 'getHeight'
     ];
 
     /**
@@ -177,7 +192,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
+        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
+        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
+        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
     }
 
     /**
@@ -205,25 +223,97 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets unit
      *
-     * @return \KwelangaAPI\Model\ProductDetailedItem|null
+     * @return \KwelangaAPI\Model\ProductDetailedItemSizeUnit|null
      */
-    public function getData()
+    public function getUnit()
     {
-        return $this->container['data'];
+        return $this->container['unit'];
     }
 
     /**
-     * Sets data
+     * Sets unit
      *
-     * @param \KwelangaAPI\Model\ProductDetailedItem|null $data data
+     * @param \KwelangaAPI\Model\ProductDetailedItemSizeUnit|null $unit unit
      *
      * @return $this
      */
-    public function setData($data)
+    public function setUnit($unit)
     {
-        $this->container['data'] = $data;
+        $this->container['unit'] = $unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets width
+     *
+     * @return float|null
+     */
+    public function getWidth()
+    {
+        return $this->container['width'];
+    }
+
+    /**
+     * Sets width
+     *
+     * @param float|null $width width
+     *
+     * @return $this
+     */
+    public function setWidth($width)
+    {
+        $this->container['width'] = $width;
+
+        return $this;
+    }
+
+    /**
+     * Gets length
+     *
+     * @return float|null
+     */
+    public function getLength()
+    {
+        return $this->container['length'];
+    }
+
+    /**
+     * Sets length
+     *
+     * @param float|null $length length
+     *
+     * @return $this
+     */
+    public function setLength($length)
+    {
+        $this->container['length'] = $length;
+
+        return $this;
+    }
+
+    /**
+     * Gets height
+     *
+     * @return float|null
+     */
+    public function getHeight()
+    {
+        return $this->container['height'];
+    }
+
+    /**
+     * Sets height
+     *
+     * @param float|null $height height
+     *
+     * @return $this
+     */
+    public function setHeight($height)
+    {
+        $this->container['height'] = $height;
 
         return $this;
     }

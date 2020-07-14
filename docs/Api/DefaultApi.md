@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**getPrincipals**](DefaultApi.md#getPrincipals) | **GET** /principals | Search/List Principals
 [**getPrincipalsId**](DefaultApi.md#getPrincipalsId) | **GET** /principals/{id} | Fetch Principal Item
 [**getProducts**](DefaultApi.md#getProducts) | **GET** /products | Search/List Products
-[**getProductsId**](DefaultApi.md#getProductsId) | **GET** /products/{id} | Fetch Order Item
+[**getProductsId**](DefaultApi.md#getProductsId) | **GET** /products/{id} | Fetch Product Item
 [**getStores**](DefaultApi.md#getStores) | **GET** /stores | Search/List Stores
 [**getStoresId**](DefaultApi.md#getStoresId) | **GET** /stores/{id} | Fetch Store Item
 [**getSupport**](DefaultApi.md#getSupport) | **GET** /support | Your GET endpoint
@@ -753,9 +753,9 @@ Name | Type | Description  | Notes
 
 ## getProductsId
 
-> getProductsId($id)
+> \KwelangaAPI\Model\InlineResponse2001 getProductsId($id)
 
-Fetch Order Item
+Fetch Product Item
 
 ### Example
 
@@ -784,7 +784,8 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
 $id = 'id_example'; // string | 
 
 try {
-    $apiInstance->getProductsId($id);
+    $result = $apiInstance->getProductsId($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getProductsId: ', $e->getMessage(), PHP_EOL;
 }
@@ -800,7 +801,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\KwelangaAPI\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -809,7 +810,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)

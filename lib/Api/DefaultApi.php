@@ -3010,29 +3010,30 @@ class DefaultApi
     /**
      * Operation getProductsId
      *
-     * Fetch Order Item
+     * Fetch Product Item
      *
      * @param  string $id id (required)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \KwelangaAPI\Model\InlineResponse2001
      */
     public function getProductsId($id)
     {
-        $this->getProductsIdWithHttpInfo($id);
+        list($response) = $this->getProductsIdWithHttpInfo($id);
+        return $response;
     }
 
     /**
      * Operation getProductsIdWithHttpInfo
      *
-     * Fetch Order Item
+     * Fetch Product Item
      *
      * @param  string $id (required)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProductsIdWithHttpInfo($id)
     {
@@ -3066,10 +3067,46 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\KwelangaAPI\Model\InlineResponse2001' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2001', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\KwelangaAPI\Model\InlineResponse2001';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\KwelangaAPI\Model\InlineResponse2001',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -3078,7 +3115,7 @@ class DefaultApi
     /**
      * Operation getProductsIdAsync
      *
-     * Fetch Order Item
+     * Fetch Product Item
      *
      * @param  string $id (required)
      *
@@ -3098,7 +3135,7 @@ class DefaultApi
     /**
      * Operation getProductsIdAsyncWithHttpInfo
      *
-     * Fetch Order Item
+     * Fetch Product Item
      *
      * @param  string $id (required)
      *
@@ -3107,14 +3144,25 @@ class DefaultApi
      */
     public function getProductsIdAsyncWithHttpInfo($id)
     {
-        $returnType = '';
+        $returnType = '\KwelangaAPI\Model\InlineResponse2001';
         $request = $this->getProductsIdRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3173,11 +3221,11 @@ class DefaultApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['application/json'],
                 []
             );
         }

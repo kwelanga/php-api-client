@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * ProductDetailedItemPricing
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * ProductDetailedItemPricing Class Doc Comment
  *
  * @category Class
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class InlineResponse2001 implements ModelInterface, ArrayAccess
+class ProductDetailedItemPricing implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_1';
+    protected static $openAPIModelName = 'ProductDetailedItem_pricing';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,11 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\KwelangaAPI\Model\ProductDetailedItem'
+        'inclusive' => 'float',
+        'vat_rate' => 'float',
+        'start_date' => 'string',
+        'end_date' => 'string',
+        'code' => 'string'
     ];
 
     /**
@@ -66,7 +70,11 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'inclusive' => null,
+        'vat_rate' => null,
+        'start_date' => null,
+        'end_date' => null,
+        'code' => null
     ];
 
     /**
@@ -96,7 +104,11 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'inclusive' => 'inclusive',
+        'vat_rate' => 'vatRate',
+        'start_date' => 'startDate',
+        'end_date' => 'endDate',
+        'code' => 'code'
     ];
 
     /**
@@ -105,7 +117,11 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'inclusive' => 'setInclusive',
+        'vat_rate' => 'setVatRate',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'code' => 'setCode'
     ];
 
     /**
@@ -114,7 +130,11 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'inclusive' => 'getInclusive',
+        'vat_rate' => 'getVatRate',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'code' => 'getCode'
     ];
 
     /**
@@ -177,7 +197,11 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['inclusive'] = isset($data['inclusive']) ? $data['inclusive'] : null;
+        $this->container['vat_rate'] = isset($data['vat_rate']) ? $data['vat_rate'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
     }
 
     /**
@@ -205,25 +229,121 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets inclusive
      *
-     * @return \KwelangaAPI\Model\ProductDetailedItem|null
+     * @return float|null
      */
-    public function getData()
+    public function getInclusive()
     {
-        return $this->container['data'];
+        return $this->container['inclusive'];
     }
 
     /**
-     * Sets data
+     * Sets inclusive
      *
-     * @param \KwelangaAPI\Model\ProductDetailedItem|null $data data
+     * @param float|null $inclusive inclusive
      *
      * @return $this
      */
-    public function setData($data)
+    public function setInclusive($inclusive)
     {
-        $this->container['data'] = $data;
+        $this->container['inclusive'] = $inclusive;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat_rate
+     *
+     * @return float|null
+     */
+    public function getVatRate()
+    {
+        return $this->container['vat_rate'];
+    }
+
+    /**
+     * Sets vat_rate
+     *
+     * @param float|null $vat_rate vat_rate
+     *
+     * @return $this
+     */
+    public function setVatRate($vat_rate)
+    {
+        $this->container['vat_rate'] = $vat_rate;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return string|null
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param string|null $start_date start_date
+     *
+     * @return $this
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return string|null
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param string|null $end_date end_date
+     *
+     * @return $this
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     *
+     * @return string|null
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param string|null $code code
+     *
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
 
         return $this;
     }
