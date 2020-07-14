@@ -355,7 +355,7 @@ This endpoint does not need any parameter.
 
 ## getOrder
 
-> \KwelangaAPI\Model\InlineResponse200 getOrder($store_id, $limit, $order, $offset)
+> object getOrder($order, $search, $start, $length, $draw)
 
 Search/List Orders
 
@@ -378,13 +378,14 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$store_id = 56; // int | fetch orders by store/customer id
-$limit = 56; // int | limit returned orders
-$order = 'order_example'; // string | 
-$offset = 56; // int | limit offset
+$order = new \stdClass; // object | order[column]=direction eg: order[code]=desc
+$search = new \stdClass; // object | //  eg:  search[GLOBAL] = '*fadfsad*'   //global regex search     //  eg:  search[GLOBAL] = '136'   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] = 'hello'   //column strict search
+$start = 3.4; // float | Paging first record indicator. This is the start point in the current data set, default 1
+$length = 3.4; // float | -1 = all records, default 50 for mobile first
+$draw = 3.4; // float | used as an indicator to distinguish between requests, default: 0
 
 try {
-    $result = $apiInstance->getOrder($store_id, $limit, $order, $offset);
+    $result = $apiInstance->getOrder($order, $search, $start, $length, $draw);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOrder: ', $e->getMessage(), PHP_EOL;
@@ -397,14 +398,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **store_id** | **int**| fetch orders by store/customer id | [optional]
- **limit** | **int**| limit returned orders | [optional]
- **order** | **string**|  | [optional]
- **offset** | **int**| limit offset | [optional]
+ **order** | [**object**](../Model/.md)| order[column]&#x3D;direction eg: order[code]&#x3D;desc | [optional]
+ **search** | [**object**](../Model/.md)| //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search | [optional]
+ **start** | **float**| Paging first record indicator. This is the start point in the current data set, default 1 | [optional]
+ **length** | **float**| -1 &#x3D; all records, default 50 for mobile first | [optional]
+ **draw** | **float**| used as an indicator to distinguish between requests, default: 0 | [optional]
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse200**](../Model/InlineResponse200.md)
+**object**
 
 ### Authorization
 
@@ -539,7 +541,7 @@ No authorization required
 
 ## getPrincipals
 
-> getPrincipals()
+> getPrincipals($order, $search, $start, $length, $draw)
 
 Search/List Principals
 
@@ -567,9 +569,14 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$order = new \stdClass; // object | order[column]=direction eg: order[code]=desc
+$search = new \stdClass; // object | //  eg:  search[GLOBAL] = '*fadfsad*'   //global regex search     //  eg:  search[GLOBAL] = '136'   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] = 'hello'   //column strict search
+$start = 3.4; // float | Paging first record indicator. This is the start point in the current data set, default 1
+$length = 3.4; // float | -1 = all records, default 50 for mobile first
+$draw = 3.4; // float | used as an indicator to distinguish between requests, default: 0
 
 try {
-    $apiInstance->getPrincipals();
+    $apiInstance->getPrincipals($order, $search, $start, $length, $draw);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPrincipals: ', $e->getMessage(), PHP_EOL;
 }
@@ -578,7 +585,14 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order** | [**object**](../Model/.md)| order[column]&#x3D;direction eg: order[code]&#x3D;desc | [optional]
+ **search** | [**object**](../Model/.md)| //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search | [optional]
+ **start** | **float**| Paging first record indicator. This is the start point in the current data set, default 1 | [optional]
+ **length** | **float**| -1 &#x3D; all records, default 50 for mobile first | [optional]
+ **draw** | **float**| used as an indicator to distinguish between requests, default: 0 | [optional]
 
 ### Return type
 
@@ -665,7 +679,7 @@ void (empty response body)
 
 ## getProducts
 
-> \KwelangaAPI\Model\InlineResponse2001 getProducts($order, $search, $start, $length, $draw)
+> \KwelangaAPI\Model\InlineResponse200 getProducts($order, $search, $start, $length, $draw)
 
 Search/List Products
 
@@ -721,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\KwelangaAPI\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 

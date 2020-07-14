@@ -1,6 +1,6 @@
 <?php
 /**
- * User
+ * UserRewrwe
  *
  * PHP version 7.2
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * User Class Doc Comment
+ * UserRewrwe Class Doc Comment
  *
  * @category Class
- * @description Tetst
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class User implements ModelInterface, ArrayAccess
+class UserRewrwe implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class User implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'User';
+    protected static $openAPIModelName = 'User_rewrwe';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +57,7 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'rewrew' => 'string',
-        'rewrwe' => '\KwelangaAPI\Model\UserRewrwe'
+        'test' => 'string'
     ];
 
     /**
@@ -69,9 +66,7 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'rewrew' => 'hostname',
-        'rewrwe' => null
+        'test' => null
     ];
 
     /**
@@ -101,9 +96,7 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'rewrew' => 'rewrew',
-        'rewrwe' => 'rewrwe'
+        'test' => 'test'
     ];
 
     /**
@@ -112,9 +105,7 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'rewrew' => 'setRewrew',
-        'rewrwe' => 'setRewrwe'
+        'test' => 'setTest'
     ];
 
     /**
@@ -123,9 +114,7 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'rewrew' => 'getRewrew',
-        'rewrwe' => 'getRewrwe'
+        'test' => 'getTest'
     ];
 
     /**
@@ -188,9 +177,7 @@ class User implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['rewrew'] = isset($data['rewrew']) ? $data['rewrew'] : null;
-        $this->container['rewrwe'] = isset($data['rewrwe']) ? $data['rewrwe'] : null;
+        $this->container['test'] = isset($data['test']) ? $data['test'] : null;
     }
 
     /**
@@ -218,73 +205,25 @@ class User implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets test
      *
      * @return string|null
      */
-    public function getId()
+    public function getTest()
     {
-        return $this->container['id'];
+        return $this->container['test'];
     }
 
     /**
-     * Sets id
+     * Sets test
      *
-     * @param string|null $id id
+     * @param string|null $test test
      *
      * @return $this
      */
-    public function setId($id)
+    public function setTest($test)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets rewrew
-     *
-     * @return string|null
-     */
-    public function getRewrew()
-    {
-        return $this->container['rewrew'];
-    }
-
-    /**
-     * Sets rewrew
-     *
-     * @param string|null $rewrew rewrew
-     *
-     * @return $this
-     */
-    public function setRewrew($rewrew)
-    {
-        $this->container['rewrew'] = $rewrew;
-
-        return $this;
-    }
-
-    /**
-     * Gets rewrwe
-     *
-     * @return \KwelangaAPI\Model\UserRewrwe|null
-     */
-    public function getRewrwe()
-    {
-        return $this->container['rewrwe'];
-    }
-
-    /**
-     * Sets rewrwe
-     *
-     * @param \KwelangaAPI\Model\UserRewrwe|null $rewrwe rewrwe
-     *
-     * @return $this
-     */
-    public function setRewrwe($rewrwe)
-    {
-        $this->container['rewrwe'] = $rewrwe;
+        $this->container['test'] = $test;
 
         return $this;
     }

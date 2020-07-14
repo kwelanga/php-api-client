@@ -1314,18 +1314,19 @@ class DefaultApi
      *
      * Search/List Orders
      *
-     * @param  int $store_id fetch orders by store/customer id (optional)
-     * @param  int $limit limit returned orders (optional)
-     * @param  string $order order (optional)
-     * @param  int $offset limit offset (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \KwelangaAPI\Model\InlineResponse200
+     * @return object
      */
-    public function getOrder($store_id = null, $limit = null, $order = null, $offset = null)
+    public function getOrder($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        list($response) = $this->getOrderWithHttpInfo($store_id, $limit, $order, $offset);
+        list($response) = $this->getOrderWithHttpInfo($order, $search, $start, $length, $draw);
         return $response;
     }
 
@@ -1334,18 +1335,19 @@ class DefaultApi
      *
      * Search/List Orders
      *
-     * @param  int $store_id fetch orders by store/customer id (optional)
-     * @param  int $limit limit returned orders (optional)
-     * @param  string $order (optional)
-     * @param  int $offset limit offset (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \KwelangaAPI\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderWithHttpInfo($store_id = null, $limit = null, $order = null, $offset = null)
+    public function getOrderWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $request = $this->getOrderRequest($store_id, $limit, $order, $offset);
+        $request = $this->getOrderRequest($order, $search, $start, $length, $draw);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1378,20 +1380,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\KwelangaAPI\Model\InlineResponse200' === '\SplFileObject') {
+                    if ('object' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse200', []),
+                        ObjectSerializer::deserialize($content, 'object', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\KwelangaAPI\Model\InlineResponse200';
+            $returnType = 'object';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1410,7 +1412,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\KwelangaAPI\Model\InlineResponse200',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1425,17 +1427,18 @@ class DefaultApi
      *
      * Search/List Orders
      *
-     * @param  int $store_id fetch orders by store/customer id (optional)
-     * @param  int $limit limit returned orders (optional)
-     * @param  string $order (optional)
-     * @param  int $offset limit offset (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderAsync($store_id = null, $limit = null, $order = null, $offset = null)
+    public function getOrderAsync($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        return $this->getOrderAsyncWithHttpInfo($store_id, $limit, $order, $offset)
+        return $this->getOrderAsyncWithHttpInfo($order, $search, $start, $length, $draw)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1448,18 +1451,19 @@ class DefaultApi
      *
      * Search/List Orders
      *
-     * @param  int $store_id fetch orders by store/customer id (optional)
-     * @param  int $limit limit returned orders (optional)
-     * @param  string $order (optional)
-     * @param  int $offset limit offset (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderAsyncWithHttpInfo($store_id = null, $limit = null, $order = null, $offset = null)
+    public function getOrderAsyncWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $returnType = '\KwelangaAPI\Model\InlineResponse200';
-        $request = $this->getOrderRequest($store_id, $limit, $order, $offset);
+        $returnType = 'object';
+        $request = $this->getOrderRequest($order, $search, $start, $length, $draw);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1498,15 +1502,16 @@ class DefaultApi
     /**
      * Create request for operation 'getOrder'
      *
-     * @param  int $store_id fetch orders by store/customer id (optional)
-     * @param  int $limit limit returned orders (optional)
-     * @param  string $order (optional)
-     * @param  int $offset limit offset (optional)
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderRequest($store_id = null, $limit = null, $order = null, $offset = null)
+    protected function getOrderRequest($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
 
         $resourcePath = '/orders';
@@ -1516,28 +1521,6 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($store_id !== null) {
-            if('form' === 'form' && is_array($store_id)) {
-                foreach($store_id as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['store_id'] = $store_id;
-            }
-        }
-        // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
         // query params
         if ($order !== null) {
             if('form' === 'form' && is_array($order)) {
@@ -1550,11 +1533,48 @@ class DefaultApi
             }
         }
         // query params
-        if (is_array($offset)) {
-            $offset = ObjectSerializer::serializeCollection($offset, 'form', true);
+        if ($search !== null) {
+            if('form' === 'form' && is_array($search)) {
+                foreach($search as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['search'] = $search;
+            }
         }
-        if ($offset !== null) {
-            $queryParams['offset'] = $offset;
+        // query params
+        if ($start !== null) {
+            if('form' === 'form' && is_array($start)) {
+                foreach($start as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start'] = $start;
+            }
+        }
+        // query params
+        if ($length !== null) {
+            if('form' === 'form' && is_array($length)) {
+                foreach($length as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['length'] = $length;
+            }
+        }
+        // query params
+        if ($draw !== null) {
+            if('form' === 'form' && is_array($draw)) {
+                foreach($draw as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['draw'] = $draw;
+            }
         }
 
 
@@ -2120,14 +2140,19 @@ class DefaultApi
      *
      * Search/List Principals
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function getPrincipals()
+    public function getPrincipals($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $this->getPrincipalsWithHttpInfo();
+        $this->getPrincipalsWithHttpInfo($order, $search, $start, $length, $draw);
     }
 
     /**
@@ -2135,14 +2160,19 @@ class DefaultApi
      *
      * Search/List Principals
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPrincipalsWithHttpInfo()
+    public function getPrincipalsWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $request = $this->getPrincipalsRequest();
+        $request = $this->getPrincipalsRequest($order, $search, $start, $length, $draw);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2186,13 +2216,18 @@ class DefaultApi
      *
      * Search/List Principals
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPrincipalsAsync()
+    public function getPrincipalsAsync($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        return $this->getPrincipalsAsyncWithHttpInfo()
+        return $this->getPrincipalsAsyncWithHttpInfo($order, $search, $start, $length, $draw)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2205,14 +2240,19 @@ class DefaultApi
      *
      * Search/List Principals
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPrincipalsAsyncWithHttpInfo()
+    public function getPrincipalsAsyncWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
         $returnType = '';
-        $request = $this->getPrincipalsRequest();
+        $request = $this->getPrincipalsRequest($order, $search, $start, $length, $draw);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2240,11 +2280,16 @@ class DefaultApi
     /**
      * Create request for operation 'getPrincipals'
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPrincipalsRequest()
+    protected function getPrincipalsRequest($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
 
         $resourcePath = '/principals';
@@ -2254,6 +2299,61 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($order !== null) {
+            if('form' === 'form' && is_array($order)) {
+                foreach($order as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['order'] = $order;
+            }
+        }
+        // query params
+        if ($search !== null) {
+            if('form' === 'form' && is_array($search)) {
+                foreach($search as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['search'] = $search;
+            }
+        }
+        // query params
+        if ($start !== null) {
+            if('form' === 'form' && is_array($start)) {
+                foreach($start as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start'] = $start;
+            }
+        }
+        // query params
+        if ($length !== null) {
+            if('form' === 'form' && is_array($length)) {
+                foreach($length as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['length'] = $length;
+            }
+        }
+        // query params
+        if ($draw !== null) {
+            if('form' === 'form' && is_array($draw)) {
+                foreach($draw as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['draw'] = $draw;
+            }
+        }
 
 
 
@@ -2577,7 +2677,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \KwelangaAPI\Model\InlineResponse2001
+     * @return \KwelangaAPI\Model\InlineResponse200
      */
     public function getProducts($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
@@ -2598,7 +2698,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \KwelangaAPI\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProductsWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
@@ -2635,20 +2735,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\KwelangaAPI\Model\InlineResponse2001' === '\SplFileObject') {
+                    if ('\KwelangaAPI\Model\InlineResponse200' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2001', []),
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse200', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\KwelangaAPI\Model\InlineResponse2001';
+            $returnType = '\KwelangaAPI\Model\InlineResponse200';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2667,7 +2767,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\KwelangaAPI\Model\InlineResponse2001',
+                        '\KwelangaAPI\Model\InlineResponse200',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2717,7 +2817,7 @@ class DefaultApi
      */
     public function getProductsAsyncWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $returnType = '\KwelangaAPI\Model\InlineResponse2001';
+        $returnType = '\KwelangaAPI\Model\InlineResponse200';
         $request = $this->getProductsRequest($order, $search, $start, $length, $draw);
 
         return $this->client

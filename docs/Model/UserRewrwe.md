@@ -1,11 +1,10 @@
-# # InlineResponse200
+# # UserRewrwe
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **int** |  | [optional] 
-**data** | [**\KwelangaAPI\Model\ProductListItem[]**](ProductListItem.md) |  | [optional] 
+**test** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

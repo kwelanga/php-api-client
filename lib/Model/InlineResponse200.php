@@ -57,7 +57,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'test' => 'string'
+        'total' => 'int',
+        'data' => '\KwelangaAPI\Model\ProductListItem[]'
     ];
 
     /**
@@ -66,7 +67,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'test' => null
+        'total' => null,
+        'data' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'test' => 'test'
+        'total' => 'total',
+        'data' => 'data'
     ];
 
     /**
@@ -105,7 +108,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'test' => 'setTest'
+        'total' => 'setTotal',
+        'data' => 'setData'
     ];
 
     /**
@@ -114,7 +118,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'test' => 'getTest'
+        'total' => 'getTotal',
+        'data' => 'getData'
     ];
 
     /**
@@ -177,7 +182,8 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['test'] = isset($data['test']) ? $data['test'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -205,25 +211,49 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets test
+     * Gets total
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getTest()
+    public function getTotal()
     {
-        return $this->container['test'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets test
+     * Sets total
      *
-     * @param string|null $test test
+     * @param int|null $total total
      *
      * @return $this
      */
-    public function setTest($test)
+    public function setTotal($total)
     {
-        $this->container['test'] = $test;
+        $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return \KwelangaAPI\Model\ProductListItem[]|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \KwelangaAPI\Model\ProductListItem[]|null $data data
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
 
         return $this;
     }
