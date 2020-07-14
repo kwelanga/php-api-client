@@ -2569,20 +2569,19 @@ class DefaultApi
      *
      * Search/List Products
      *
-     * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
-     * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
      * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \KwelangaAPI\Model\InlineResponse2001
      */
-    public function getProducts($web_enabled = null, $status = null, $order = null, $start = null, $length = null, $search = null)
+    public function getProducts($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        list($response) = $this->getProductsWithHttpInfo($web_enabled, $status, $order, $start, $length, $search);
+        list($response) = $this->getProductsWithHttpInfo($order, $search, $start, $length, $draw);
         return $response;
     }
 
@@ -2591,20 +2590,19 @@ class DefaultApi
      *
      * Search/List Products
      *
-     * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
-     * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
      * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \KwelangaAPI\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProductsWithHttpInfo($web_enabled = null, $status = null, $order = null, $start = null, $length = null, $search = null)
+    public function getProductsWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $request = $this->getProductsRequest($web_enabled, $status, $order, $start, $length, $search);
+        $request = $this->getProductsRequest($order, $search, $start, $length, $draw);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2684,19 +2682,18 @@ class DefaultApi
      *
      * Search/List Products
      *
-     * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
-     * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
      * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductsAsync($web_enabled = null, $status = null, $order = null, $start = null, $length = null, $search = null)
+    public function getProductsAsync($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        return $this->getProductsAsyncWithHttpInfo($web_enabled, $status, $order, $start, $length, $search)
+        return $this->getProductsAsyncWithHttpInfo($order, $search, $start, $length, $draw)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2709,20 +2706,19 @@ class DefaultApi
      *
      * Search/List Products
      *
-     * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
-     * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
      * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductsAsyncWithHttpInfo($web_enabled = null, $status = null, $order = null, $start = null, $length = null, $search = null)
+    public function getProductsAsyncWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
         $returnType = '\KwelangaAPI\Model\InlineResponse2001';
-        $request = $this->getProductsRequest($web_enabled, $status, $order, $start, $length, $search);
+        $request = $this->getProductsRequest($order, $search, $start, $length, $draw);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2761,17 +2757,16 @@ class DefaultApi
     /**
      * Create request for operation 'getProducts'
      *
-     * @param  string $web_enabled filter response to include/exclude web enabled products - options: Y/N (optional)
-     * @param  string $status filter response to include/exclude deleted products - options: A/D, default : A (optional)
      * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
      * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
      * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
-     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getProductsRequest($web_enabled = null, $status = null, $order = null, $start = null, $length = null, $search = null)
+    protected function getProductsRequest($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
 
         $resourcePath = '/products';
@@ -2782,28 +2777,6 @@ class DefaultApi
         $multipart = false;
 
         // query params
-        if ($web_enabled !== null) {
-            if('form' === 'form' && is_array($web_enabled)) {
-                foreach($web_enabled as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['webEnabled'] = $web_enabled;
-            }
-        }
-        // query params
-        if ($status !== null) {
-            if('form' === 'form' && is_array($status)) {
-                foreach($status as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['status'] = $status;
-            }
-        }
-        // query params
         if ($order !== null) {
             if('form' === 'form' && is_array($order)) {
                 foreach($order as $key => $value) {
@@ -2812,6 +2785,17 @@ class DefaultApi
             }
             else {
                 $queryParams['order'] = $order;
+            }
+        }
+        // query params
+        if ($search !== null) {
+            if('form' === 'form' && is_array($search)) {
+                foreach($search as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['search'] = $search;
             }
         }
         // query params
@@ -2837,14 +2821,14 @@ class DefaultApi
             }
         }
         // query params
-        if ($search !== null) {
-            if('form' === 'form' && is_array($search)) {
-                foreach($search as $key => $value) {
+        if ($draw !== null) {
+            if('form' === 'form' && is_array($draw)) {
+                foreach($draw as $key => $value) {
                     $queryParams[$key] = $value;
                 }
             }
             else {
-                $queryParams['search'] = $search;
+                $queryParams['draw'] = $draw;
             }
         }
 
