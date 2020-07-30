@@ -21,7 +21,7 @@ Method | HTTP request | Description
 [**getSupport**](DefaultApi.md#getSupport) | **GET** /support | Your GET endpoint
 [**getUser**](DefaultApi.md#getUser) | **GET** /user | Your GET endpoint
 [**getUserSettings**](DefaultApi.md#getUserSettings) | **GET** /user/settings | Fetch User Settings
-[**getVerifyProductPrice**](DefaultApi.md#getVerifyProductPrice) | **GET** /verify_product_price | Verify Price for Product &amp; Quantity by Chain
+[**getVerifyProductPrice**](DefaultApi.md#getVerifyProductPrice) | **GET** /verify_product_price/{id} | Verify Price for Product &amp; Quantity by Chain
 [**postCustomerLogin**](DefaultApi.md#postCustomerLogin) | **POST** /customer/login | 
 [**postCustomerProfile**](DefaultApi.md#postCustomerProfile) | **POST** /customer/profile | Create Customer/Store Profile
 [**postOrder**](DefaultApi.md#postOrder) | **POST** /orders | Create New Order
@@ -1123,7 +1123,7 @@ void (empty response body)
 
 ## getVerifyProductPrice
 
-> \KwelangaAPI\Model\InlineResponse2002 getVerifyProductPrice($product_id, $quantity, $chain_code)
+> \KwelangaAPI\Model\InlineResponse2002 getVerifyProductPrice($id, $quantity, $chain_code)
 
 Verify Price for Product & Quantity by Chain
 
@@ -1151,12 +1151,12 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 56; // int | 
+$id = 56; // int | product ID
 $quantity = 56; // int | 
 $chain_code = 'chain_code_example'; // string | 
 
 try {
-    $result = $apiInstance->getVerifyProductPrice($product_id, $quantity, $chain_code);
+    $result = $apiInstance->getVerifyProductPrice($id, $quantity, $chain_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getVerifyProductPrice: ', $e->getMessage(), PHP_EOL;
@@ -1169,7 +1169,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**|  |
+ **id** | **int**| product ID |
  **quantity** | **int**|  |
  **chain_code** | **string**|  | [optional]
 

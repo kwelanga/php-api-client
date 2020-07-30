@@ -4378,7 +4378,7 @@ class DefaultApi
      *
      * Verify Price for Product & Quantity by Chain
      *
-     * @param  int $product_id product_id (required)
+     * @param  int $id product ID (required)
      * @param  int $quantity quantity (required)
      * @param  string $chain_code chain_code (optional)
      *
@@ -4386,9 +4386,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \KwelangaAPI\Model\InlineResponse2002
      */
-    public function getVerifyProductPrice($product_id, $quantity, $chain_code = null)
+    public function getVerifyProductPrice($id, $quantity, $chain_code = null)
     {
-        list($response) = $this->getVerifyProductPriceWithHttpInfo($product_id, $quantity, $chain_code);
+        list($response) = $this->getVerifyProductPriceWithHttpInfo($id, $quantity, $chain_code);
         return $response;
     }
 
@@ -4397,7 +4397,7 @@ class DefaultApi
      *
      * Verify Price for Product & Quantity by Chain
      *
-     * @param  int $product_id (required)
+     * @param  int $id product ID (required)
      * @param  int $quantity (required)
      * @param  string $chain_code (optional)
      *
@@ -4405,9 +4405,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \KwelangaAPI\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVerifyProductPriceWithHttpInfo($product_id, $quantity, $chain_code = null)
+    public function getVerifyProductPriceWithHttpInfo($id, $quantity, $chain_code = null)
     {
-        $request = $this->getVerifyProductPriceRequest($product_id, $quantity, $chain_code);
+        $request = $this->getVerifyProductPriceRequest($id, $quantity, $chain_code);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4487,16 +4487,16 @@ class DefaultApi
      *
      * Verify Price for Product & Quantity by Chain
      *
-     * @param  int $product_id (required)
+     * @param  int $id product ID (required)
      * @param  int $quantity (required)
      * @param  string $chain_code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVerifyProductPriceAsync($product_id, $quantity, $chain_code = null)
+    public function getVerifyProductPriceAsync($id, $quantity, $chain_code = null)
     {
-        return $this->getVerifyProductPriceAsyncWithHttpInfo($product_id, $quantity, $chain_code)
+        return $this->getVerifyProductPriceAsyncWithHttpInfo($id, $quantity, $chain_code)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4509,17 +4509,17 @@ class DefaultApi
      *
      * Verify Price for Product & Quantity by Chain
      *
-     * @param  int $product_id (required)
+     * @param  int $id product ID (required)
      * @param  int $quantity (required)
      * @param  string $chain_code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVerifyProductPriceAsyncWithHttpInfo($product_id, $quantity, $chain_code = null)
+    public function getVerifyProductPriceAsyncWithHttpInfo($id, $quantity, $chain_code = null)
     {
         $returnType = '\KwelangaAPI\Model\InlineResponse2002';
-        $request = $this->getVerifyProductPriceRequest($product_id, $quantity, $chain_code);
+        $request = $this->getVerifyProductPriceRequest($id, $quantity, $chain_code);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4558,19 +4558,19 @@ class DefaultApi
     /**
      * Create request for operation 'getVerifyProductPrice'
      *
-     * @param  int $product_id (required)
+     * @param  int $id product ID (required)
      * @param  int $quantity (required)
      * @param  string $chain_code (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getVerifyProductPriceRequest($product_id, $quantity, $chain_code = null)
+    protected function getVerifyProductPriceRequest($id, $quantity, $chain_code = null)
     {
-        // verify the required parameter 'product_id' is set
-        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $product_id when calling getVerifyProductPrice'
+                'Missing the required parameter $id when calling getVerifyProductPrice'
             );
         }
         // verify the required parameter 'quantity' is set
@@ -4580,24 +4580,13 @@ class DefaultApi
             );
         }
 
-        $resourcePath = '/verify_product_price';
+        $resourcePath = '/verify_product_price/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($product_id !== null) {
-            if('form' === 'form' && is_array($product_id)) {
-                foreach($product_id as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['productId'] = $product_id;
-            }
-        }
         // query params
         if ($quantity !== null) {
             if('form' === 'form' && is_array($quantity)) {
@@ -4622,6 +4611,14 @@ class DefaultApi
         }
 
 
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
