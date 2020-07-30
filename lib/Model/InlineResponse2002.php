@@ -102,8 +102,8 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'item_amount' => 'itemAmount',
-        'total_amount' => 'totalAmount',
+        'item_amount' => 'item_amount',
+        'total_amount' => 'total_amount',
         'currency' => 'currency',
         'level' => 'level'
     ];
