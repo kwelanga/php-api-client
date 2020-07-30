@@ -57,7 +57,9 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'response' => 'string'
+        'item_amount' => 'float',
+        'total_amount' => 'float',
+        'currency' => 'string'
     ];
 
     /**
@@ -66,7 +68,9 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'response' => null
+        'item_amount' => null,
+        'total_amount' => null,
+        'currency' => null
     ];
 
     /**
@@ -96,7 +100,9 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'response' => 'response'
+        'item_amount' => 'itemAmount',
+        'total_amount' => 'totalAmount',
+        'currency' => 'currency'
     ];
 
     /**
@@ -105,7 +111,9 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'response' => 'setResponse'
+        'item_amount' => 'setItemAmount',
+        'total_amount' => 'setTotalAmount',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -114,7 +122,9 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'response' => 'getResponse'
+        'item_amount' => 'getItemAmount',
+        'total_amount' => 'getTotalAmount',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -177,7 +187,9 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['response'] = isset($data['response']) ? $data['response'] : null;
+        $this->container['item_amount'] = isset($data['item_amount']) ? $data['item_amount'] : null;
+        $this->container['total_amount'] = isset($data['total_amount']) ? $data['total_amount'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
     }
 
     /**
@@ -205,25 +217,73 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets response
+     * Gets item_amount
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getResponse()
+    public function getItemAmount()
     {
-        return $this->container['response'];
+        return $this->container['item_amount'];
     }
 
     /**
-     * Sets response
+     * Sets item_amount
      *
-     * @param string|null $response response
+     * @param float|null $item_amount item_amount
      *
      * @return $this
      */
-    public function setResponse($response)
+    public function setItemAmount($item_amount)
     {
-        $this->container['response'] = $response;
+        $this->container['item_amount'] = $item_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_amount
+     *
+     * @return float|null
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['total_amount'];
+    }
+
+    /**
+     * Sets total_amount
+     *
+     * @param float|null $total_amount total_amount
+     *
+     * @return $this
+     */
+    public function setTotalAmount($total_amount)
+    {
+        $this->container['total_amount'] = $total_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency currency
+     *
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
 
         return $this;
     }

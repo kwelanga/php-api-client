@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**getPing**](DefaultApi.md#getPing) | **GET** /ping | Your GET endpoint
 [**getPrincipals**](DefaultApi.md#getPrincipals) | **GET** /principals | Search/List Principals
 [**getPrincipalsId**](DefaultApi.md#getPrincipalsId) | **GET** /principals/{id} | Fetch Principal Item
+[**getProductVerifiyPrice**](DefaultApi.md#getProductVerifiyPrice) | **GET** /product/confirm_price | Verfiy/Confirm Price for Product &amp; Quantity by Chain
 [**getProducts**](DefaultApi.md#getProducts) | **GET** /products | Search/List Products
 [**getProductsId**](DefaultApi.md#getProductsId) | **GET** /products/{id} | Fetch Product Item
 [**getStores**](DefaultApi.md#getStores) | **GET** /stores | Search/List Stores
@@ -671,6 +672,76 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## getProductVerifiyPrice
+
+> \KwelangaAPI\Model\InlineResponse2002 getProductVerifiyPrice($product_id, $quantity, $chain_code)
+
+Verfiy/Confirm Price for Product & Quantity by Chain
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+// Configure API key authorization: principal
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
+
+
+$apiInstance = new KwelangaAPI\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$product_id = 56; // int | 
+$quantity = 56; // int | 
+$chain_code = 'chain_code_example'; // string | 
+
+try {
+    $result = $apiInstance->getProductVerifiyPrice($product_id, $quantity, $chain_code);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getProductVerifiyPrice: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**|  |
+ **quantity** | **int**|  |
+ **chain_code** | **string**|  | [optional]
+
+### Return type
+
+[**\KwelangaAPI\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+
+### Authorization
+
+[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)

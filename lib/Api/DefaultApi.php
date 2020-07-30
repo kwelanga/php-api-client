@@ -2665,6 +2665,329 @@ class DefaultApi
     }
 
     /**
+     * Operation getProductVerifiyPrice
+     *
+     * Verfiy/Confirm Price for Product & Quantity by Chain
+     *
+     * @param  int $product_id product_id (required)
+     * @param  int $quantity quantity (required)
+     * @param  string $chain_code chain_code (optional)
+     *
+     * @throws \KwelangaAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \KwelangaAPI\Model\InlineResponse2002
+     */
+    public function getProductVerifiyPrice($product_id, $quantity, $chain_code = null)
+    {
+        list($response) = $this->getProductVerifiyPriceWithHttpInfo($product_id, $quantity, $chain_code);
+        return $response;
+    }
+
+    /**
+     * Operation getProductVerifiyPriceWithHttpInfo
+     *
+     * Verfiy/Confirm Price for Product & Quantity by Chain
+     *
+     * @param  int $product_id (required)
+     * @param  int $quantity (required)
+     * @param  string $chain_code (optional)
+     *
+     * @throws \KwelangaAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \KwelangaAPI\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getProductVerifiyPriceWithHttpInfo($product_id, $quantity, $chain_code = null)
+    {
+        $request = $this->getProductVerifiyPriceRequest($product_id, $quantity, $chain_code);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\KwelangaAPI\Model\InlineResponse2002' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2002', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\KwelangaAPI\Model\InlineResponse2002',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getProductVerifiyPriceAsync
+     *
+     * Verfiy/Confirm Price for Product & Quantity by Chain
+     *
+     * @param  int $product_id (required)
+     * @param  int $quantity (required)
+     * @param  string $chain_code (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProductVerifiyPriceAsync($product_id, $quantity, $chain_code = null)
+    {
+        return $this->getProductVerifiyPriceAsyncWithHttpInfo($product_id, $quantity, $chain_code)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getProductVerifiyPriceAsyncWithHttpInfo
+     *
+     * Verfiy/Confirm Price for Product & Quantity by Chain
+     *
+     * @param  int $product_id (required)
+     * @param  int $quantity (required)
+     * @param  string $chain_code (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProductVerifiyPriceAsyncWithHttpInfo($product_id, $quantity, $chain_code = null)
+    {
+        $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+        $request = $this->getProductVerifiyPriceRequest($product_id, $quantity, $chain_code);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getProductVerifiyPrice'
+     *
+     * @param  int $product_id (required)
+     * @param  int $quantity (required)
+     * @param  string $chain_code (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getProductVerifiyPriceRequest($product_id, $quantity, $chain_code = null)
+    {
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $product_id when calling getProductVerifiyPrice'
+            );
+        }
+        // verify the required parameter 'quantity' is set
+        if ($quantity === null || (is_array($quantity) && count($quantity) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $quantity when calling getProductVerifiyPrice'
+            );
+        }
+
+        $resourcePath = '/product/confirm_price';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($product_id !== null) {
+            if('form' === 'form' && is_array($product_id)) {
+                foreach($product_id as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['productId'] = $product_id;
+            }
+        }
+        // query params
+        if ($quantity !== null) {
+            if('form' === 'form' && is_array($quantity)) {
+                foreach($quantity as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['quantity'] = $quantity;
+            }
+        }
+        // query params
+        if ($chain_code !== null) {
+            if('form' === 'form' && is_array($chain_code)) {
+                foreach($chain_code as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['chainCode'] = $chain_code;
+            }
+        }
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody));
+            } else {
+                $httpBody = $_tempBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('principal');
+        if ($apiKey !== null) {
+            $headers['principal'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getProducts
      *
      * Search/List Products
