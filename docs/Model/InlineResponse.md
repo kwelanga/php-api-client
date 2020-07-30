@@ -1,13 +1,13 @@
-# # InlineResponse2002
+# # InlineResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**item_amount** | **float** |  | [optional] 
+**item_price** | **float** |  | [optional] 
 **total_amount** | **float** |  | [optional] 
-**currency** | **string** |  | [optional] 
 **level** | **string** |  | [optional] 
+**currency** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
