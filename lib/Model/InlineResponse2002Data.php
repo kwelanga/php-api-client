@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2002
+ * InlineResponse2002Data
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * InlineResponse2002 Class Doc Comment
+ * InlineResponse2002Data Class Doc Comment
  *
  * @category Class
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class InlineResponse2002 implements ModelInterface, ArrayAccess
+class InlineResponse2002Data implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_2';
+    protected static $openAPIModelName = 'inline_response_200_2_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,10 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\KwelangaAPI\Model\InlineResponse2002Data'
+        'item_amount' => 'float',
+        'total_amount' => 'float',
+        'currency' => 'string',
+        'level' => 'string'
     ];
 
     /**
@@ -66,7 +69,10 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'item_amount' => null,
+        'total_amount' => null,
+        'currency' => null,
+        'level' => null
     ];
 
     /**
@@ -96,7 +102,10 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'item_amount' => 'item_amount',
+        'total_amount' => 'total_amount',
+        'currency' => 'currency',
+        'level' => 'level'
     ];
 
     /**
@@ -105,7 +114,10 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'item_amount' => 'setItemAmount',
+        'total_amount' => 'setTotalAmount',
+        'currency' => 'setCurrency',
+        'level' => 'setLevel'
     ];
 
     /**
@@ -114,7 +126,10 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'item_amount' => 'getItemAmount',
+        'total_amount' => 'getTotalAmount',
+        'currency' => 'getCurrency',
+        'level' => 'getLevel'
     ];
 
     /**
@@ -177,7 +192,10 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['item_amount'] = isset($data['item_amount']) ? $data['item_amount'] : null;
+        $this->container['total_amount'] = isset($data['total_amount']) ? $data['total_amount'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['level'] = isset($data['level']) ? $data['level'] : null;
     }
 
     /**
@@ -205,25 +223,97 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets item_amount
      *
-     * @return \KwelangaAPI\Model\InlineResponse2002Data|null
+     * @return float|null
      */
-    public function getData()
+    public function getItemAmount()
     {
-        return $this->container['data'];
+        return $this->container['item_amount'];
     }
 
     /**
-     * Sets data
+     * Sets item_amount
      *
-     * @param \KwelangaAPI\Model\InlineResponse2002Data|null $data data
+     * @param float|null $item_amount item_amount
      *
      * @return $this
      */
-    public function setData($data)
+    public function setItemAmount($item_amount)
     {
-        $this->container['data'] = $data;
+        $this->container['item_amount'] = $item_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_amount
+     *
+     * @return float|null
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['total_amount'];
+    }
+
+    /**
+     * Sets total_amount
+     *
+     * @param float|null $total_amount total_amount
+     *
+     * @return $this
+     */
+    public function setTotalAmount($total_amount)
+    {
+        $this->container['total_amount'] = $total_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency currency
+     *
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets level
+     *
+     * @return string|null
+     */
+    public function getLevel()
+    {
+        return $this->container['level'];
+    }
+
+    /**
+     * Sets level
+     *
+     * @param string|null $level level
+     *
+     * @return $this
+     */
+    public function setLevel($level)
+    {
+        $this->container['level'] = $level;
 
         return $this;
     }

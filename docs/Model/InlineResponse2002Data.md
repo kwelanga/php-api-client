@@ -1,10 +1,13 @@
-# # InlineResponse2002
+# # InlineResponse2002Data
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\KwelangaAPI\Model\InlineResponse2002Data**](InlineResponse2002Data.md) |  | [optional] 
+**item_amount** | **float** |  | [optional] 
+**total_amount** | **float** |  | [optional] 
+**currency** | **string** |  | [optional] 
+**level** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
