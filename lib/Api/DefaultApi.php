@@ -4384,7 +4384,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \KwelangaAPI\Model\InlineResponse2002
+     * @return \KwelangaAPI\Model\InlineResponse2003
      */
     public function getVerifyProductPrice($id, $quantity, $chain_code = null)
     {
@@ -4403,7 +4403,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \KwelangaAPI\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
     public function getVerifyProductPriceWithHttpInfo($id, $quantity, $chain_code = null)
     {
@@ -4440,20 +4440,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\KwelangaAPI\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('\KwelangaAPI\Model\InlineResponse2003' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2003', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+            $returnType = '\KwelangaAPI\Model\InlineResponse2003';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -4472,7 +4472,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\KwelangaAPI\Model\InlineResponse2002',
+                        '\KwelangaAPI\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4518,7 +4518,7 @@ class DefaultApi
      */
     public function getVerifyProductPriceAsyncWithHttpInfo($id, $quantity, $chain_code = null)
     {
-        $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+        $returnType = '\KwelangaAPI\Model\InlineResponse2003';
         $request = $this->getVerifyProductPriceRequest($id, $quantity, $chain_code);
 
         return $this->client
@@ -5791,14 +5791,16 @@ class DefaultApi
      *
      * Create New Store
      *
+     * @param  \KwelangaAPI\Model\PostStore $post_store post_store (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \KwelangaAPI\Model\InlineResponse2002
      */
-    public function postStores()
+    public function postStores($post_store = null)
     {
-        $this->postStoresWithHttpInfo();
+        list($response) = $this->postStoresWithHttpInfo($post_store);
+        return $response;
     }
 
     /**
@@ -5806,14 +5808,15 @@ class DefaultApi
      *
      * Create New Store
      *
+     * @param  \KwelangaAPI\Model\PostStore $post_store (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postStoresWithHttpInfo()
+    public function postStoresWithHttpInfo($post_store = null)
     {
-        $request = $this->postStoresRequest();
+        $request = $this->postStoresRequest($post_store);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5843,10 +5846,46 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\KwelangaAPI\Model\InlineResponse2002' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2002', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\KwelangaAPI\Model\InlineResponse2002',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -5857,13 +5896,14 @@ class DefaultApi
      *
      * Create New Store
      *
+     * @param  \KwelangaAPI\Model\PostStore $post_store (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postStoresAsync()
+    public function postStoresAsync($post_store = null)
     {
-        return $this->postStoresAsyncWithHttpInfo()
+        return $this->postStoresAsyncWithHttpInfo($post_store)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5876,20 +5916,32 @@ class DefaultApi
      *
      * Create New Store
      *
+     * @param  \KwelangaAPI\Model\PostStore $post_store (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postStoresAsyncWithHttpInfo()
+    public function postStoresAsyncWithHttpInfo($post_store = null)
     {
-        $returnType = '';
-        $request = $this->postStoresRequest();
+        $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+        $request = $this->postStoresRequest($post_store);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -5911,11 +5963,12 @@ class DefaultApi
     /**
      * Create request for operation 'postStores'
      *
+     * @param  \KwelangaAPI\Model\PostStore $post_store (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postStoresRequest()
+    protected function postStoresRequest($post_store = null)
     {
 
         $resourcePath = '/stores';
@@ -5930,15 +5983,18 @@ class DefaultApi
 
         // body params
         $_tempBody = null;
+        if (isset($post_store)) {
+            $_tempBody = $post_store;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
+                ['application/json'],
+                ['application/json']
             );
         }
 

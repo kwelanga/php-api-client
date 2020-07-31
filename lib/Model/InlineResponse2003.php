@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2002
+ * InlineResponse2003
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * InlineResponse2002 Class Doc Comment
+ * InlineResponse2003 Class Doc Comment
  *
  * @category Class
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class InlineResponse2002 implements ModelInterface, ArrayAccess
+class InlineResponse2003 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_2';
+    protected static $openAPIModelName = 'inline_response_200_3';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float'
+        'data' => '\KwelangaAPI\Model\InlineResponse2003Data'
     ];
 
     /**
@@ -66,7 +66,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => null
+        'data' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id'
+        'data' => 'data'
     ];
 
     /**
@@ -105,7 +105,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId'
+        'data' => 'setData'
     ];
 
     /**
@@ -114,7 +114,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId'
+        'data' => 'getData'
     ];
 
     /**
@@ -177,7 +177,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -205,25 +205,25 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets data
      *
-     * @return float|null
+     * @return \KwelangaAPI\Model\InlineResponse2003Data|null
      */
-    public function getId()
+    public function getData()
     {
-        return $this->container['id'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets id
+     * Sets data
      *
-     * @param float|null $id id
+     * @param \KwelangaAPI\Model\InlineResponse2003Data|null $data data
      *
      * @return $this
      */
-    public function setId($id)
+    public function setData($data)
     {
-        $this->container['id'] = $id;
+        $this->container['data'] = $data;
 
         return $this;
     }

@@ -1123,7 +1123,7 @@ void (empty response body)
 
 ## getVerifyProductPrice
 
-> \KwelangaAPI\Model\InlineResponse2002 getVerifyProductPrice($id, $quantity, $chain_code)
+> \KwelangaAPI\Model\InlineResponse2003 getVerifyProductPrice($id, $quantity, $chain_code)
 
 Verify Price for Product & Quantity by Chain
 
@@ -1175,7 +1175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\KwelangaAPI\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -1494,7 +1494,7 @@ void (empty response body)
 
 ## postStores
 
-> postStores()
+> \KwelangaAPI\Model\InlineResponse2002 postStores($post_store)
 
 Create New Store
 
@@ -1522,9 +1522,11 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$post_store = new \KwelangaAPI\Model\PostStore(); // \KwelangaAPI\Model\PostStore | 
 
 try {
-    $apiInstance->postStores();
+    $result = $apiInstance->postStores($post_store);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postStores: ', $e->getMessage(), PHP_EOL;
 }
@@ -1533,11 +1535,14 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **post_store** | [**\KwelangaAPI\Model\PostStore**](../Model/PostStore.md)|  | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\KwelangaAPI\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -1545,8 +1550,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
