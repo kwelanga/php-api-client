@@ -35,6 +35,3 @@ lib/Model/User.php
 lib/Model/UserRewrwe.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/InlineResponse2003DataTest.php
-test/Model/InlineResponse2003Test.php
-test/Model/PostStoreTest.php
