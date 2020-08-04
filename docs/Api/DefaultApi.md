@@ -110,6 +110,11 @@ Delete Principal Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -145,7 +150,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -169,6 +174,11 @@ Delete Product Item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -205,7 +215,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -229,6 +239,11 @@ Delete Store Item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -265,7 +280,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -289,6 +304,11 @@ Get Customer/Store Profile
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -322,7 +342,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -416,6 +436,11 @@ Fetch Order Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -451,7 +476,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -528,6 +553,11 @@ Search/List Principals
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -571,7 +601,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -595,6 +625,11 @@ Fetch Principal Item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -631,7 +666,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -655,6 +690,11 @@ Search/List Products
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -700,7 +740,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -724,6 +764,11 @@ Fetch Product Item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -761,7 +806,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -785,6 +830,11 @@ Search/List Stores
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -817,7 +867,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -841,6 +891,11 @@ Fetch Store Item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -877,7 +932,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1018,6 +1073,11 @@ Fetch User Settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1049,7 +1109,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1073,6 +1133,11 @@ Verify Price for Product & Quantity by Chain
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1114,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1138,6 +1203,11 @@ Name | Type | Description  | Notes
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1176,7 +1246,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1200,6 +1270,11 @@ Create Customer/Store Profile
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1232,7 +1307,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1313,6 +1388,11 @@ Create New Principal
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1344,7 +1424,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1369,17 +1449,10 @@ Create New Product
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: credentials
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
-
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 
 try {
@@ -1400,7 +1473,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+No authorization required
 
 ### HTTP request headers
 
@@ -1424,6 +1497,11 @@ Create New Store
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1461,7 +1539,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1485,6 +1563,11 @@ Update Customer/Store Profile
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1517,7 +1600,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1602,6 +1685,11 @@ Update Principal Item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -1637,7 +1725,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1661,6 +1749,11 @@ Update Product Item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1697,7 +1790,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1721,6 +1814,11 @@ Update Store Item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1757,7 +1855,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1781,6 +1879,11 @@ Update User Settings
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1813,7 +1916,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 

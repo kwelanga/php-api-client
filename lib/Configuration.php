@@ -440,7 +440,7 @@ class Configuration
                 "description" => "Production",
             ],
             [
-                "url" => "http://localhost:8099/v1",
+                "url" => "https://localhost:8085/v1",
                 "description" => "Local/Development",
             ]
         ];
