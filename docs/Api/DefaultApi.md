@@ -115,11 +115,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -150,7 +145,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -179,11 +174,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -215,7 +205,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -244,11 +234,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -280,7 +265,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -310,11 +295,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -342,7 +322,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -441,11 +421,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -476,7 +451,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -558,11 +533,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -601,7 +571,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -630,11 +600,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -666,7 +631,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -695,11 +660,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -740,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -769,11 +729,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -806,7 +761,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -836,11 +791,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -867,7 +817,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -896,11 +846,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -932,7 +877,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1078,11 +1023,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -1109,7 +1049,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1138,11 +1078,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -1179,7 +1114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1208,11 +1143,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -1246,7 +1176,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1276,11 +1206,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -1307,7 +1232,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1393,11 +1318,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -1424,7 +1344,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1510,11 +1430,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -1546,7 +1461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1576,11 +1491,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -1607,7 +1517,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1697,11 +1607,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -1732,7 +1637,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1761,11 +1666,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -1797,7 +1697,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1826,11 +1726,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
-
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -1862,7 +1757,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
@@ -1892,11 +1787,6 @@ $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
-// Configure API key authorization: principal
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('principal', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('principal', 'Bearer');
-
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -1923,7 +1813,7 @@ void (empty response body)
 
 ### Authorization
 
-[credentials](../../README.md#credentials), [principal](../../README.md#principal)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
