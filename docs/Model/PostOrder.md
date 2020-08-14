@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] 
+**id** | **float** |  | [optional] 
 **details** | [**\KwelangaAPI\Model\PostOrderDetailLine[]**](PostOrderDetailLine.md) |  | [optional] 
 **status** | **string** |  | [optional] 
 **delivery_date** | **string** |  | [optional] 

@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **float** |  | [optional] 
-**total_pages** | **float** |  | [optional] 
-**data** | [**\KwelangaAPI\Model\ProductListItem[]**](ProductListItem.md) |  | [optional] 
+**id** | **float** |  | [optional] 
+**customer_order_number** | **string** |  | [optional] 
+**invoice_number** | **string** |  | [optional] 
+**data** | **object** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

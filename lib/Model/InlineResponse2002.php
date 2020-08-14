@@ -57,9 +57,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total' => 'float',
-        'total_pages' => 'float',
-        'data' => '\KwelangaAPI\Model\FetchedStore[]'
+        'data' => '\KwelangaAPI\Model\ProductDetailedItem'
     ];
 
     /**
@@ -68,8 +66,6 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'total' => null,
-        'total_pages' => null,
         'data' => null
     ];
 
@@ -100,8 +96,6 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total' => 'total',
-        'total_pages' => 'total_pages',
         'data' => 'data'
     ];
 
@@ -111,8 +105,6 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total' => 'setTotal',
-        'total_pages' => 'setTotalPages',
         'data' => 'setData'
     ];
 
@@ -122,8 +114,6 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total' => 'getTotal',
-        'total_pages' => 'getTotalPages',
         'data' => 'getData'
     ];
 
@@ -187,8 +177,6 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
@@ -217,57 +205,9 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets total
-     *
-     * @return float|null
-     */
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     *
-     * @param float|null $total total
-     *
-     * @return $this
-     */
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_pages
-     *
-     * @return float|null
-     */
-    public function getTotalPages()
-    {
-        return $this->container['total_pages'];
-    }
-
-    /**
-     * Sets total_pages
-     *
-     * @param float|null $total_pages total_pages
-     *
-     * @return $this
-     */
-    public function setTotalPages($total_pages)
-    {
-        $this->container['total_pages'] = $total_pages;
-
-        return $this;
-    }
-
-    /**
      * Gets data
      *
-     * @return \KwelangaAPI\Model\FetchedStore[]|null
+     * @return \KwelangaAPI\Model\ProductDetailedItem|null
      */
     public function getData()
     {
@@ -277,7 +217,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \KwelangaAPI\Model\FetchedStore[]|null $data data
+     * @param \KwelangaAPI\Model\ProductDetailedItem|null $data data
      *
      * @return $this
      */

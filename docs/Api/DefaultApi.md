@@ -544,7 +544,7 @@ No authorization required
 
 ## getPrincipals
 
-> \KwelangaAPI\Model\InlineResponse2004 getPrincipals($order, $search, $start, $length, $draw)
+> \KwelangaAPI\Model\InlineResponse2005 getPrincipals($order, $search, $start, $length, $draw)
 
 Search/List Principals
 
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\KwelangaAPI\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
@@ -683,7 +683,7 @@ void (empty response body)
 
 ## getProducts
 
-> \KwelangaAPI\Model\InlineResponse200 getProducts($order, $search, $start, $length, $draw)
+> \KwelangaAPI\Model\InlineResponse2001 getProducts($order, $search, $start, $length, $draw)
 
 Search/List Products
 
@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\KwelangaAPI\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -757,7 +757,7 @@ Name | Type | Description  | Notes
 
 ## getProductsId
 
-> \KwelangaAPI\Model\InlineResponse2001 getProductsId($id)
+> \KwelangaAPI\Model\InlineResponse2002 getProductsId($id)
 
 Fetch Product Item
 
@@ -805,7 +805,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\KwelangaAPI\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 ## getStores
 
-> \KwelangaAPI\Model\InlineResponse2002 getStores($order, $search, $start, $length, $draw)
+> \KwelangaAPI\Model\InlineResponse2003 getStores($order, $search, $start, $length, $draw)
 
 Search/List Stores
 
@@ -879,7 +879,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\KwelangaAPI\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -1139,7 +1139,7 @@ void (empty response body)
 
 ## getVerifyProductPrice
 
-> \KwelangaAPI\Model\InlineResponse2005 getVerifyProductPrice($id, $quantity, $chain_code)
+> \KwelangaAPI\Model\InlineResponse2006 getVerifyProductPrice($id, $quantity, $chain_code)
 
 Verify Price for Product & Quantity by Chain
 
@@ -1191,7 +1191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\KwelangaAPI\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -1337,7 +1337,7 @@ void (empty response body)
 
 ## postOrder
 
-> postOrder()
+> \KwelangaAPI\Model\InlineResponse200 postOrder($post_order)
 
 Create New Order
 
@@ -1347,6 +1347,11 @@ Create New Order
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
@@ -1360,9 +1365,11 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$post_order = new \KwelangaAPI\Model\PostOrder(); // \KwelangaAPI\Model\PostOrder | 
 
 try {
-    $apiInstance->postOrder();
+    $result = $apiInstance->postOrder($post_order);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postOrder: ', $e->getMessage(), PHP_EOL;
 }
@@ -1371,20 +1378,23 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **post_order** | [**\KwelangaAPI\Model\PostOrder**](../Model/PostOrder.md)|  | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\KwelangaAPI\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
-[credentials](../../README.md#credentials)
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
@@ -1503,7 +1513,7 @@ No authorization required
 
 ## postStores
 
-> \KwelangaAPI\Model\InlineResponse2003 postStores($post_store)
+> \KwelangaAPI\Model\InlineResponse2004 postStores($post_store)
 
 Create New Store
 
@@ -1551,7 +1561,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\KwelangaAPI\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 
@@ -1630,7 +1640,7 @@ void (empty response body)
 
 ## postUsersVerifyLogin
 
-> \KwelangaAPI\Model\InlineResponse2006 postUsersVerifyLogin()
+> \KwelangaAPI\Model\InlineResponse2007 postUsersVerifyLogin()
 
 Verify User Login
 
@@ -1669,7 +1679,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\KwelangaAPI\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 

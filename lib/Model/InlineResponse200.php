@@ -57,9 +57,10 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total' => 'float',
-        'total_pages' => 'float',
-        'data' => '\KwelangaAPI\Model\ProductListItem[]'
+        'id' => 'float',
+        'customer_order_number' => 'string',
+        'invoice_number' => 'string',
+        'data' => 'object'
     ];
 
     /**
@@ -68,8 +69,9 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'total' => null,
-        'total_pages' => null,
+        'id' => null,
+        'customer_order_number' => null,
+        'invoice_number' => null,
         'data' => null
     ];
 
@@ -100,8 +102,9 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total' => 'total',
-        'total_pages' => 'total_pages',
+        'id' => 'id',
+        'customer_order_number' => 'customer_order_number',
+        'invoice_number' => 'invoice_number',
         'data' => 'data'
     ];
 
@@ -111,8 +114,9 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total' => 'setTotal',
-        'total_pages' => 'setTotalPages',
+        'id' => 'setId',
+        'customer_order_number' => 'setCustomerOrderNumber',
+        'invoice_number' => 'setInvoiceNumber',
         'data' => 'setData'
     ];
 
@@ -122,8 +126,9 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total' => 'getTotal',
-        'total_pages' => 'getTotalPages',
+        'id' => 'getId',
+        'customer_order_number' => 'getCustomerOrderNumber',
+        'invoice_number' => 'getInvoiceNumber',
         'data' => 'getData'
     ];
 
@@ -187,8 +192,9 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['customer_order_number'] = isset($data['customer_order_number']) ? $data['customer_order_number'] : null;
+        $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
@@ -217,49 +223,73 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets total
+     * Gets id
      *
      * @return float|null
      */
-    public function getTotal()
+    public function getId()
     {
-        return $this->container['total'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets total
+     * Sets id
      *
-     * @param float|null $total total
+     * @param float|null $id id
      *
      * @return $this
      */
-    public function setTotal($total)
+    public function setId($id)
     {
-        $this->container['total'] = $total;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets total_pages
+     * Gets customer_order_number
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getTotalPages()
+    public function getCustomerOrderNumber()
     {
-        return $this->container['total_pages'];
+        return $this->container['customer_order_number'];
     }
 
     /**
-     * Sets total_pages
+     * Sets customer_order_number
      *
-     * @param float|null $total_pages total_pages
+     * @param string|null $customer_order_number customer_order_number
      *
      * @return $this
      */
-    public function setTotalPages($total_pages)
+    public function setCustomerOrderNumber($customer_order_number)
     {
-        $this->container['total_pages'] = $total_pages;
+        $this->container['customer_order_number'] = $customer_order_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_number
+     *
+     * @return string|null
+     */
+    public function getInvoiceNumber()
+    {
+        return $this->container['invoice_number'];
+    }
+
+    /**
+     * Sets invoice_number
+     *
+     * @param string|null $invoice_number invoice_number
+     *
+     * @return $this
+     */
+    public function setInvoiceNumber($invoice_number)
+    {
+        $this->container['invoice_number'] = $invoice_number;
 
         return $this;
     }
@@ -267,7 +297,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \KwelangaAPI\Model\ProductListItem[]|null
+     * @return object|null
      */
     public function getData()
     {
@@ -277,7 +307,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \KwelangaAPI\Model\ProductListItem[]|null $data data
+     * @param object|null $data data
      *
      * @return $this
      */

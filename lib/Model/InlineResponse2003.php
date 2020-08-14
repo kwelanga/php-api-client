@@ -57,8 +57,9 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'data' => 'object'
+        'total' => 'float',
+        'total_pages' => 'float',
+        'data' => '\KwelangaAPI\Model\FetchedStore[]'
     ];
 
     /**
@@ -67,7 +68,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'total' => null,
+        'total_pages' => null,
         'data' => null
     ];
 
@@ -98,7 +100,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'total' => 'total',
+        'total_pages' => 'total_pages',
         'data' => 'data'
     ];
 
@@ -108,7 +111,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'total' => 'setTotal',
+        'total_pages' => 'setTotalPages',
         'data' => 'setData'
     ];
 
@@ -118,7 +122,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'total' => 'getTotal',
+        'total_pages' => 'getTotalPages',
         'data' => 'getData'
     ];
 
@@ -182,7 +187,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
@@ -211,25 +217,49 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets total
      *
      * @return float|null
      */
-    public function getId()
+    public function getTotal()
     {
-        return $this->container['id'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets id
+     * Sets total
      *
-     * @param float|null $id id
+     * @param float|null $total total
      *
      * @return $this
      */
-    public function setId($id)
+    public function setTotal($total)
     {
-        $this->container['id'] = $id;
+        $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_pages
+     *
+     * @return float|null
+     */
+    public function getTotalPages()
+    {
+        return $this->container['total_pages'];
+    }
+
+    /**
+     * Sets total_pages
+     *
+     * @param float|null $total_pages total_pages
+     *
+     * @return $this
+     */
+    public function setTotalPages($total_pages)
+    {
+        $this->container['total_pages'] = $total_pages;
 
         return $this;
     }
@@ -237,7 +267,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return object|null
+     * @return \KwelangaAPI\Model\FetchedStore[]|null
      */
     public function getData()
     {
@@ -247,7 +277,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param object|null $data data
+     * @param \KwelangaAPI\Model\FetchedStore[]|null $data data
      *
      * @return $this
      */

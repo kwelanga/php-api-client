@@ -57,7 +57,7 @@ class PostOrder implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
+        'id' => 'float',
         'details' => '\KwelangaAPI\Model\PostOrderDetailLine[]',
         'status' => 'string',
         'delivery_date' => 'string',
@@ -237,7 +237,7 @@ class PostOrder implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return string|null
+     * @return float|null
      */
     public function getId()
     {
@@ -247,7 +247,7 @@ class PostOrder implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string|null $id id
+     * @param float|null $id id
      *
      * @return $this
      */

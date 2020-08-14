@@ -57,7 +57,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\KwelangaAPI\Model\User'
+        'data' => '\KwelangaAPI\Model\InlineResponse2006Data'
     ];
 
     /**
@@ -207,7 +207,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \KwelangaAPI\Model\User|null
+     * @return \KwelangaAPI\Model\InlineResponse2006Data|null
      */
     public function getData()
     {
@@ -217,7 +217,7 @@ class InlineResponse2006 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \KwelangaAPI\Model\User|null $data data
+     * @param \KwelangaAPI\Model\InlineResponse2006Data|null $data data
      *
      * @return $this
      */

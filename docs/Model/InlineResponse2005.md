@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\KwelangaAPI\Model\InlineResponse2005Data**](InlineResponse2005Data.md) |  | [optional] 
+**total** | **float** |  | [optional] 
+**total_pages** | **float** |  | [optional] 
+**data** | [**\KwelangaAPI\Model\PrincipalItem[]**](PrincipalItem.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

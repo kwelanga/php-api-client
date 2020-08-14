@@ -8,8 +8,9 @@ docs/Model/InlineResponse2002.md
 docs/Model/InlineResponse2003.md
 docs/Model/InlineResponse2004.md
 docs/Model/InlineResponse2005.md
-docs/Model/InlineResponse2005Data.md
 docs/Model/InlineResponse2006.md
+docs/Model/InlineResponse2006Data.md
+docs/Model/InlineResponse2007.md
 docs/Model/PostOrder.md
 docs/Model/PostOrderDetailLine.md
 docs/Model/PostStore.md
@@ -32,8 +33,9 @@ lib/Model/InlineResponse2002.php
 lib/Model/InlineResponse2003.php
 lib/Model/InlineResponse2004.php
 lib/Model/InlineResponse2005.php
-lib/Model/InlineResponse2005Data.php
 lib/Model/InlineResponse2006.php
+lib/Model/InlineResponse2006Data.php
+lib/Model/InlineResponse2007.php
 lib/Model/ModelInterface.php
 lib/Model/PostOrder.php
 lib/Model/PostOrderDetailLine.php
@@ -47,3 +49,5 @@ lib/Model/ProductListItem.php
 lib/Model/User.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/InlineResponse2006DataTest.php
+test/Model/InlineResponse2007Test.php
