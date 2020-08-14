@@ -49,5 +49,3 @@ lib/Model/ProductListItem.php
 lib/Model/User.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/InlineResponse2006DataTest.php
-test/Model/InlineResponse2007Test.php

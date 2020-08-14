@@ -59,7 +59,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'float',
         'customer_order_number' => 'string',
-        'invoice_number' => 'string',
+        'document_number' => 'string',
         'data' => 'object'
     ];
 
@@ -71,7 +71,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => null,
         'customer_order_number' => null,
-        'invoice_number' => null,
+        'document_number' => null,
         'data' => null
     ];
 
@@ -104,7 +104,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'customer_order_number' => 'customer_order_number',
-        'invoice_number' => 'invoice_number',
+        'document_number' => 'document_number',
         'data' => 'data'
     ];
 
@@ -116,7 +116,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'customer_order_number' => 'setCustomerOrderNumber',
-        'invoice_number' => 'setInvoiceNumber',
+        'document_number' => 'setDocumentNumber',
         'data' => 'setData'
     ];
 
@@ -128,7 +128,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'customer_order_number' => 'getCustomerOrderNumber',
-        'invoice_number' => 'getInvoiceNumber',
+        'document_number' => 'getDocumentNumber',
         'data' => 'getData'
     ];
 
@@ -194,7 +194,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['customer_order_number'] = isset($data['customer_order_number']) ? $data['customer_order_number'] : null;
-        $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
+        $this->container['document_number'] = isset($data['document_number']) ? $data['document_number'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
@@ -271,25 +271,25 @@ class InlineResponse200 implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets invoice_number
+     * Gets document_number
      *
      * @return string|null
      */
-    public function getInvoiceNumber()
+    public function getDocumentNumber()
     {
-        return $this->container['invoice_number'];
+        return $this->container['document_number'];
     }
 
     /**
-     * Sets invoice_number
+     * Sets document_number
      *
-     * @param string|null $invoice_number invoice_number
+     * @param string|null $document_number document_number
      *
      * @return $this
      */
-    public function setInvoiceNumber($invoice_number)
+    public function setDocumentNumber($document_number)
     {
-        $this->container['invoice_number'] = $invoice_number;
+        $this->container['document_number'] = $document_number;
 
         return $this;
     }
