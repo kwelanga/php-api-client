@@ -59,8 +59,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'total' => 'float',
         'total_pages' => 'float',
-        'data' => '\KwelangaAPI\Model\FetchedStore[]',
-        '' => 'string'
+        'data' => '\KwelangaAPI\Model\FetchedStore[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'total' => null,
         'total_pages' => null,
-        'data' => null,
-        '' => null
+        'data' => null
     ];
 
     /**
@@ -104,8 +102,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'total' => 'total',
         'total_pages' => 'total_pages',
-        'data' => 'data',
-        '' => ''
+        'data' => 'data'
     ];
 
     /**
@@ -116,8 +113,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
     protected static $setters = [
         'total' => 'setTotal',
         'total_pages' => 'setTotalPages',
-        'data' => 'setData',
-        '' => 'set'
+        'data' => 'setData'
     ];
 
     /**
@@ -128,8 +124,7 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
     protected static $getters = [
         'total' => 'getTotal',
         'total_pages' => 'getTotalPages',
-        'data' => 'getData',
-        '' => 'get'
+        'data' => 'getData'
     ];
 
     /**
@@ -195,7 +190,6 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
         $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container[''] = isset($data['']) ? $data[''] : null;
     }
 
     /**
@@ -290,30 +284,6 @@ class InlineResponse2002 implements ModelInterface, ArrayAccess
     public function setData($data)
     {
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets 
-     *
-     * @return string|null
-     */
-    public function get()
-    {
-        return $this->container[''];
-    }
-
-    /**
-     * Sets 
-     *
-     * @param string|null $ 
-     *
-     * @return $this
-     */
-    public function set($)
-    {
-        $this->container[''] = $;
 
         return $this;
     }
