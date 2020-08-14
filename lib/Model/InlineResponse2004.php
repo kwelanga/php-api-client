@@ -1,6 +1,6 @@
 <?php
 /**
- * User
+ * InlineResponse2004
  *
  * PHP version 7.2
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * User Class Doc Comment
+ * InlineResponse2004 Class Doc Comment
  *
  * @category Class
- * @description Tetst
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class User implements ModelInterface, ArrayAccess
+class InlineResponse2004 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class User implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'User';
+    protected static $openAPIModelName = 'inline_response_200_4';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +57,9 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'full_name' => 'string',
-        'user_email' => 'string',
-        'user_tel' => 'string',
-        'user_cell' => 'string',
-        'lastlogin' => 'string',
-        'browser_user_info' => 'string'
+        'total' => 'float',
+        'total_pages' => 'float',
+        'data' => '\KwelangaAPI\Model\PrincipalItem[]'
     ];
 
     /**
@@ -73,13 +68,9 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'full_name' => null,
-        'user_email' => null,
-        'user_tel' => null,
-        'user_cell' => null,
-        'lastlogin' => null,
-        'browser_user_info' => null
+        'total' => null,
+        'total_pages' => null,
+        'data' => null
     ];
 
     /**
@@ -109,13 +100,9 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'full_name' => 'full_name',
-        'user_email' => 'user_email',
-        'user_tel' => 'user_tel',
-        'user_cell' => 'user_cell',
-        'lastlogin' => 'lastlogin',
-        'browser_user_info' => 'browser_user_info'
+        'total' => 'total',
+        'total_pages' => 'total_pages',
+        'data' => 'data'
     ];
 
     /**
@@ -124,13 +111,9 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'full_name' => 'setFullName',
-        'user_email' => 'setUserEmail',
-        'user_tel' => 'setUserTel',
-        'user_cell' => 'setUserCell',
-        'lastlogin' => 'setLastlogin',
-        'browser_user_info' => 'setBrowserUserInfo'
+        'total' => 'setTotal',
+        'total_pages' => 'setTotalPages',
+        'data' => 'setData'
     ];
 
     /**
@@ -139,13 +122,9 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'full_name' => 'getFullName',
-        'user_email' => 'getUserEmail',
-        'user_tel' => 'getUserTel',
-        'user_cell' => 'getUserCell',
-        'lastlogin' => 'getLastlogin',
-        'browser_user_info' => 'getBrowserUserInfo'
+        'total' => 'getTotal',
+        'total_pages' => 'getTotalPages',
+        'data' => 'getData'
     ];
 
     /**
@@ -208,13 +187,9 @@ class User implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
-        $this->container['user_tel'] = isset($data['user_tel']) ? $data['user_tel'] : null;
-        $this->container['user_cell'] = isset($data['user_cell']) ? $data['user_cell'] : null;
-        $this->container['lastlogin'] = isset($data['lastlogin']) ? $data['lastlogin'] : null;
-        $this->container['browser_user_info'] = isset($data['browser_user_info']) ? $data['browser_user_info'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -226,12 +201,6 @@ class User implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['full_name'] === null) {
-            $invalidProperties[] = "'full_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -248,169 +217,73 @@ class User implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets total
      *
-     * @return float
+     * @return float|null
      */
-    public function getId()
+    public function getTotal()
     {
-        return $this->container['id'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets id
+     * Sets total
      *
-     * @param float $id id
+     * @param float|null $total total
      *
      * @return $this
      */
-    public function setId($id)
+    public function setTotal($total)
     {
-        $this->container['id'] = $id;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets full_name
+     * Gets total_pages
      *
-     * @return string
+     * @return float|null
      */
-    public function getFullName()
+    public function getTotalPages()
     {
-        return $this->container['full_name'];
+        return $this->container['total_pages'];
     }
 
     /**
-     * Sets full_name
+     * Sets total_pages
      *
-     * @param string $full_name full_name
+     * @param float|null $total_pages total_pages
      *
      * @return $this
      */
-    public function setFullName($full_name)
+    public function setTotalPages($total_pages)
     {
-        $this->container['full_name'] = $full_name;
+        $this->container['total_pages'] = $total_pages;
 
         return $this;
     }
 
     /**
-     * Gets user_email
+     * Gets data
      *
-     * @return string|null
+     * @return \KwelangaAPI\Model\PrincipalItem[]|null
      */
-    public function getUserEmail()
+    public function getData()
     {
-        return $this->container['user_email'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets user_email
+     * Sets data
      *
-     * @param string|null $user_email user_email
+     * @param \KwelangaAPI\Model\PrincipalItem[]|null $data data
      *
      * @return $this
      */
-    public function setUserEmail($user_email)
+    public function setData($data)
     {
-        $this->container['user_email'] = $user_email;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_tel
-     *
-     * @return string|null
-     */
-    public function getUserTel()
-    {
-        return $this->container['user_tel'];
-    }
-
-    /**
-     * Sets user_tel
-     *
-     * @param string|null $user_tel user_tel
-     *
-     * @return $this
-     */
-    public function setUserTel($user_tel)
-    {
-        $this->container['user_tel'] = $user_tel;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_cell
-     *
-     * @return string|null
-     */
-    public function getUserCell()
-    {
-        return $this->container['user_cell'];
-    }
-
-    /**
-     * Sets user_cell
-     *
-     * @param string|null $user_cell user_cell
-     *
-     * @return $this
-     */
-    public function setUserCell($user_cell)
-    {
-        $this->container['user_cell'] = $user_cell;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastlogin
-     *
-     * @return string|null
-     */
-    public function getLastlogin()
-    {
-        return $this->container['lastlogin'];
-    }
-
-    /**
-     * Sets lastlogin
-     *
-     * @param string|null $lastlogin lastlogin
-     *
-     * @return $this
-     */
-    public function setLastlogin($lastlogin)
-    {
-        $this->container['lastlogin'] = $lastlogin;
-
-        return $this;
-    }
-
-    /**
-     * Gets browser_user_info
-     *
-     * @return string|null
-     */
-    public function getBrowserUserInfo()
-    {
-        return $this->container['browser_user_info'];
-    }
-
-    /**
-     * Sets browser_user_info
-     *
-     * @param string|null $browser_user_info browser_user_info
-     *
-     * @return $this
-     */
-    public function setBrowserUserInfo($browser_user_info)
-    {
-        $this->container['browser_user_info'] = $browser_user_info;
+        $this->container['data'] = $data;
 
         return $this;
     }

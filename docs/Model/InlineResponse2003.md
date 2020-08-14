@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\KwelangaAPI\Model\InlineResponse2003Data**](InlineResponse2003Data.md) |  | [optional] 
+**id** | **float** |  | [optional] 
+**data** | **object** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

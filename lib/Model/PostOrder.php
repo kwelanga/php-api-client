@@ -1,6 +1,6 @@
 <?php
 /**
- * User
+ * PostOrder
  *
  * PHP version 7.2
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * User Class Doc Comment
+ * PostOrder Class Doc Comment
  *
  * @category Class
- * @description Tetst
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class User implements ModelInterface, ArrayAccess
+class PostOrder implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class User implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'User';
+    protected static $openAPIModelName = 'PostOrder';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +57,12 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'full_name' => 'string',
-        'user_email' => 'string',
-        'user_tel' => 'string',
-        'user_cell' => 'string',
-        'lastlogin' => 'string',
-        'browser_user_info' => 'string'
+        'id' => 'string',
+        'details' => '\KwelangaAPI\Model\PostOrderDetailLine[]',
+        'status' => 'string',
+        'delivery_date' => 'string',
+        'order_date' => 'string',
+        'store_id' => 'string'
     ];
 
     /**
@@ -74,12 +72,11 @@ class User implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'full_name' => null,
-        'user_email' => null,
-        'user_tel' => null,
-        'user_cell' => null,
-        'lastlogin' => null,
-        'browser_user_info' => null
+        'details' => null,
+        'status' => null,
+        'delivery_date' => null,
+        'order_date' => null,
+        'store_id' => null
     ];
 
     /**
@@ -110,12 +107,11 @@ class User implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'full_name' => 'full_name',
-        'user_email' => 'user_email',
-        'user_tel' => 'user_tel',
-        'user_cell' => 'user_cell',
-        'lastlogin' => 'lastlogin',
-        'browser_user_info' => 'browser_user_info'
+        'details' => 'details',
+        'status' => 'status',
+        'delivery_date' => 'deliveryDate',
+        'order_date' => 'orderDate',
+        'store_id' => 'storeId'
     ];
 
     /**
@@ -125,12 +121,11 @@ class User implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'full_name' => 'setFullName',
-        'user_email' => 'setUserEmail',
-        'user_tel' => 'setUserTel',
-        'user_cell' => 'setUserCell',
-        'lastlogin' => 'setLastlogin',
-        'browser_user_info' => 'setBrowserUserInfo'
+        'details' => 'setDetails',
+        'status' => 'setStatus',
+        'delivery_date' => 'setDeliveryDate',
+        'order_date' => 'setOrderDate',
+        'store_id' => 'setStoreId'
     ];
 
     /**
@@ -140,12 +135,11 @@ class User implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'full_name' => 'getFullName',
-        'user_email' => 'getUserEmail',
-        'user_tel' => 'getUserTel',
-        'user_cell' => 'getUserCell',
-        'lastlogin' => 'getLastlogin',
-        'browser_user_info' => 'getBrowserUserInfo'
+        'details' => 'getDetails',
+        'status' => 'getStatus',
+        'delivery_date' => 'getDeliveryDate',
+        'order_date' => 'getOrderDate',
+        'store_id' => 'getStoreId'
     ];
 
     /**
@@ -209,12 +203,11 @@ class User implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
-        $this->container['user_tel'] = isset($data['user_tel']) ? $data['user_tel'] : null;
-        $this->container['user_cell'] = isset($data['user_cell']) ? $data['user_cell'] : null;
-        $this->container['lastlogin'] = isset($data['lastlogin']) ? $data['lastlogin'] : null;
-        $this->container['browser_user_info'] = isset($data['browser_user_info']) ? $data['browser_user_info'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['delivery_date'] = isset($data['delivery_date']) ? $data['delivery_date'] : null;
+        $this->container['order_date'] = isset($data['order_date']) ? $data['order_date'] : null;
+        $this->container['store_id'] = isset($data['store_id']) ? $data['store_id'] : null;
     }
 
     /**
@@ -226,12 +219,6 @@ class User implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['full_name'] === null) {
-            $invalidProperties[] = "'full_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -250,7 +237,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return float
+     * @return string|null
      */
     public function getId()
     {
@@ -260,7 +247,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param string|null $id id
      *
      * @return $this
      */
@@ -272,145 +259,121 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets full_name
+     * Gets details
      *
-     * @return string
+     * @return \KwelangaAPI\Model\PostOrderDetailLine[]|null
      */
-    public function getFullName()
+    public function getDetails()
     {
-        return $this->container['full_name'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets full_name
+     * Sets details
      *
-     * @param string $full_name full_name
+     * @param \KwelangaAPI\Model\PostOrderDetailLine[]|null $details details
      *
      * @return $this
      */
-    public function setFullName($full_name)
+    public function setDetails($details)
     {
-        $this->container['full_name'] = $full_name;
+        $this->container['details'] = $details;
 
         return $this;
     }
 
     /**
-     * Gets user_email
+     * Gets status
      *
      * @return string|null
      */
-    public function getUserEmail()
+    public function getStatus()
     {
-        return $this->container['user_email'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets user_email
+     * Sets status
      *
-     * @param string|null $user_email user_email
+     * @param string|null $status status
      *
      * @return $this
      */
-    public function setUserEmail($user_email)
+    public function setStatus($status)
     {
-        $this->container['user_email'] = $user_email;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets user_tel
+     * Gets delivery_date
      *
      * @return string|null
      */
-    public function getUserTel()
+    public function getDeliveryDate()
     {
-        return $this->container['user_tel'];
+        return $this->container['delivery_date'];
     }
 
     /**
-     * Sets user_tel
+     * Sets delivery_date
      *
-     * @param string|null $user_tel user_tel
+     * @param string|null $delivery_date delivery_date
      *
      * @return $this
      */
-    public function setUserTel($user_tel)
+    public function setDeliveryDate($delivery_date)
     {
-        $this->container['user_tel'] = $user_tel;
+        $this->container['delivery_date'] = $delivery_date;
 
         return $this;
     }
 
     /**
-     * Gets user_cell
+     * Gets order_date
      *
      * @return string|null
      */
-    public function getUserCell()
+    public function getOrderDate()
     {
-        return $this->container['user_cell'];
+        return $this->container['order_date'];
     }
 
     /**
-     * Sets user_cell
+     * Sets order_date
      *
-     * @param string|null $user_cell user_cell
+     * @param string|null $order_date order_date
      *
      * @return $this
      */
-    public function setUserCell($user_cell)
+    public function setOrderDate($order_date)
     {
-        $this->container['user_cell'] = $user_cell;
+        $this->container['order_date'] = $order_date;
 
         return $this;
     }
 
     /**
-     * Gets lastlogin
+     * Gets store_id
      *
      * @return string|null
      */
-    public function getLastlogin()
+    public function getStoreId()
     {
-        return $this->container['lastlogin'];
+        return $this->container['store_id'];
     }
 
     /**
-     * Sets lastlogin
+     * Sets store_id
      *
-     * @param string|null $lastlogin lastlogin
+     * @param string|null $store_id store_id
      *
      * @return $this
      */
-    public function setLastlogin($lastlogin)
+    public function setStoreId($store_id)
     {
-        $this->container['lastlogin'] = $lastlogin;
-
-        return $this;
-    }
-
-    /**
-     * Gets browser_user_info
-     *
-     * @return string|null
-     */
-    public function getBrowserUserInfo()
-    {
-        return $this->container['browser_user_info'];
-    }
-
-    /**
-     * Sets browser_user_info
-     *
-     * @param string|null $browser_user_info browser_user_info
-     *
-     * @return $this
-     */
-    public function setBrowserUserInfo($browser_user_info)
-    {
-        $this->container['browser_user_info'] = $browser_user_info;
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }

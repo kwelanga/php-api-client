@@ -1,6 +1,6 @@
 <?php
 /**
- * User
+ * PostOrderDetailLine
  *
  * PHP version 7.2
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * User Class Doc Comment
+ * PostOrderDetailLine Class Doc Comment
  *
  * @category Class
- * @description Tetst
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class User implements ModelInterface, ArrayAccess
+class PostOrderDetailLine implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class User implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'User';
+    protected static $openAPIModelName = 'PostOrderDetailLine';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +57,9 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'full_name' => 'string',
-        'user_email' => 'string',
-        'user_tel' => 'string',
-        'user_cell' => 'string',
-        'lastlogin' => 'string',
-        'browser_user_info' => 'string'
+        'product_u_id' => 'float',
+        'product_code' => 'string',
+        'ordered_qty' => 'float'
     ];
 
     /**
@@ -73,13 +68,9 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'full_name' => null,
-        'user_email' => null,
-        'user_tel' => null,
-        'user_cell' => null,
-        'lastlogin' => null,
-        'browser_user_info' => null
+        'product_u_id' => null,
+        'product_code' => null,
+        'ordered_qty' => null
     ];
 
     /**
@@ -109,13 +100,9 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'full_name' => 'full_name',
-        'user_email' => 'user_email',
-        'user_tel' => 'user_tel',
-        'user_cell' => 'user_cell',
-        'lastlogin' => 'lastlogin',
-        'browser_user_info' => 'browser_user_info'
+        'product_u_id' => 'productUId',
+        'product_code' => 'productCode',
+        'ordered_qty' => 'orderedQty'
     ];
 
     /**
@@ -124,13 +111,9 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'full_name' => 'setFullName',
-        'user_email' => 'setUserEmail',
-        'user_tel' => 'setUserTel',
-        'user_cell' => 'setUserCell',
-        'lastlogin' => 'setLastlogin',
-        'browser_user_info' => 'setBrowserUserInfo'
+        'product_u_id' => 'setProductUId',
+        'product_code' => 'setProductCode',
+        'ordered_qty' => 'setOrderedQty'
     ];
 
     /**
@@ -139,13 +122,9 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'full_name' => 'getFullName',
-        'user_email' => 'getUserEmail',
-        'user_tel' => 'getUserTel',
-        'user_cell' => 'getUserCell',
-        'lastlogin' => 'getLastlogin',
-        'browser_user_info' => 'getBrowserUserInfo'
+        'product_u_id' => 'getProductUId',
+        'product_code' => 'getProductCode',
+        'ordered_qty' => 'getOrderedQty'
     ];
 
     /**
@@ -208,13 +187,9 @@ class User implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
-        $this->container['user_tel'] = isset($data['user_tel']) ? $data['user_tel'] : null;
-        $this->container['user_cell'] = isset($data['user_cell']) ? $data['user_cell'] : null;
-        $this->container['lastlogin'] = isset($data['lastlogin']) ? $data['lastlogin'] : null;
-        $this->container['browser_user_info'] = isset($data['browser_user_info']) ? $data['browser_user_info'] : null;
+        $this->container['product_u_id'] = isset($data['product_u_id']) ? $data['product_u_id'] : null;
+        $this->container['product_code'] = isset($data['product_code']) ? $data['product_code'] : null;
+        $this->container['ordered_qty'] = isset($data['ordered_qty']) ? $data['ordered_qty'] : null;
     }
 
     /**
@@ -226,11 +201,8 @@ class User implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['full_name'] === null) {
-            $invalidProperties[] = "'full_name' can't be null";
+        if ($this->container['ordered_qty'] === null) {
+            $invalidProperties[] = "'ordered_qty' can't be null";
         }
         return $invalidProperties;
     }
@@ -248,169 +220,73 @@ class User implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets product_u_id
+     *
+     * @return float|null
+     */
+    public function getProductUId()
+    {
+        return $this->container['product_u_id'];
+    }
+
+    /**
+     * Sets product_u_id
+     *
+     * @param float|null $product_u_id product_u_id
+     *
+     * @return $this
+     */
+    public function setProductUId($product_u_id)
+    {
+        $this->container['product_u_id'] = $product_u_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_code
+     *
+     * @return string|null
+     */
+    public function getProductCode()
+    {
+        return $this->container['product_code'];
+    }
+
+    /**
+     * Sets product_code
+     *
+     * @param string|null $product_code product_code
+     *
+     * @return $this
+     */
+    public function setProductCode($product_code)
+    {
+        $this->container['product_code'] = $product_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets ordered_qty
      *
      * @return float
      */
-    public function getId()
+    public function getOrderedQty()
     {
-        return $this->container['id'];
+        return $this->container['ordered_qty'];
     }
 
     /**
-     * Sets id
+     * Sets ordered_qty
      *
-     * @param float $id id
+     * @param float $ordered_qty ordered_qty
      *
      * @return $this
      */
-    public function setId($id)
+    public function setOrderedQty($ordered_qty)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets full_name
-     *
-     * @return string
-     */
-    public function getFullName()
-    {
-        return $this->container['full_name'];
-    }
-
-    /**
-     * Sets full_name
-     *
-     * @param string $full_name full_name
-     *
-     * @return $this
-     */
-    public function setFullName($full_name)
-    {
-        $this->container['full_name'] = $full_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_email
-     *
-     * @return string|null
-     */
-    public function getUserEmail()
-    {
-        return $this->container['user_email'];
-    }
-
-    /**
-     * Sets user_email
-     *
-     * @param string|null $user_email user_email
-     *
-     * @return $this
-     */
-    public function setUserEmail($user_email)
-    {
-        $this->container['user_email'] = $user_email;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_tel
-     *
-     * @return string|null
-     */
-    public function getUserTel()
-    {
-        return $this->container['user_tel'];
-    }
-
-    /**
-     * Sets user_tel
-     *
-     * @param string|null $user_tel user_tel
-     *
-     * @return $this
-     */
-    public function setUserTel($user_tel)
-    {
-        $this->container['user_tel'] = $user_tel;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_cell
-     *
-     * @return string|null
-     */
-    public function getUserCell()
-    {
-        return $this->container['user_cell'];
-    }
-
-    /**
-     * Sets user_cell
-     *
-     * @param string|null $user_cell user_cell
-     *
-     * @return $this
-     */
-    public function setUserCell($user_cell)
-    {
-        $this->container['user_cell'] = $user_cell;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastlogin
-     *
-     * @return string|null
-     */
-    public function getLastlogin()
-    {
-        return $this->container['lastlogin'];
-    }
-
-    /**
-     * Sets lastlogin
-     *
-     * @param string|null $lastlogin lastlogin
-     *
-     * @return $this
-     */
-    public function setLastlogin($lastlogin)
-    {
-        $this->container['lastlogin'] = $lastlogin;
-
-        return $this;
-    }
-
-    /**
-     * Gets browser_user_info
-     *
-     * @return string|null
-     */
-    public function getBrowserUserInfo()
-    {
-        return $this->container['browser_user_info'];
-    }
-
-    /**
-     * Sets browser_user_info
-     *
-     * @param string|null $browser_user_info browser_user_info
-     *
-     * @return $this
-     */
-    public function setBrowserUserInfo($browser_user_info)
-    {
-        $this->container['browser_user_info'] = $browser_user_info;
+        $this->container['ordered_qty'] = $ordered_qty;
 
         return $this;
     }

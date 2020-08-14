@@ -28,6 +28,8 @@ Method | HTTP request | Description
 [**postPrincipals**](DefaultApi.md#postPrincipals) | **POST** /principals | Create New Principal
 [**postProducts**](DefaultApi.md#postProducts) | **POST** /products | Create New Product
 [**postStores**](DefaultApi.md#postStores) | **POST** /stores | Create New Store
+[**postUserLogin**](DefaultApi.md#postUserLogin) | **POST** /user | 
+[**postUsersVerifyLogin**](DefaultApi.md#postUsersVerifyLogin) | **POST** /users/verify_login | Verify User Login
 [**putCustomerProfile**](DefaultApi.md#putCustomerProfile) | **PUT** /customer/profile | Update Customer/Store Profile
 [**putOrderId**](DefaultApi.md#putOrderId) | **PUT** /orders/{id} | Update Order Item
 [**putPrincipalsId**](DefaultApi.md#putPrincipalsId) | **PUT** /principals/{id} | Update Principal Item
@@ -542,7 +544,7 @@ No authorization required
 
 ## getPrincipals
 
-> getPrincipals($order, $search, $start, $length, $draw)
+> \KwelangaAPI\Model\InlineResponse2004 getPrincipals($order, $search, $start, $length, $draw)
 
 Search/List Principals
 
@@ -577,7 +579,8 @@ $length = 3.4; // float | -1 = all records, default 50 for mobile first
 $draw = 3.4; // float | used as an indicator to distinguish between requests, default: 0
 
 try {
-    $apiInstance->getPrincipals($order, $search, $start, $length, $draw);
+    $result = $apiInstance->getPrincipals($order, $search, $start, $length, $draw);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPrincipals: ', $e->getMessage(), PHP_EOL;
 }
@@ -597,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\KwelangaAPI\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 
@@ -606,7 +609,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
@@ -820,7 +823,7 @@ Name | Type | Description  | Notes
 
 ## getStores
 
-> getStores()
+> \KwelangaAPI\Model\InlineResponse2002 getStores($order, $search, $start, $length, $draw)
 
 Search/List Stores
 
@@ -848,9 +851,15 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$order = new \stdClass; // object | order[column]=direction eg: order[code]=desc
+$search = new \stdClass; // object | //  eg:  search[GLOBAL] = '*fadfsad*'   //global regex search     //  eg:  search[GLOBAL] = '136'   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] = 'hello'   //column strict search
+$start = 3.4; // float | Paging first record indicator. This is the start point in the current data set, default 1
+$length = 3.4; // float | -1 = all records, default 50 for mobile first
+$draw = 3.4; // float | used as an indicator to distinguish between requests, default: 0
 
 try {
-    $apiInstance->getStores();
+    $result = $apiInstance->getStores($order, $search, $start, $length, $draw);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStores: ', $e->getMessage(), PHP_EOL;
 }
@@ -859,11 +868,18 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order** | [**object**](../Model/.md)| order[column]&#x3D;direction eg: order[code]&#x3D;desc | [optional]
+ **search** | [**object**](../Model/.md)| //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search | [optional]
+ **start** | **float**| Paging first record indicator. This is the start point in the current data set, default 1 | [optional]
+ **length** | **float**| -1 &#x3D; all records, default 50 for mobile first | [optional]
+ **draw** | **float**| used as an indicator to distinguish between requests, default: 0 | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\KwelangaAPI\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -872,7 +888,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
@@ -1123,7 +1139,7 @@ void (empty response body)
 
 ## getVerifyProductPrice
 
-> \KwelangaAPI\Model\InlineResponse2003 getVerifyProductPrice($id, $quantity, $chain_code)
+> \KwelangaAPI\Model\InlineResponse2005 getVerifyProductPrice($id, $quantity, $chain_code)
 
 Verify Price for Product & Quantity by Chain
 
@@ -1175,7 +1191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\KwelangaAPI\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
@@ -1487,7 +1503,7 @@ No authorization required
 
 ## postStores
 
-> \KwelangaAPI\Model\InlineResponse2002 postStores($post_store)
+> \KwelangaAPI\Model\InlineResponse2003 postStores($post_store)
 
 Create New Store
 
@@ -1535,7 +1551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\KwelangaAPI\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\KwelangaAPI\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -1544,6 +1560,124 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## postUserLogin
+
+> postUserLogin()
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new KwelangaAPI\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->postUserLogin();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->postUserLogin: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## postUsersVerifyLogin
+
+> \KwelangaAPI\Model\InlineResponse2006 postUsersVerifyLogin()
+
+Verify User Login
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: credentials
+$config = KwelangaAPI\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new KwelangaAPI\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->postUsersVerifyLogin();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->postUsersVerifyLogin: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\KwelangaAPI\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+
+### Authorization
+
+[credentials](../../README.md#credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

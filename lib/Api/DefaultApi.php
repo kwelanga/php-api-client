@@ -2148,11 +2148,12 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \KwelangaAPI\Model\InlineResponse2004
      */
     public function getPrincipals($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $this->getPrincipalsWithHttpInfo($order, $search, $start, $length, $draw);
+        list($response) = $this->getPrincipalsWithHttpInfo($order, $search, $start, $length, $draw);
+        return $response;
     }
 
     /**
@@ -2168,7 +2169,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPrincipalsWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
@@ -2202,10 +2203,46 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\KwelangaAPI\Model\InlineResponse2004' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2004', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\KwelangaAPI\Model\InlineResponse2004';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\KwelangaAPI\Model\InlineResponse2004',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -2251,14 +2288,25 @@ class DefaultApi
      */
     public function getPrincipalsAsyncWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $returnType = '';
+        $returnType = '\KwelangaAPI\Model\InlineResponse2004';
         $request = $this->getPrincipalsRequest($order, $search, $start, $length, $draw);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2362,11 +2410,11 @@ class DefaultApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['application/json'],
                 []
             );
         }
@@ -3294,14 +3342,20 @@ class DefaultApi
      *
      * Search/List Stores
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \KwelangaAPI\Model\InlineResponse2002
      */
-    public function getStores()
+    public function getStores($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $this->getStoresWithHttpInfo();
+        list($response) = $this->getStoresWithHttpInfo($order, $search, $start, $length, $draw);
+        return $response;
     }
 
     /**
@@ -3309,14 +3363,19 @@ class DefaultApi
      *
      * Search/List Stores
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStoresWithHttpInfo()
+    public function getStoresWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $request = $this->getStoresRequest();
+        $request = $this->getStoresRequest($order, $search, $start, $length, $draw);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3346,10 +3405,46 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\KwelangaAPI\Model\InlineResponse2002' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2002', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\KwelangaAPI\Model\InlineResponse2002',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -3360,13 +3455,18 @@ class DefaultApi
      *
      * Search/List Stores
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStoresAsync()
+    public function getStoresAsync($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        return $this->getStoresAsyncWithHttpInfo()
+        return $this->getStoresAsyncWithHttpInfo($order, $search, $start, $length, $draw)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3379,20 +3479,36 @@ class DefaultApi
      *
      * Search/List Stores
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStoresAsyncWithHttpInfo()
+    public function getStoresAsyncWithHttpInfo($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
-        $returnType = '';
-        $request = $this->getStoresRequest();
+        $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+        $request = $this->getStoresRequest($order, $search, $start, $length, $draw);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3414,11 +3530,16 @@ class DefaultApi
     /**
      * Create request for operation 'getStores'
      *
+     * @param  object $order order[column]&#x3D;direction eg: order[code]&#x3D;desc (optional)
+     * @param  object $search //  eg:  search[GLOBAL] &#x3D; &#39;*fadfsad*&#39;   //global regex search     //  eg:  search[GLOBAL] &#x3D; &#39;136&#39;   //global STRICT search, eg: looking for any full numbers that match     //  eg:  search[column] &#x3D; &#39;hello&#39;   //column strict search (optional)
+     * @param  float $start Paging first record indicator. This is the start point in the current data set, default 1 (optional)
+     * @param  float $length -1 &#x3D; all records, default 50 for mobile first (optional)
+     * @param  float $draw used as an indicator to distinguish between requests, default: 0 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getStoresRequest()
+    protected function getStoresRequest($order = null, $search = null, $start = null, $length = null, $draw = null)
     {
 
         $resourcePath = '/stores';
@@ -3428,6 +3549,61 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($order !== null) {
+            if('form' === 'form' && is_array($order)) {
+                foreach($order as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['order'] = $order;
+            }
+        }
+        // query params
+        if ($search !== null) {
+            if('form' === 'form' && is_array($search)) {
+                foreach($search as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['search'] = $search;
+            }
+        }
+        // query params
+        if ($start !== null) {
+            if('form' === 'form' && is_array($start)) {
+                foreach($start as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['start'] = $start;
+            }
+        }
+        // query params
+        if ($length !== null) {
+            if('form' === 'form' && is_array($length)) {
+                foreach($length as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['length'] = $length;
+            }
+        }
+        // query params
+        if ($draw !== null) {
+            if('form' === 'form' && is_array($draw)) {
+                foreach($draw as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['draw'] = $draw;
+            }
+        }
 
 
 
@@ -3436,11 +3612,11 @@ class DefaultApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['application/json'],
                 []
             );
         }
@@ -4384,7 +4560,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \KwelangaAPI\Model\InlineResponse2003
+     * @return \KwelangaAPI\Model\InlineResponse2005
      */
     public function getVerifyProductPrice($id, $quantity, $chain_code = null)
     {
@@ -4403,7 +4579,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \KwelangaAPI\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
      */
     public function getVerifyProductPriceWithHttpInfo($id, $quantity, $chain_code = null)
     {
@@ -4440,20 +4616,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\KwelangaAPI\Model\InlineResponse2003' === '\SplFileObject') {
+                    if ('\KwelangaAPI\Model\InlineResponse2005' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2003', []),
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2005', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\KwelangaAPI\Model\InlineResponse2003';
+            $returnType = '\KwelangaAPI\Model\InlineResponse2005';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -4472,7 +4648,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\KwelangaAPI\Model\InlineResponse2003',
+                        '\KwelangaAPI\Model\InlineResponse2005',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4518,7 +4694,7 @@ class DefaultApi
      */
     public function getVerifyProductPriceAsyncWithHttpInfo($id, $quantity, $chain_code = null)
     {
-        $returnType = '\KwelangaAPI\Model\InlineResponse2003';
+        $returnType = '\KwelangaAPI\Model\InlineResponse2005';
         $request = $this->getVerifyProductPriceRequest($id, $quantity, $chain_code);
 
         return $this->client
@@ -5791,7 +5967,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \KwelangaAPI\Model\InlineResponse2002
+     * @return \KwelangaAPI\Model\InlineResponse2003
      */
     public function postStores($post_store = null)
     {
@@ -5808,7 +5984,7 @@ class DefaultApi
      *
      * @throws \KwelangaAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \KwelangaAPI\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KwelangaAPI\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
     public function postStoresWithHttpInfo($post_store = null)
     {
@@ -5845,20 +6021,20 @@ class DefaultApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\KwelangaAPI\Model\InlineResponse2002' === '\SplFileObject') {
+                    if ('\KwelangaAPI\Model\InlineResponse2003' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2003', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+            $returnType = '\KwelangaAPI\Model\InlineResponse2003';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -5877,7 +6053,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\KwelangaAPI\Model\InlineResponse2002',
+                        '\KwelangaAPI\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5919,7 +6095,7 @@ class DefaultApi
      */
     public function postStoresAsyncWithHttpInfo($post_store = null)
     {
-        $returnType = '\KwelangaAPI\Model\InlineResponse2002';
+        $returnType = '\KwelangaAPI\Model\InlineResponse2003';
         $request = $this->postStoresRequest($post_store);
 
         return $this->client
@@ -6028,6 +6204,475 @@ class DefaultApi
         if ($apiKey !== null) {
             $headers['X-API-KEY'] = $apiKey;
         }
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postUserLogin
+     *
+     *
+     * @throws \KwelangaAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function postUserLogin()
+    {
+        $this->postUserLoginWithHttpInfo();
+    }
+
+    /**
+     * Operation postUserLoginWithHttpInfo
+     *
+     *
+     * @throws \KwelangaAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postUserLoginWithHttpInfo()
+    {
+        $request = $this->postUserLoginRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postUserLoginAsync
+     *
+     * 
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUserLoginAsync()
+    {
+        return $this->postUserLoginAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postUserLoginAsyncWithHttpInfo
+     *
+     * 
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUserLoginAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->postUserLoginRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postUserLogin'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postUserLoginRequest()
+    {
+
+        $resourcePath = '/user';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody));
+            } else {
+                $httpBody = $_tempBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-API-KEY');
+        if ($apiKey !== null) {
+            $headers['X-API-KEY'] = $apiKey;
+        }
+        // this endpoint requires HTTP basic authentication
+        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postUsersVerifyLogin
+     *
+     * Verify User Login
+     *
+     *
+     * @throws \KwelangaAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \KwelangaAPI\Model\InlineResponse2006
+     */
+    public function postUsersVerifyLogin()
+    {
+        list($response) = $this->postUsersVerifyLoginWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation postUsersVerifyLoginWithHttpInfo
+     *
+     * Verify User Login
+     *
+     *
+     * @throws \KwelangaAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \KwelangaAPI\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postUsersVerifyLoginWithHttpInfo()
+    {
+        $request = $this->postUsersVerifyLoginRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\KwelangaAPI\Model\InlineResponse2006' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\KwelangaAPI\Model\InlineResponse2006', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\KwelangaAPI\Model\InlineResponse2006';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\KwelangaAPI\Model\InlineResponse2006',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postUsersVerifyLoginAsync
+     *
+     * Verify User Login
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUsersVerifyLoginAsync()
+    {
+        return $this->postUsersVerifyLoginAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postUsersVerifyLoginAsyncWithHttpInfo
+     *
+     * Verify User Login
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUsersVerifyLoginAsyncWithHttpInfo()
+    {
+        $returnType = '\KwelangaAPI\Model\InlineResponse2006';
+        $request = $this->postUsersVerifyLoginRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postUsersVerifyLogin'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postUsersVerifyLoginRequest()
+    {
+
+        $resourcePath = '/users/verify_login';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($_tempBody));
+            } else {
+                $httpBody = $_tempBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());

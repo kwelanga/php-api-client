@@ -57,7 +57,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\KwelangaAPI\Model\InlineResponse2003Data'
+        'id' => 'float',
+        'data' => 'object'
     ];
 
     /**
@@ -66,6 +67,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'id' => null,
         'data' => null
     ];
 
@@ -96,6 +98,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'data' => 'data'
     ];
 
@@ -105,6 +108,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'data' => 'setData'
     ];
 
@@ -114,6 +118,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'data' => 'getData'
     ];
 
@@ -177,6 +182,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
@@ -205,9 +211,33 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets id
+     *
+     * @return float|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param float|null $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets data
      *
-     * @return \KwelangaAPI\Model\InlineResponse2003Data|null
+     * @return object|null
      */
     public function getData()
     {
@@ -217,7 +247,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \KwelangaAPI\Model\InlineResponse2003Data|null $data data
+     * @param object|null $data data
      *
      * @return $this
      */

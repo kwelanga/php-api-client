@@ -1,6 +1,6 @@
 <?php
 /**
- * User
+ * InlineResponse2005Data
  *
  * PHP version 7.2
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * User Class Doc Comment
+ * InlineResponse2005Data Class Doc Comment
  *
  * @category Class
- * @description Tetst
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class User implements ModelInterface, ArrayAccess
+class InlineResponse2005Data implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class User implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'User';
+    protected static $openAPIModelName = 'inline_response_200_5_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +57,10 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'float',
-        'full_name' => 'string',
-        'user_email' => 'string',
-        'user_tel' => 'string',
-        'user_cell' => 'string',
-        'lastlogin' => 'string',
-        'browser_user_info' => 'string'
+        'item_amount' => 'float',
+        'total_amount' => 'float',
+        'currency' => 'string',
+        'level' => 'string'
     ];
 
     /**
@@ -73,13 +69,10 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'full_name' => null,
-        'user_email' => null,
-        'user_tel' => null,
-        'user_cell' => null,
-        'lastlogin' => null,
-        'browser_user_info' => null
+        'item_amount' => null,
+        'total_amount' => null,
+        'currency' => null,
+        'level' => null
     ];
 
     /**
@@ -109,13 +102,10 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'full_name' => 'full_name',
-        'user_email' => 'user_email',
-        'user_tel' => 'user_tel',
-        'user_cell' => 'user_cell',
-        'lastlogin' => 'lastlogin',
-        'browser_user_info' => 'browser_user_info'
+        'item_amount' => 'item_amount',
+        'total_amount' => 'total_amount',
+        'currency' => 'currency',
+        'level' => 'level'
     ];
 
     /**
@@ -124,13 +114,10 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'full_name' => 'setFullName',
-        'user_email' => 'setUserEmail',
-        'user_tel' => 'setUserTel',
-        'user_cell' => 'setUserCell',
-        'lastlogin' => 'setLastlogin',
-        'browser_user_info' => 'setBrowserUserInfo'
+        'item_amount' => 'setItemAmount',
+        'total_amount' => 'setTotalAmount',
+        'currency' => 'setCurrency',
+        'level' => 'setLevel'
     ];
 
     /**
@@ -139,13 +126,10 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'full_name' => 'getFullName',
-        'user_email' => 'getUserEmail',
-        'user_tel' => 'getUserTel',
-        'user_cell' => 'getUserCell',
-        'lastlogin' => 'getLastlogin',
-        'browser_user_info' => 'getBrowserUserInfo'
+        'item_amount' => 'getItemAmount',
+        'total_amount' => 'getTotalAmount',
+        'currency' => 'getCurrency',
+        'level' => 'getLevel'
     ];
 
     /**
@@ -208,13 +192,10 @@ class User implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
-        $this->container['user_tel'] = isset($data['user_tel']) ? $data['user_tel'] : null;
-        $this->container['user_cell'] = isset($data['user_cell']) ? $data['user_cell'] : null;
-        $this->container['lastlogin'] = isset($data['lastlogin']) ? $data['lastlogin'] : null;
-        $this->container['browser_user_info'] = isset($data['browser_user_info']) ? $data['browser_user_info'] : null;
+        $this->container['item_amount'] = isset($data['item_amount']) ? $data['item_amount'] : null;
+        $this->container['total_amount'] = isset($data['total_amount']) ? $data['total_amount'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['level'] = isset($data['level']) ? $data['level'] : null;
     }
 
     /**
@@ -226,12 +207,6 @@ class User implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['full_name'] === null) {
-            $invalidProperties[] = "'full_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -248,169 +223,97 @@ class User implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets item_amount
      *
-     * @return float
+     * @return float|null
      */
-    public function getId()
+    public function getItemAmount()
     {
-        return $this->container['id'];
+        return $this->container['item_amount'];
     }
 
     /**
-     * Sets id
+     * Sets item_amount
      *
-     * @param float $id id
+     * @param float|null $item_amount item_amount
      *
      * @return $this
      */
-    public function setId($id)
+    public function setItemAmount($item_amount)
     {
-        $this->container['id'] = $id;
+        $this->container['item_amount'] = $item_amount;
 
         return $this;
     }
 
     /**
-     * Gets full_name
+     * Gets total_amount
      *
-     * @return string
+     * @return float|null
      */
-    public function getFullName()
+    public function getTotalAmount()
     {
-        return $this->container['full_name'];
+        return $this->container['total_amount'];
     }
 
     /**
-     * Sets full_name
+     * Sets total_amount
      *
-     * @param string $full_name full_name
+     * @param float|null $total_amount total_amount
      *
      * @return $this
      */
-    public function setFullName($full_name)
+    public function setTotalAmount($total_amount)
     {
-        $this->container['full_name'] = $full_name;
+        $this->container['total_amount'] = $total_amount;
 
         return $this;
     }
 
     /**
-     * Gets user_email
+     * Gets currency
      *
      * @return string|null
      */
-    public function getUserEmail()
+    public function getCurrency()
     {
-        return $this->container['user_email'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets user_email
+     * Sets currency
      *
-     * @param string|null $user_email user_email
+     * @param string|null $currency currency
      *
      * @return $this
      */
-    public function setUserEmail($user_email)
+    public function setCurrency($currency)
     {
-        $this->container['user_email'] = $user_email;
+        $this->container['currency'] = $currency;
 
         return $this;
     }
 
     /**
-     * Gets user_tel
+     * Gets level
      *
      * @return string|null
      */
-    public function getUserTel()
+    public function getLevel()
     {
-        return $this->container['user_tel'];
+        return $this->container['level'];
     }
 
     /**
-     * Sets user_tel
+     * Sets level
      *
-     * @param string|null $user_tel user_tel
+     * @param string|null $level level
      *
      * @return $this
      */
-    public function setUserTel($user_tel)
+    public function setLevel($level)
     {
-        $this->container['user_tel'] = $user_tel;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_cell
-     *
-     * @return string|null
-     */
-    public function getUserCell()
-    {
-        return $this->container['user_cell'];
-    }
-
-    /**
-     * Sets user_cell
-     *
-     * @param string|null $user_cell user_cell
-     *
-     * @return $this
-     */
-    public function setUserCell($user_cell)
-    {
-        $this->container['user_cell'] = $user_cell;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastlogin
-     *
-     * @return string|null
-     */
-    public function getLastlogin()
-    {
-        return $this->container['lastlogin'];
-    }
-
-    /**
-     * Sets lastlogin
-     *
-     * @param string|null $lastlogin lastlogin
-     *
-     * @return $this
-     */
-    public function setLastlogin($lastlogin)
-    {
-        $this->container['lastlogin'] = $lastlogin;
-
-        return $this;
-    }
-
-    /**
-     * Gets browser_user_info
-     *
-     * @return string|null
-     */
-    public function getBrowserUserInfo()
-    {
-        return $this->container['browser_user_info'];
-    }
-
-    /**
-     * Sets browser_user_info
-     *
-     * @param string|null $browser_user_info browser_user_info
-     *
-     * @return $this
-     */
-    public function setBrowserUserInfo($browser_user_info)
-    {
-        $this->container['browser_user_info'] = $browser_user_info;
+        $this->container['level'] = $level;
 
         return $this;
     }
