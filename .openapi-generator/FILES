@@ -47,11 +47,3 @@ lib/Model/ProductListItem.php
 lib/Model/User.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/FetchedStoreTest.php
-test/Model/InlineResponse2004Test.php
-test/Model/InlineResponse2005DataTest.php
-test/Model/InlineResponse2005Test.php
-test/Model/InlineResponse2006Test.php
-test/Model/PostOrderDetailLineTest.php
-test/Model/PostOrderTest.php
-test/Model/PrincipalItemTest.php

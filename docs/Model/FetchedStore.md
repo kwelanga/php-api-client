@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **float** |  | [optional] 
 **deliver_name** | **string** |  | [optional] 
 **deliver_add1** | **string** |  | [optional] 
 **deliver_add2** | **string** |  | [optional] 

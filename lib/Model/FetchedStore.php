@@ -57,6 +57,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'float',
         'deliver_name' => 'string',
         'deliver_add1' => 'string',
         'deliver_add2' => 'string',
@@ -80,6 +81,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'id' => null,
         'deliver_name' => null,
         'deliver_add1' => null,
         'deliver_add2' => null,
@@ -124,6 +126,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'deliver_name' => 'deliver_name',
         'deliver_add1' => 'deliver_add1',
         'deliver_add2' => 'deliver_add2',
@@ -147,6 +150,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'deliver_name' => 'setDeliverName',
         'deliver_add1' => 'setDeliverAdd1',
         'deliver_add2' => 'setDeliverAdd2',
@@ -170,6 +174,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'deliver_name' => 'getDeliverName',
         'deliver_add1' => 'getDeliverAdd1',
         'deliver_add2' => 'getDeliverAdd2',
@@ -247,6 +252,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['deliver_name'] = isset($data['deliver_name']) ? $data['deliver_name'] : null;
         $this->container['deliver_add1'] = isset($data['deliver_add1']) ? $data['deliver_add1'] : null;
         $this->container['deliver_add2'] = isset($data['deliver_add2']) ? $data['deliver_add2'] : null;
@@ -287,6 +293,30 @@ class FetchedStore implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return float|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param float|null $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets deliver_name
