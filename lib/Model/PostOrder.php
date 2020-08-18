@@ -59,7 +59,9 @@ class PostOrder implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'float',
         'details' => '\KwelangaAPI\Model\PostOrderDetailLine[]',
+        'document_type' => 'float',
         'status' => 'string',
+        'delivery_notes' => 'string',
         'delivery_date' => 'string',
         'order_date' => 'string',
         'store_id' => 'string'
@@ -73,7 +75,9 @@ class PostOrder implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => null,
         'details' => null,
+        'document_type' => null,
         'status' => null,
+        'delivery_notes' => null,
         'delivery_date' => null,
         'order_date' => null,
         'store_id' => null
@@ -108,7 +112,9 @@ class PostOrder implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'details' => 'details',
+        'document_type' => 'documentType',
         'status' => 'status',
+        'delivery_notes' => 'deliveryNotes',
         'delivery_date' => 'deliveryDate',
         'order_date' => 'orderDate',
         'store_id' => 'storeId'
@@ -122,7 +128,9 @@ class PostOrder implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'details' => 'setDetails',
+        'document_type' => 'setDocumentType',
         'status' => 'setStatus',
+        'delivery_notes' => 'setDeliveryNotes',
         'delivery_date' => 'setDeliveryDate',
         'order_date' => 'setOrderDate',
         'store_id' => 'setStoreId'
@@ -136,7 +144,9 @@ class PostOrder implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'details' => 'getDetails',
+        'document_type' => 'getDocumentType',
         'status' => 'getStatus',
+        'delivery_notes' => 'getDeliveryNotes',
         'delivery_date' => 'getDeliveryDate',
         'order_date' => 'getOrderDate',
         'store_id' => 'getStoreId'
@@ -204,7 +214,9 @@ class PostOrder implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['delivery_notes'] = isset($data['delivery_notes']) ? $data['delivery_notes'] : null;
         $this->container['delivery_date'] = isset($data['delivery_date']) ? $data['delivery_date'] : null;
         $this->container['order_date'] = isset($data['order_date']) ? $data['order_date'] : null;
         $this->container['store_id'] = isset($data['store_id']) ? $data['store_id'] : null;
@@ -283,6 +295,30 @@ class PostOrder implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets document_type
+     *
+     * @return float|null
+     */
+    public function getDocumentType()
+    {
+        return $this->container['document_type'];
+    }
+
+    /**
+     * Sets document_type
+     *
+     * @param float|null $document_type document_type
+     *
+     * @return $this
+     */
+    public function setDocumentType($document_type)
+    {
+        $this->container['document_type'] = $document_type;
+
+        return $this;
+    }
+
+    /**
      * Gets status
      *
      * @return string|null
@@ -302,6 +338,30 @@ class PostOrder implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivery_notes
+     *
+     * @return string|null
+     */
+    public function getDeliveryNotes()
+    {
+        return $this->container['delivery_notes'];
+    }
+
+    /**
+     * Sets delivery_notes
+     *
+     * @param string|null $delivery_notes delivery_notes
+     *
+     * @return $this
+     */
+    public function setDeliveryNotes($delivery_notes)
+    {
+        $this->container['delivery_notes'] = $delivery_notes;
 
         return $this;
     }
