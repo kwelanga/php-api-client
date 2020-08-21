@@ -64,7 +64,8 @@ class PostOrder implements ModelInterface, ArrayAccess
         'delivery_notes' => 'string',
         'delivery_date' => 'string',
         'order_date' => 'string',
-        'store_id' => 'string'
+        'store_id' => 'string',
+        'captured_by' => 'string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class PostOrder implements ModelInterface, ArrayAccess
         'delivery_notes' => null,
         'delivery_date' => null,
         'order_date' => null,
-        'store_id' => null
+        'store_id' => null,
+        'captured_by' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class PostOrder implements ModelInterface, ArrayAccess
         'delivery_notes' => 'deliveryNotes',
         'delivery_date' => 'deliveryDate',
         'order_date' => 'orderDate',
-        'store_id' => 'storeId'
+        'store_id' => 'storeId',
+        'captured_by' => 'capturedBy'
     ];
 
     /**
@@ -133,7 +136,8 @@ class PostOrder implements ModelInterface, ArrayAccess
         'delivery_notes' => 'setDeliveryNotes',
         'delivery_date' => 'setDeliveryDate',
         'order_date' => 'setOrderDate',
-        'store_id' => 'setStoreId'
+        'store_id' => 'setStoreId',
+        'captured_by' => 'setCapturedBy'
     ];
 
     /**
@@ -149,7 +153,8 @@ class PostOrder implements ModelInterface, ArrayAccess
         'delivery_notes' => 'getDeliveryNotes',
         'delivery_date' => 'getDeliveryDate',
         'order_date' => 'getOrderDate',
-        'store_id' => 'getStoreId'
+        'store_id' => 'getStoreId',
+        'captured_by' => 'getCapturedBy'
     ];
 
     /**
@@ -220,6 +225,7 @@ class PostOrder implements ModelInterface, ArrayAccess
         $this->container['delivery_date'] = isset($data['delivery_date']) ? $data['delivery_date'] : null;
         $this->container['order_date'] = isset($data['order_date']) ? $data['order_date'] : null;
         $this->container['store_id'] = isset($data['store_id']) ? $data['store_id'] : null;
+        $this->container['captured_by'] = isset($data['captured_by']) ? $data['captured_by'] : null;
     }
 
     /**
@@ -434,6 +440,30 @@ class PostOrder implements ModelInterface, ArrayAccess
     public function setStoreId($store_id)
     {
         $this->container['store_id'] = $store_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets captured_by
+     *
+     * @return string|null
+     */
+    public function getCapturedBy()
+    {
+        return $this->container['captured_by'];
+    }
+
+    /**
+     * Sets captured_by
+     *
+     * @param string|null $captured_by captured_by
+     *
+     * @return $this
+     */
+    public function setCapturedBy($captured_by)
+    {
+        $this->container['captured_by'] = $captured_by;
 
         return $this;
     }

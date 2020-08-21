@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **delivery_date** | **string** |  | [optional] 
 **order_date** | **string** |  | [optional] 
 **store_id** | **string** |  | [optional] 
+**captured_by** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
