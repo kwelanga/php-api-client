@@ -49,4 +49,3 @@ lib/Model/ProductListItem.php
 lib/Model/UserItem.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/UserItemTest.php
