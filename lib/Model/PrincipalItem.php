@@ -39,10 +39,13 @@ use \KwelangaAPI\ObjectSerializer;
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null  
  */
-class PrincipalItem implements ModelInterface, ArrayAccess
+class PrincipalItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -75,6 +78,8 @@ class PrincipalItem implements ModelInterface, ArrayAccess
       * Array of property to format mappings. Used for (de)serialization
       *
       * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
         'id' => null,
@@ -232,18 +237,18 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['physical_add1'] = isset($data['physical_add1']) ? $data['physical_add1'] : null;
-        $this->container['physical_add2'] = isset($data['physical_add2']) ? $data['physical_add2'] : null;
-        $this->container['physical_add3'] = isset($data['physical_add3']) ? $data['physical_add3'] : null;
-        $this->container['physical_add4'] = isset($data['physical_add4']) ? $data['physical_add4'] : null;
-        $this->container['postal_add1'] = isset($data['postal_add1']) ? $data['postal_add1'] : null;
-        $this->container['postal_add2'] = isset($data['postal_add2']) ? $data['postal_add2'] : null;
-        $this->container['postal_add3'] = isset($data['postal_add3']) ? $data['postal_add3'] : null;
-        $this->container['postal_add4'] = isset($data['postal_add4']) ? $data['postal_add4'] : null;
-        $this->container['office_tel'] = isset($data['office_tel']) ? $data['office_tel'] : null;
-        $this->container['email_add'] = isset($data['email_add']) ? $data['email_add'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['physical_add1'] = $data['physical_add1'] ?? null;
+        $this->container['physical_add2'] = $data['physical_add2'] ?? null;
+        $this->container['physical_add3'] = $data['physical_add3'] ?? null;
+        $this->container['physical_add4'] = $data['physical_add4'] ?? null;
+        $this->container['postal_add1'] = $data['postal_add1'] ?? null;
+        $this->container['postal_add2'] = $data['postal_add2'] ?? null;
+        $this->container['postal_add3'] = $data['postal_add3'] ?? null;
+        $this->container['postal_add4'] = $data['postal_add4'] ?? null;
+        $this->container['office_tel'] = $data['office_tel'] ?? null;
+        $this->container['email_add'] = $data['email_add'] ?? null;
     }
 
     /**
@@ -291,7 +296,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param float $id id
      *
-     * @return $this
+     * @return self
      */
     public function setId($id)
     {
@@ -315,7 +320,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string $name name
      *
-     * @return $this
+     * @return self
      */
     public function setName($name)
     {
@@ -339,7 +344,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $physical_add1 physical_add1
      *
-     * @return $this
+     * @return self
      */
     public function setPhysicalAdd1($physical_add1)
     {
@@ -363,7 +368,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $physical_add2 physical_add2
      *
-     * @return $this
+     * @return self
      */
     public function setPhysicalAdd2($physical_add2)
     {
@@ -387,7 +392,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $physical_add3 physical_add3
      *
-     * @return $this
+     * @return self
      */
     public function setPhysicalAdd3($physical_add3)
     {
@@ -411,7 +416,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $physical_add4 physical_add4
      *
-     * @return $this
+     * @return self
      */
     public function setPhysicalAdd4($physical_add4)
     {
@@ -435,7 +440,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $postal_add1 postal_add1
      *
-     * @return $this
+     * @return self
      */
     public function setPostalAdd1($postal_add1)
     {
@@ -459,7 +464,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $postal_add2 postal_add2
      *
-     * @return $this
+     * @return self
      */
     public function setPostalAdd2($postal_add2)
     {
@@ -483,7 +488,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $postal_add3 postal_add3
      *
-     * @return $this
+     * @return self
      */
     public function setPostalAdd3($postal_add3)
     {
@@ -507,7 +512,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $postal_add4 postal_add4
      *
-     * @return $this
+     * @return self
      */
     public function setPostalAdd4($postal_add4)
     {
@@ -531,7 +536,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string[]|null $office_tel office_tel
      *
-     * @return $this
+     * @return self
      */
     public function setOfficeTel($office_tel)
     {
@@ -555,7 +560,7 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param string[]|null $email_add email_add
      *
-     * @return $this
+     * @return self
      */
     public function setEmailAdd($email_add)
     {
@@ -580,18 +585,18 @@ class PrincipalItem implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param integer $offset Offset
-     * @param mixed   $value  Value to be set
+     * @param int|null $offset Offset
+     * @param mixed    $value  Value to be set
      *
      * @return void
      */
@@ -614,6 +619,18 @@ class PrincipalItem implements ModelInterface, ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /**
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    public function jsonSerialize()
+    {
+       return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

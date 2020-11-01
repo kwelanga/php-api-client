@@ -39,10 +39,13 @@ use \KwelangaAPI\ObjectSerializer;
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null  
  */
-class ProductDetailedItem implements ModelInterface, ArrayAccess
+class ProductDetailedItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -77,6 +80,8 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
       * Array of property to format mappings. Used for (de)serialization
       *
       * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
         'id' => null,
@@ -242,20 +247,20 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['alt_code'] = isset($data['alt_code']) ? $data['alt_code'] : null;
-        $this->container['ean_code'] = isset($data['ean_code']) ? $data['ean_code'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['short_desc'] = isset($data['short_desc']) ? $data['short_desc'] : null;
-        $this->container['long_desc'] = isset($data['long_desc']) ? $data['long_desc'] : null;
-        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
-        $this->container['items_per_case'] = isset($data['items_per_case']) ? $data['items_per_case'] : null;
-        $this->container['web_enabled'] = isset($data['web_enabled']) ? $data['web_enabled'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['image_uri'] = isset($data['image_uri']) ? $data['image_uri'] : null;
-        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
-        $this->container['pricing'] = isset($data['pricing']) ? $data['pricing'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['alt_code'] = $data['alt_code'] ?? null;
+        $this->container['ean_code'] = $data['ean_code'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['short_desc'] = $data['short_desc'] ?? null;
+        $this->container['long_desc'] = $data['long_desc'] ?? null;
+        $this->container['weight'] = $data['weight'] ?? null;
+        $this->container['items_per_case'] = $data['items_per_case'] ?? null;
+        $this->container['web_enabled'] = $data['web_enabled'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['image_uri'] = $data['image_uri'] ?? null;
+        $this->container['size'] = $data['size'] ?? null;
+        $this->container['pricing'] = $data['pricing'] ?? null;
     }
 
     /**
@@ -297,7 +302,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param int|null $id id
      *
-     * @return $this
+     * @return self
      */
     public function setId($id)
     {
@@ -321,7 +326,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $code code
      *
-     * @return $this
+     * @return self
      */
     public function setCode($code)
     {
@@ -345,7 +350,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $alt_code alt_code
      *
-     * @return $this
+     * @return self
      */
     public function setAltCode($alt_code)
     {
@@ -369,7 +374,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $ean_code ean_code
      *
-     * @return $this
+     * @return self
      */
     public function setEanCode($ean_code)
     {
@@ -393,7 +398,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $name name
      *
-     * @return $this
+     * @return self
      */
     public function setName($name)
     {
@@ -417,7 +422,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $short_desc short_desc
      *
-     * @return $this
+     * @return self
      */
     public function setShortDesc($short_desc)
     {
@@ -441,7 +446,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $long_desc long_desc
      *
-     * @return $this
+     * @return self
      */
     public function setLongDesc($long_desc)
     {
@@ -465,7 +470,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param float|null $weight weight
      *
-     * @return $this
+     * @return self
      */
     public function setWeight($weight)
     {
@@ -489,7 +494,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param float|null $items_per_case items_per_case
      *
-     * @return $this
+     * @return self
      */
     public function setItemsPerCase($items_per_case)
     {
@@ -513,7 +518,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $web_enabled web_enabled
      *
-     * @return $this
+     * @return self
      */
     public function setWebEnabled($web_enabled)
     {
@@ -537,7 +542,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $status status
      *
-     * @return $this
+     * @return self
      */
     public function setStatus($status)
     {
@@ -561,7 +566,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param string|null $image_uri image_uri
      *
-     * @return $this
+     * @return self
      */
     public function setImageUri($image_uri)
     {
@@ -585,7 +590,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param \KwelangaAPI\Model\ProductDetailedItemSize|null $size size
      *
-     * @return $this
+     * @return self
      */
     public function setSize($size)
     {
@@ -609,7 +614,7 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param \KwelangaAPI\Model\ProductDetailedItemPricing|null $pricing pricing
      *
-     * @return $this
+     * @return self
      */
     public function setPricing($pricing)
     {
@@ -634,18 +639,18 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param integer $offset Offset
-     * @param mixed   $value  Value to be set
+     * @param int|null $offset Offset
+     * @param mixed    $value  Value to be set
      *
      * @return void
      */
@@ -668,6 +673,18 @@ class ProductDetailedItem implements ModelInterface, ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /**
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    public function jsonSerialize()
+    {
+       return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2006Data
+ * UserItem
  *
  * PHP version 7.2
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \KwelangaAPI\ObjectSerializer;
 
 /**
- * InlineResponse2006Data Class Doc Comment
+ * UserItem Class Doc Comment
  *
  * @category Class
+ * @description User Fields
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \KwelangaAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerializable
+class UserItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_6_data';
+    protected static $openAPIModelName = 'UserItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,10 +61,13 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'item_amount' => 'float',
-        'total_amount' => 'float',
-        'currency' => 'string',
-        'level' => 'string'
+        'id' => 'float',
+        'full_name' => 'string',
+        'user_email' => 'string',
+        'user_tel' => 'string',
+        'user_cell' => 'string',
+        'lastlogin' => 'string',
+        'browser_user_info' => 'string'
     ];
 
     /**
@@ -74,10 +78,13 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'item_amount' => null,
-        'total_amount' => null,
-        'currency' => null,
-        'level' => null
+        'id' => null,
+        'full_name' => null,
+        'user_email' => null,
+        'user_tel' => null,
+        'user_cell' => null,
+        'lastlogin' => null,
+        'browser_user_info' => null
     ];
 
     /**
@@ -107,10 +114,13 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'item_amount' => 'item_amount',
-        'total_amount' => 'total_amount',
-        'currency' => 'currency',
-        'level' => 'level'
+        'id' => 'id',
+        'full_name' => 'full_name',
+        'user_email' => 'user_email',
+        'user_tel' => 'user_tel',
+        'user_cell' => 'user_cell',
+        'lastlogin' => 'lastlogin',
+        'browser_user_info' => 'browser_user_info'
     ];
 
     /**
@@ -119,10 +129,13 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'item_amount' => 'setItemAmount',
-        'total_amount' => 'setTotalAmount',
-        'currency' => 'setCurrency',
-        'level' => 'setLevel'
+        'id' => 'setId',
+        'full_name' => 'setFullName',
+        'user_email' => 'setUserEmail',
+        'user_tel' => 'setUserTel',
+        'user_cell' => 'setUserCell',
+        'lastlogin' => 'setLastlogin',
+        'browser_user_info' => 'setBrowserUserInfo'
     ];
 
     /**
@@ -131,10 +144,13 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'item_amount' => 'getItemAmount',
-        'total_amount' => 'getTotalAmount',
-        'currency' => 'getCurrency',
-        'level' => 'getLevel'
+        'id' => 'getId',
+        'full_name' => 'getFullName',
+        'user_email' => 'getUserEmail',
+        'user_tel' => 'getUserTel',
+        'user_cell' => 'getUserCell',
+        'lastlogin' => 'getLastlogin',
+        'browser_user_info' => 'getBrowserUserInfo'
     ];
 
     /**
@@ -197,10 +213,13 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['item_amount'] = $data['item_amount'] ?? null;
-        $this->container['total_amount'] = $data['total_amount'] ?? null;
-        $this->container['currency'] = $data['currency'] ?? null;
-        $this->container['level'] = $data['level'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['full_name'] = $data['full_name'] ?? null;
+        $this->container['user_email'] = $data['user_email'] ?? null;
+        $this->container['user_tel'] = $data['user_tel'] ?? null;
+        $this->container['user_cell'] = $data['user_cell'] ?? null;
+        $this->container['lastlogin'] = $data['lastlogin'] ?? null;
+        $this->container['browser_user_info'] = $data['browser_user_info'] ?? null;
     }
 
     /**
@@ -212,6 +231,12 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['full_name'] === null) {
+            $invalidProperties[] = "'full_name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -228,97 +253,169 @@ class InlineResponse2006Data implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets item_amount
+     * Gets id
      *
-     * @return float|null
+     * @return float
      */
-    public function getItemAmount()
+    public function getId()
     {
-        return $this->container['item_amount'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets item_amount
+     * Sets id
      *
-     * @param float|null $item_amount item_amount
+     * @param float $id id
      *
      * @return self
      */
-    public function setItemAmount($item_amount)
+    public function setId($id)
     {
-        $this->container['item_amount'] = $item_amount;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets total_amount
+     * Gets full_name
      *
-     * @return float|null
+     * @return string
      */
-    public function getTotalAmount()
+    public function getFullName()
     {
-        return $this->container['total_amount'];
+        return $this->container['full_name'];
     }
 
     /**
-     * Sets total_amount
+     * Sets full_name
      *
-     * @param float|null $total_amount total_amount
+     * @param string $full_name full_name
      *
      * @return self
      */
-    public function setTotalAmount($total_amount)
+    public function setFullName($full_name)
     {
-        $this->container['total_amount'] = $total_amount;
+        $this->container['full_name'] = $full_name;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets user_email
      *
      * @return string|null
      */
-    public function getCurrency()
+    public function getUserEmail()
     {
-        return $this->container['currency'];
+        return $this->container['user_email'];
     }
 
     /**
-     * Sets currency
+     * Sets user_email
      *
-     * @param string|null $currency currency
+     * @param string|null $user_email user_email
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setUserEmail($user_email)
     {
-        $this->container['currency'] = $currency;
+        $this->container['user_email'] = $user_email;
 
         return $this;
     }
 
     /**
-     * Gets level
+     * Gets user_tel
      *
      * @return string|null
      */
-    public function getLevel()
+    public function getUserTel()
     {
-        return $this->container['level'];
+        return $this->container['user_tel'];
     }
 
     /**
-     * Sets level
+     * Sets user_tel
      *
-     * @param string|null $level level
+     * @param string|null $user_tel user_tel
      *
      * @return self
      */
-    public function setLevel($level)
+    public function setUserTel($user_tel)
     {
-        $this->container['level'] = $level;
+        $this->container['user_tel'] = $user_tel;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_cell
+     *
+     * @return string|null
+     */
+    public function getUserCell()
+    {
+        return $this->container['user_cell'];
+    }
+
+    /**
+     * Sets user_cell
+     *
+     * @param string|null $user_cell user_cell
+     *
+     * @return self
+     */
+    public function setUserCell($user_cell)
+    {
+        $this->container['user_cell'] = $user_cell;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastlogin
+     *
+     * @return string|null
+     */
+    public function getLastlogin()
+    {
+        return $this->container['lastlogin'];
+    }
+
+    /**
+     * Sets lastlogin
+     *
+     * @param string|null $lastlogin lastlogin
+     *
+     * @return self
+     */
+    public function setLastlogin($lastlogin)
+    {
+        $this->container['lastlogin'] = $lastlogin;
+
+        return $this;
+    }
+
+    /**
+     * Gets browser_user_info
+     *
+     * @return string|null
+     */
+    public function getBrowserUserInfo()
+    {
+        return $this->container['browser_user_info'];
+    }
+
+    /**
+     * Sets browser_user_info
+     *
+     * @param string|null $browser_user_info browser_user_info
+     *
+     * @return self
+     */
+    public function setBrowserUserInfo($browser_user_info)
+    {
+        $this->container['browser_user_info'] = $browser_user_info;
 
         return $this;
     }

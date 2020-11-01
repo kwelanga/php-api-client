@@ -20,7 +20,7 @@ docs/Model/ProductDetailedItemPricing.md
 docs/Model/ProductDetailedItemSize.md
 docs/Model/ProductDetailedItemSizeUnit.md
 docs/Model/ProductListItem.md
-docs/Model/User.md
+docs/Model/UserItem.md
 git_push.sh
 lib/Api/DefaultApi.php
 lib/ApiException.php
@@ -46,6 +46,7 @@ lib/Model/ProductDetailedItemPricing.php
 lib/Model/ProductDetailedItemSize.php
 lib/Model/ProductDetailedItemSizeUnit.php
 lib/Model/ProductListItem.php
-lib/Model/User.php
+lib/Model/UserItem.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/UserItemTest.php

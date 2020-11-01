@@ -39,10 +39,13 @@ use \KwelangaAPI\ObjectSerializer;
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null  
  */
-class FetchedStore implements ModelInterface, ArrayAccess
+class FetchedStore implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -79,6 +82,8 @@ class FetchedStore implements ModelInterface, ArrayAccess
       * Array of property to format mappings. Used for (de)serialization
       *
       * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
         'id' => null,
@@ -252,22 +257,22 @@ class FetchedStore implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['deliver_name'] = isset($data['deliver_name']) ? $data['deliver_name'] : null;
-        $this->container['deliver_add1'] = isset($data['deliver_add1']) ? $data['deliver_add1'] : null;
-        $this->container['deliver_add2'] = isset($data['deliver_add2']) ? $data['deliver_add2'] : null;
-        $this->container['deliver_add3'] = isset($data['deliver_add3']) ? $data['deliver_add3'] : null;
-        $this->container['bill_name'] = isset($data['bill_name']) ? $data['bill_name'] : null;
-        $this->container['bill_add1'] = isset($data['bill_add1']) ? $data['bill_add1'] : null;
-        $this->container['bill_add2'] = isset($data['bill_add2']) ? $data['bill_add2'] : null;
-        $this->container['bill_add3'] = isset($data['bill_add3']) ? $data['bill_add3'] : null;
-        $this->container['principal_chain_uid'] = isset($data['principal_chain_uid']) ? $data['principal_chain_uid'] : null;
-        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
-        $this->container['tel_no1'] = isset($data['tel_no1']) ? $data['tel_no1'] : null;
-        $this->container['tel_no2'] = isset($data['tel_no2']) ? $data['tel_no2'] : null;
-        $this->container['email_add1'] = isset($data['email_add1']) ? $data['email_add1'] : null;
-        $this->container['email_add2'] = isset($data['email_add2']) ? $data['email_add2'] : null;
-        $this->container['depot_uid'] = isset($data['depot_uid']) ? $data['depot_uid'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['deliver_name'] = $data['deliver_name'] ?? null;
+        $this->container['deliver_add1'] = $data['deliver_add1'] ?? null;
+        $this->container['deliver_add2'] = $data['deliver_add2'] ?? null;
+        $this->container['deliver_add3'] = $data['deliver_add3'] ?? null;
+        $this->container['bill_name'] = $data['bill_name'] ?? null;
+        $this->container['bill_add1'] = $data['bill_add1'] ?? null;
+        $this->container['bill_add2'] = $data['bill_add2'] ?? null;
+        $this->container['bill_add3'] = $data['bill_add3'] ?? null;
+        $this->container['principal_chain_uid'] = $data['principal_chain_uid'] ?? null;
+        $this->container['branch_code'] = $data['branch_code'] ?? null;
+        $this->container['tel_no1'] = $data['tel_no1'] ?? null;
+        $this->container['tel_no2'] = $data['tel_no2'] ?? null;
+        $this->container['email_add1'] = $data['email_add1'] ?? null;
+        $this->container['email_add2'] = $data['email_add2'] ?? null;
+        $this->container['depot_uid'] = $data['depot_uid'] ?? null;
     }
 
     /**
@@ -309,7 +314,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param float|null $id id
      *
-     * @return $this
+     * @return self
      */
     public function setId($id)
     {
@@ -333,7 +338,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $deliver_name deliver_name
      *
-     * @return $this
+     * @return self
      */
     public function setDeliverName($deliver_name)
     {
@@ -357,7 +362,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $deliver_add1 deliver_add1
      *
-     * @return $this
+     * @return self
      */
     public function setDeliverAdd1($deliver_add1)
     {
@@ -381,7 +386,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $deliver_add2 deliver_add2
      *
-     * @return $this
+     * @return self
      */
     public function setDeliverAdd2($deliver_add2)
     {
@@ -405,7 +410,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $deliver_add3 deliver_add3
      *
-     * @return $this
+     * @return self
      */
     public function setDeliverAdd3($deliver_add3)
     {
@@ -429,7 +434,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $bill_name bill_name
      *
-     * @return $this
+     * @return self
      */
     public function setBillName($bill_name)
     {
@@ -453,7 +458,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $bill_add1 bill_add1
      *
-     * @return $this
+     * @return self
      */
     public function setBillAdd1($bill_add1)
     {
@@ -477,7 +482,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $bill_add2 bill_add2
      *
-     * @return $this
+     * @return self
      */
     public function setBillAdd2($bill_add2)
     {
@@ -501,7 +506,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $bill_add3 bill_add3
      *
-     * @return $this
+     * @return self
      */
     public function setBillAdd3($bill_add3)
     {
@@ -525,7 +530,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param float|null $principal_chain_uid principal_chain_uid
      *
-     * @return $this
+     * @return self
      */
     public function setPrincipalChainUid($principal_chain_uid)
     {
@@ -549,7 +554,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $branch_code branch_code
      *
-     * @return $this
+     * @return self
      */
     public function setBranchCode($branch_code)
     {
@@ -573,7 +578,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $tel_no1 tel_no1
      *
-     * @return $this
+     * @return self
      */
     public function setTelNo1($tel_no1)
     {
@@ -597,7 +602,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $tel_no2 tel_no2
      *
-     * @return $this
+     * @return self
      */
     public function setTelNo2($tel_no2)
     {
@@ -621,7 +626,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $email_add1 email_add1
      *
-     * @return $this
+     * @return self
      */
     public function setEmailAdd1($email_add1)
     {
@@ -645,7 +650,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param string|null $email_add2 email_add2
      *
-     * @return $this
+     * @return self
      */
     public function setEmailAdd2($email_add2)
     {
@@ -669,7 +674,7 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param float|null $depot_uid depot_uid
      *
-     * @return $this
+     * @return self
      */
     public function setDepotUid($depot_uid)
     {
@@ -694,18 +699,18 @@ class FetchedStore implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param integer $offset Offset
-     * @param mixed   $value  Value to be set
+     * @param int|null $offset Offset
+     * @param mixed    $value  Value to be set
      *
      * @return void
      */
@@ -728,6 +733,18 @@ class FetchedStore implements ModelInterface, ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /**
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    public function jsonSerialize()
+    {
+       return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

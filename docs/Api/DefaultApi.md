@@ -1,47 +1,48 @@
 # KwelangaAPI\DefaultApi
 
-All URIs are relative to *https://api.kwelangasolutions.co.za/v1*
+All URIs are relative to https://api.kwelangasolutions.co.za/v1.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteOrderId**](DefaultApi.md#deleteOrderId) | **DELETE** /orders/{id} | Delete Order Item
-[**deletePrincipalsId**](DefaultApi.md#deletePrincipalsId) | **DELETE** /principals/{id} | Delete Principal Item
-[**deleteProductsId**](DefaultApi.md#deleteProductsId) | **DELETE** /products/{id} | Delete Product Item
-[**deleteStoresId**](DefaultApi.md#deleteStoresId) | **DELETE** /stores/{id} | Delete Store Item
-[**getCustomerProfile**](DefaultApi.md#getCustomerProfile) | **GET** /customer/profile | Get Customer/Store Profile
-[**getOrder**](DefaultApi.md#getOrder) | **GET** /orders | Search/List Orders
-[**getOrderId**](DefaultApi.md#getOrderId) | **GET** /orders/{id} | Fetch Order Item
-[**getPing**](DefaultApi.md#getPing) | **GET** /ping | Your GET endpoint
-[**getPrincipals**](DefaultApi.md#getPrincipals) | **GET** /principals | Search/List Principals
-[**getPrincipalsId**](DefaultApi.md#getPrincipalsId) | **GET** /principals/{id} | Fetch Principal Item
-[**getProducts**](DefaultApi.md#getProducts) | **GET** /products | Search/List Products
-[**getProductsId**](DefaultApi.md#getProductsId) | **GET** /products/{id} | Fetch Product Item
-[**getStores**](DefaultApi.md#getStores) | **GET** /stores | Search/List Stores
-[**getStoresId**](DefaultApi.md#getStoresId) | **GET** /stores/{id} | Fetch Store Item
-[**getSupport**](DefaultApi.md#getSupport) | **GET** /support | Your GET endpoint
-[**getUser**](DefaultApi.md#getUser) | **GET** /user | Your GET endpoint
-[**getUserSettings**](DefaultApi.md#getUserSettings) | **GET** /user/settings | Fetch User Settings
-[**getVerifyProductPrice**](DefaultApi.md#getVerifyProductPrice) | **GET** /verify_product_price/{id} | Verify Price for Product &amp; Quantity by Chain
-[**postCustomerLogin**](DefaultApi.md#postCustomerLogin) | **POST** /customer/login | 
-[**postCustomerProfile**](DefaultApi.md#postCustomerProfile) | **POST** /customer/profile | Create Customer/Store Profile
-[**postOrder**](DefaultApi.md#postOrder) | **POST** /orders | Create New Order
-[**postPrincipals**](DefaultApi.md#postPrincipals) | **POST** /principals | Create New Principal
-[**postProducts**](DefaultApi.md#postProducts) | **POST** /products | Create New Product
-[**postStores**](DefaultApi.md#postStores) | **POST** /stores | Create New Store
-[**postUserLogin**](DefaultApi.md#postUserLogin) | **POST** /user | 
-[**postUsersVerifyLogin**](DefaultApi.md#postUsersVerifyLogin) | **POST** /users/verify_login | Verify User Login
-[**putCustomerProfile**](DefaultApi.md#putCustomerProfile) | **PUT** /customer/profile | Update Customer/Store Profile
-[**putOrderId**](DefaultApi.md#putOrderId) | **PUT** /orders/{id} | Update Order Item
-[**putPrincipalsId**](DefaultApi.md#putPrincipalsId) | **PUT** /principals/{id} | Update Principal Item
-[**putProductsId**](DefaultApi.md#putProductsId) | **PUT** /products/{id} | Update Product Item
-[**putStoresId**](DefaultApi.md#putStoresId) | **PUT** /stores/{id} | Update Store Item
-[**putUserSettings**](DefaultApi.md#putUserSettings) | **PUT** /user/settings | Update User Settings
+[**deleteOrderId()**](DefaultApi.md#deleteOrderId) | **DELETE** /orders/{id} | Delete Order Item
+[**deletePrincipalsId()**](DefaultApi.md#deletePrincipalsId) | **DELETE** /principals/{id} | Delete Principal Item
+[**deleteProductsId()**](DefaultApi.md#deleteProductsId) | **DELETE** /products/{id} | Delete Product Item
+[**deleteStoresId()**](DefaultApi.md#deleteStoresId) | **DELETE** /stores/{id} | Delete Store Item
+[**getCustomerProfile()**](DefaultApi.md#getCustomerProfile) | **GET** /customer/profile | Get Customer/Store Profile
+[**getOrder()**](DefaultApi.md#getOrder) | **GET** /orders | Search/List Orders
+[**getOrderId()**](DefaultApi.md#getOrderId) | **GET** /orders/{id} | Fetch Order Item
+[**getPing()**](DefaultApi.md#getPing) | **GET** /ping | Your GET endpoint
+[**getPrincipals()**](DefaultApi.md#getPrincipals) | **GET** /principals | Search/List Principals
+[**getPrincipalsId()**](DefaultApi.md#getPrincipalsId) | **GET** /principals/{id} | Fetch Principal Item
+[**getProducts()**](DefaultApi.md#getProducts) | **GET** /products | Search/List Products
+[**getProductsId()**](DefaultApi.md#getProductsId) | **GET** /products/{id} | Fetch Product Item
+[**getStores()**](DefaultApi.md#getStores) | **GET** /stores | Search/List Stores
+[**getStoresId()**](DefaultApi.md#getStoresId) | **GET** /stores/{id} | Fetch Store Item
+[**getSupport()**](DefaultApi.md#getSupport) | **GET** /support | Your GET endpoint
+[**getUser()**](DefaultApi.md#getUser) | **GET** /user | Your GET endpoint
+[**getUserSettings()**](DefaultApi.md#getUserSettings) | **GET** /user/settings | Fetch User Settings
+[**getVerifyProductPrice()**](DefaultApi.md#getVerifyProductPrice) | **GET** /verify_product_price/{id} | Verify Price for Product &amp; Quantity by Chain
+[**postCustomerLogin()**](DefaultApi.md#postCustomerLogin) | **POST** /customer/login | 
+[**postCustomerProfile()**](DefaultApi.md#postCustomerProfile) | **POST** /customer/profile | Create Customer/Store Profile
+[**postOrder()**](DefaultApi.md#postOrder) | **POST** /orders | Create New Order
+[**postPrincipals()**](DefaultApi.md#postPrincipals) | **POST** /principals | Create New Principal
+[**postProducts()**](DefaultApi.md#postProducts) | **POST** /products | Create New Product
+[**postStores()**](DefaultApi.md#postStores) | **POST** /stores | Create New Store
+[**postUserLogin()**](DefaultApi.md#postUserLogin) | **POST** /user | 
+[**postUsersVerifyLogin()**](DefaultApi.md#postUsersVerifyLogin) | **POST** /users/verify_login | Verify User Login
+[**putCustomerProfile()**](DefaultApi.md#putCustomerProfile) | **PUT** /customer/profile | Update Customer/Store Profile
+[**putOrderId()**](DefaultApi.md#putOrderId) | **PUT** /orders/{id} | Update Order Item
+[**putPrincipalsId()**](DefaultApi.md#putPrincipalsId) | **PUT** /principals/{id} | Update Principal Item
+[**putProductsId()**](DefaultApi.md#putProductsId) | **PUT** /products/{id} | Update Product Item
+[**putStoresId()**](DefaultApi.md#putStoresId) | **PUT** /stores/{id} | Update Store Item
+[**putUserSettings()**](DefaultApi.md#putUserSettings) | **PUT** /user/settings | Update User Settings
 
 
+## `deleteOrderId()`
 
-## deleteOrderId
-
-> deleteOrderId($id)
+```php
+deleteOrderId($id)
+```
 
 Delete Order Item
 
@@ -64,18 +65,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->deleteOrderId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteOrderId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -94,14 +93,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deletePrincipalsId()`
 
-## deletePrincipalsId
-
-> deletePrincipalsId($id)
+```php
+deletePrincipalsId($id)
+```
 
 Delete Principal Item
 
@@ -129,18 +129,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->deletePrincipalsId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deletePrincipalsId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -159,14 +157,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteProductsId()`
 
-## deleteProductsId
-
-> deleteProductsId($id)
+```php
+deleteProductsId($id)
+```
 
 Delete Product Item
 
@@ -194,18 +193,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->deleteProductsId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteProductsId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -224,14 +221,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteStoresId()`
 
-## deleteStoresId
-
-> deleteStoresId($id)
+```php
+deleteStoresId($id)
+```
 
 Delete Store Item
 
@@ -259,18 +257,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->deleteStoresId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteStoresId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -289,14 +285,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCustomerProfile()`
 
-## getCustomerProfile
-
-> object getCustomerProfile()
+```php
+getCustomerProfile(): object
+```
 
 Get Customer/Store Profile
 
@@ -331,7 +328,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getCustomerProfile: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -349,16 +345,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, multipart/form-data
+- **Accept**: `application/json`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getOrder()`
 
-## getOrder
-
-> object getOrder($order, $search, $start, $length, $draw)
+```php
+getOrder($order, $search, $start, $length, $draw): object
+```
 
 Search/List Orders
 
@@ -393,11 +390,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOrder: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -418,16 +413,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getOrderId()`
 
-## getOrderId
-
-> getOrderId($id)
+```php
+getOrderId($id)
+```
 
 Fetch Order Item
 
@@ -455,18 +451,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->getOrderId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getOrderId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -485,14 +479,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPing()`
 
-## getPing
-
-> object getPing()
+```php
+getPing(): object
+```
 
 Your GET endpoint
 
@@ -503,6 +498,7 @@ api test ping endpoint, no auth required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -517,7 +513,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPing: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -535,16 +530,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPrincipals()`
 
-## getPrincipals
-
-> \KwelangaAPI\Model\InlineResponse2005 getPrincipals($order, $search, $start, $length, $draw)
+```php
+getPrincipals($order, $search, $start, $length, $draw): \KwelangaAPI\Model\InlineResponse2005
+```
 
 Search/List Principals
 
@@ -584,11 +580,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPrincipals: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -609,16 +603,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getPrincipalsId()`
 
-## getPrincipalsId
-
-> getPrincipalsId($id)
+```php
+getPrincipalsId($id)
+```
 
 Fetch Principal Item
 
@@ -646,18 +641,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->getPrincipalsId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPrincipalsId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -676,14 +669,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getProducts()`
 
-## getProducts
-
-> \KwelangaAPI\Model\InlineResponse2001 getProducts($order, $search, $start, $length, $draw)
+```php
+getProducts($order, $search, $start, $length, $draw): \KwelangaAPI\Model\InlineResponse2001
+```
 
 Search/List Products
 
@@ -723,11 +717,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getProducts: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -748,16 +740,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getProductsId()`
 
-## getProductsId
-
-> \KwelangaAPI\Model\InlineResponse2002 getProductsId($id)
+```php
+getProductsId($id): \KwelangaAPI\Model\InlineResponse2002
+```
 
 Fetch Product Item
 
@@ -785,7 +778,7 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $result = $apiInstance->getProductsId($id);
@@ -793,11 +786,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getProductsId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -814,16 +805,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getStores()`
 
-## getStores
-
-> \KwelangaAPI\Model\InlineResponse2003 getStores($order, $search, $start, $length, $draw)
+```php
+getStores($order, $search, $start, $length, $draw): \KwelangaAPI\Model\InlineResponse2003
+```
 
 Search/List Stores
 
@@ -863,11 +855,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStores: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -888,16 +878,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getStoresId()`
 
-## getStoresId
-
-> getStoresId($id)
+```php
+getStoresId($id)
+```
 
 Fetch Store Item
 
@@ -925,18 +916,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->getStoresId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStoresId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -955,14 +944,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSupport()`
 
-## getSupport
-
-> getSupport()
+```php
+getSupport()
+```
 
 Your GET endpoint
 
@@ -993,7 +983,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getSupport: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1013,14 +1002,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getUser()`
 
-## getUser
-
-> getUser()
+```php
+getUser(): object
+```
 
 Your GET endpoint
 
@@ -1047,11 +1037,11 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
 );
 
 try {
-    $apiInstance->getUser();
+    $result = $apiInstance->getUser();
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUser: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1060,7 +1050,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1069,16 +1059,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getUserSettings()`
 
-## getUserSettings
-
-> getUserSettings()
+```php
+getUserSettings()
+```
 
 Fetch User Settings
 
@@ -1112,7 +1103,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserSettings: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1132,14 +1122,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getVerifyProductPrice()`
 
-## getVerifyProductPrice
-
-> \KwelangaAPI\Model\InlineResponse2006 getVerifyProductPrice($id, $quantity, $chain_code)
+```php
+getVerifyProductPrice($id, $quantity, $chain_code): \KwelangaAPI\Model\InlineResponse2006
+```
 
 Verify Price for Product & Quantity by Chain
 
@@ -1168,8 +1159,8 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     $config
 );
 $id = 56; // int | product ID
-$quantity = 56; // int | 
-$chain_code = 'chain_code_example'; // string | 
+$quantity = 56; // int
+$chain_code = 'chain_code_example'; // string
 
 try {
     $result = $apiInstance->getVerifyProductPrice($id, $quantity, $chain_code);
@@ -1177,11 +1168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getVerifyProductPrice: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1200,16 +1189,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postCustomerLogin()`
 
-## postCustomerLogin
-
-> postCustomerLogin($username, $password)
+```php
+postCustomerLogin($username, $password)
+```
 
 
 
@@ -1237,19 +1227,17 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$username = 'username_example'; // string | 
-$password = 'password_example'; // string | 
+$username = 'username_example'; // string
+$password = 'password_example'; // string
 
 try {
     $apiInstance->postCustomerLogin($username, $password);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postCustomerLogin: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1269,14 +1257,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postCustomerProfile()`
 
-## postCustomerProfile
-
-> postCustomerProfile()
+```php
+postCustomerProfile()
+```
 
 Create Customer/Store Profile
 
@@ -1310,7 +1299,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postCustomerProfile: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1330,14 +1318,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postOrder()`
 
-## postOrder
-
-> \KwelangaAPI\Model\InlineResponse200 postOrder($post_order)
+```php
+postOrder($post_order): \KwelangaAPI\Model\InlineResponse200
+```
 
 Create New Order
 
@@ -1365,7 +1354,7 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$post_order = new \KwelangaAPI\Model\PostOrder(); // \KwelangaAPI\Model\PostOrder | 
+$post_order = new \KwelangaAPI\Model\PostOrder(); // \KwelangaAPI\Model\PostOrder
 
 try {
     $result = $apiInstance->postOrder($post_order);
@@ -1373,11 +1362,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postOrder: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1393,17 +1380,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postPrincipals()`
 
-## postPrincipals
-
-> postPrincipals()
+```php
+postPrincipals()
+```
 
 Create New Principal
 
@@ -1437,7 +1425,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postPrincipals: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1457,14 +1444,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postProducts()`
 
-## postProducts
-
-> postProducts()
+```php
+postProducts()
+```
 
 Create New Product
 
@@ -1473,6 +1461,7 @@ Create New Product
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new KwelangaAPI\Api\DefaultApi(
@@ -1486,7 +1475,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postProducts: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1506,14 +1494,15 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postStores()`
 
-## postStores
-
-> \KwelangaAPI\Model\InlineResponse2004 postStores($post_store)
+```php
+postStores($post_store): \KwelangaAPI\Model\InlineResponse2004
+```
 
 Create New Store
 
@@ -1541,7 +1530,7 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$post_store = new \KwelangaAPI\Model\PostStore(); // \KwelangaAPI\Model\PostStore | 
+$post_store = new \KwelangaAPI\Model\PostStore(); // \KwelangaAPI\Model\PostStore
 
 try {
     $result = $apiInstance->postStores($post_store);
@@ -1549,11 +1538,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postStores: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1569,17 +1556,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postUserLogin()`
 
-## postUserLogin
-
-> postUserLogin()
+```php
+postUserLogin()
+```
 
 
 
@@ -1613,7 +1601,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postUserLogin: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1633,14 +1620,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `postUsersVerifyLogin()`
 
-## postUsersVerifyLogin
-
-> \KwelangaAPI\Model\InlineResponse2007 postUsersVerifyLogin()
+```php
+postUsersVerifyLogin(): \KwelangaAPI\Model\InlineResponse2007
+```
 
 Verify User Login
 
@@ -1670,7 +1658,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postUsersVerifyLogin: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1688,16 +1675,17 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `putCustomerProfile()`
 
-## putCustomerProfile
-
-> putCustomerProfile()
+```php
+putCustomerProfile()
+```
 
 Update Customer/Store Profile
 
@@ -1731,7 +1719,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->putCustomerProfile: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -1751,14 +1738,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `putOrderId()`
 
-## putOrderId
-
-> putOrderId($id)
+```php
+putOrderId($id)
+```
 
 Update Order Item
 
@@ -1781,18 +1769,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->putOrderId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->putOrderId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1811,14 +1797,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `putPrincipalsId()`
 
-## putPrincipalsId
-
-> putPrincipalsId($id)
+```php
+putPrincipalsId($id)
+```
 
 Update Principal Item
 
@@ -1846,18 +1833,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->putPrincipalsId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->putPrincipalsId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1876,14 +1861,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `putProductsId()`
 
-## putProductsId
-
-> putProductsId($id)
+```php
+putProductsId($id)
+```
 
 Update Product Item
 
@@ -1911,18 +1897,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->putProductsId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->putProductsId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1941,14 +1925,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `putStoresId()`
 
-## putStoresId
-
-> putStoresId($id)
+```php
+putStoresId($id)
+```
 
 Update Store Item
 
@@ -1976,18 +1961,16 @@ $apiInstance = new KwelangaAPI\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | 
+$id = 'id_example'; // string
 
 try {
     $apiInstance->putStoresId($id);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->putStoresId: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2006,14 +1989,15 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `putUserSettings()`
 
-## putUserSettings
-
-> putUserSettings()
+```php
+putUserSettings()
+```
 
 Update User Settings
 
@@ -2047,7 +2031,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->putUserSettings: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -2067,7 +2050,6 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -39,10 +39,13 @@ use \KwelangaAPI\ObjectSerializer;
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null  
  */
-class ProductDetailedItemSize implements ModelInterface, ArrayAccess
+class ProductDetailedItemSize implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -67,6 +70,8 @@ class ProductDetailedItemSize implements ModelInterface, ArrayAccess
       * Array of property to format mappings. Used for (de)serialization
       *
       * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
         'unit' => null,
@@ -192,10 +197,10 @@ class ProductDetailedItemSize implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
+        $this->container['unit'] = $data['unit'] ?? null;
+        $this->container['width'] = $data['width'] ?? null;
+        $this->container['length'] = $data['length'] ?? null;
+        $this->container['height'] = $data['height'] ?? null;
     }
 
     /**
@@ -237,7 +242,7 @@ class ProductDetailedItemSize implements ModelInterface, ArrayAccess
      *
      * @param \KwelangaAPI\Model\ProductDetailedItemSizeUnit|null $unit unit
      *
-     * @return $this
+     * @return self
      */
     public function setUnit($unit)
     {
@@ -261,7 +266,7 @@ class ProductDetailedItemSize implements ModelInterface, ArrayAccess
      *
      * @param float|null $width width
      *
-     * @return $this
+     * @return self
      */
     public function setWidth($width)
     {
@@ -285,7 +290,7 @@ class ProductDetailedItemSize implements ModelInterface, ArrayAccess
      *
      * @param float|null $length length
      *
-     * @return $this
+     * @return self
      */
     public function setLength($length)
     {
@@ -309,7 +314,7 @@ class ProductDetailedItemSize implements ModelInterface, ArrayAccess
      *
      * @param float|null $height height
      *
-     * @return $this
+     * @return self
      */
     public function setHeight($height)
     {
@@ -334,18 +339,18 @@ class ProductDetailedItemSize implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param integer $offset Offset
-     * @param mixed   $value  Value to be set
+     * @param int|null $offset Offset
+     * @param mixed    $value  Value to be set
      *
      * @return void
      */
@@ -368,6 +373,18 @@ class ProductDetailedItemSize implements ModelInterface, ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /**
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    public function jsonSerialize()
+    {
+       return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

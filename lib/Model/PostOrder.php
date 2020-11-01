@@ -39,10 +39,13 @@ use \KwelangaAPI\ObjectSerializer;
  * @package  KwelangaAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null  
  */
-class PostOrder implements ModelInterface, ArrayAccess
+class PostOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -72,6 +75,8 @@ class PostOrder implements ModelInterface, ArrayAccess
       * Array of property to format mappings. Used for (de)serialization
       *
       * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
         'id' => null,
@@ -217,15 +222,15 @@ class PostOrder implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
-        $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['delivery_notes'] = isset($data['delivery_notes']) ? $data['delivery_notes'] : null;
-        $this->container['delivery_date'] = isset($data['delivery_date']) ? $data['delivery_date'] : null;
-        $this->container['order_date'] = isset($data['order_date']) ? $data['order_date'] : null;
-        $this->container['store_id'] = isset($data['store_id']) ? $data['store_id'] : null;
-        $this->container['captured_by'] = isset($data['captured_by']) ? $data['captured_by'] : null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['details'] = $data['details'] ?? null;
+        $this->container['document_type'] = $data['document_type'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['delivery_notes'] = $data['delivery_notes'] ?? null;
+        $this->container['delivery_date'] = $data['delivery_date'] ?? null;
+        $this->container['order_date'] = $data['order_date'] ?? null;
+        $this->container['store_id'] = $data['store_id'] ?? null;
+        $this->container['captured_by'] = $data['captured_by'] ?? null;
     }
 
     /**
@@ -267,7 +272,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param float|null $id id
      *
-     * @return $this
+     * @return self
      */
     public function setId($id)
     {
@@ -291,7 +296,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param \KwelangaAPI\Model\PostOrderDetailLine[]|null $details details
      *
-     * @return $this
+     * @return self
      */
     public function setDetails($details)
     {
@@ -315,7 +320,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param float|null $document_type document_type
      *
-     * @return $this
+     * @return self
      */
     public function setDocumentType($document_type)
     {
@@ -339,7 +344,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param string|null $status status
      *
-     * @return $this
+     * @return self
      */
     public function setStatus($status)
     {
@@ -363,7 +368,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param string|null $delivery_notes delivery_notes
      *
-     * @return $this
+     * @return self
      */
     public function setDeliveryNotes($delivery_notes)
     {
@@ -387,7 +392,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param string|null $delivery_date delivery_date
      *
-     * @return $this
+     * @return self
      */
     public function setDeliveryDate($delivery_date)
     {
@@ -411,7 +416,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param string|null $order_date order_date
      *
-     * @return $this
+     * @return self
      */
     public function setOrderDate($order_date)
     {
@@ -435,7 +440,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param string|null $store_id store_id
      *
-     * @return $this
+     * @return self
      */
     public function setStoreId($store_id)
     {
@@ -459,7 +464,7 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param string|null $captured_by captured_by
      *
-     * @return $this
+     * @return self
      */
     public function setCapturedBy($captured_by)
     {
@@ -484,18 +489,18 @@ class PostOrder implements ModelInterface, ArrayAccess
      *
      * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param integer $offset Offset
-     * @param mixed   $value  Value to be set
+     * @param int|null $offset Offset
+     * @param mixed    $value  Value to be set
      *
      * @return void
      */
@@ -518,6 +523,18 @@ class PostOrder implements ModelInterface, ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    /**
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    public function jsonSerialize()
+    {
+       return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
