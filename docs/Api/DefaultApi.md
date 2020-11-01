@@ -551,11 +551,6 @@ Search/List Principals
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: ApiKeyAuth
-$config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = KwelangaAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-
 // Configure HTTP basic authorization: credentials
 $config = KwelangaAPI\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
@@ -598,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth), [credentials](../../README.md#credentials)
+[credentials](../../README.md#credentials)
 
 ### HTTP request headers
 
